@@ -74,7 +74,14 @@ router.get('/', async (ctx) => {
 // RSSHub
 router.get('/rsshub/rss', require('./routes/rsshub/rss'));
 
+// 网易新闻
 router.get('/netease/:category', require('./routes/netease/news'));
+
+// 深圳证券交易所上市公司公告[pdf]
+router.get('/szse/:secode', require('./routes/szindex/corp'));
+
+// 上海证券交易所上市公司公告[pdf]
+router.get('/shse/:secode', require('./routes/shindex/corp'));
 
 // bilibili
 router.get('/bilibili/user/video/:uid', require('./routes/bilibili/video'));
