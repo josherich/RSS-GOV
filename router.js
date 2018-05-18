@@ -74,6 +74,8 @@ router.get('/', async (ctx) => {
 // RSSHub
 router.get('/rsshub/rss', require('./routes/rsshub/rss'));
 
+router.get('/netease/:category', require('./routes/netease/news'));
+
 // bilibili
 router.get('/bilibili/user/video/:uid', require('./routes/bilibili/video'));
 router.get('/bilibili/user/fav/:uid', require('./routes/bilibili/fav'));
