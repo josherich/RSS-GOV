@@ -14,6 +14,7 @@ module.exports = async (ctx) => {
             Referer: `http://news.163.com/${category}/`,
             responseEncoding: 'gb2312',
         },
+        responseType: 'arraybuffer',
     });
     const raw = iconv.decode(response.data, 'gb2312');
     const data = '{"data": ' + raw.slice(14).slice(0, -1) + '}';

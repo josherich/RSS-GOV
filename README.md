@@ -8,6 +8,16 @@
 ## 专注于新闻 RSS 的分支
 
 *   网易新闻
+    /netease/:category
+
+*   上海证券交易所上市公司公告
+    /shse/:sec_id
+
+*   深圳证券交易所上市公司公告
+    /szse/:sec_id
+
+*   海淀法院案件快报
+    /hdfy/anjian
 
 ## 介绍
 
