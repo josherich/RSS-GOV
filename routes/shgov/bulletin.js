@@ -3,8 +3,8 @@ const cheerio = require('cheerio');
 const config = require('../../config');
 const iconv = require('iconv-lite');
 
-const baseUrl = 'http://bjhdfy.chinacourt.org';
-const url = 'http://bjhdfy.chinacourt.org/public/more.php?LocationID=0202000000';
+const baseUrl = 'http://www.sheitc.gov.cn';
+const url = 'http://www.sheitc.gov.cn/zxgkxx/index.htm';
 
 module.exports = async (ctx) => {
     const response = await axios({
@@ -18,30 +18,34 @@ module.exports = async (ctx) => {
         responseType: 'arraybuffer',
     });
 
-    const responseHtml = iconv.decode(response.data, 'gb2312');
+    const responseHtml = iconv.decode(response.data, 'gbk');
     const $ = cheerio.load(responseHtml);
-    const list = $('tr', '.item_pad tbody').slice(0, 19);
+    const list = $('.li', '.list.clearfix');
+    console.log(list.length);
     const chapter_item = [];
     for (let i = 0; i < list.length; i++) {
         const el = $(list[i])
             .find('a')
             .eq(0);
         const time = $(list[i])
-            .find('.td_time')
+            .find('h1 span')
             .eq(0);
         const item = {
             title: el.text(),
-            description: el.text(),
-            link: baseUrl + el.attr('href'),
-            pubDate: new Date(time.text().slice(1, -1)).toUTCString(),
+            description: $(list[i])
+                .find('div')
+                .eq(0)
+                .text(),
+            link: el.attr('href'),
+            pubDate: new Date(time.text()).toUTCString(),
         };
         chapter_item.push(item);
     }
     ctx.state.data = {
-        title: '海淀法院-案件快报',
+        title: '上海市经济和信息化委员会',
         link: url,
-        image: baseUrl + '/images/itemBg_54_1.jpg',
-        description: '海淀法院-案件快报',
+        image: 'http://www.sheitc.gov.cn/res_base/sheitc_gov_cn_www/v3/images/logo.png',
+        description: '上海市经济和信息化委员会',
         item: chapter_item,
     };
 };

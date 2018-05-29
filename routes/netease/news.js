@@ -5,6 +5,9 @@ const iconv = require('iconv-lite');
 module.exports = async (ctx) => {
     const category = ctx.params.category;
     const url = `http://temp.163.com/special/00804KVA/cm_${category}.js?callback=data_callback`;
+    // guoji; guonei; shehui; yaowen; tech; sports; ent; lady; auto; house; jiankang
+    const financeUrl = `http://money.163.com/special/002557S5/newsdata_idx_${category}.js?callback=data_callback`;
+    // finance; fund; biz; licai; bitcoin; stock; index
 
     const response = await axios({
         method: 'get',

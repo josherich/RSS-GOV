@@ -14,89 +14,48 @@
             color: #2c3e50;
         }
 
-        .content {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 400px;
-            text-align: center;
-        }
-
-        details {
-            text-align: left;
-            max-height: 400px;
-            overflow: scroll;
-        }
-
-        details::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        details::-webkit-scrollbar-thumb {
-            border-radius: 3px;
-            background-color: #eee;
-        }
-
-        details::-webkit-scrollbar-thumb:hover {
-            background-color: #ccc;
-        }
-
-        summary {
-            margin-bottom: 10px;
-            outline: none;
-            cursor: pointer;
-        }
-
-        .debug-key {
-            width: 100px;
+        .rsshub {
             text-align: right;
-            display: inline-block;
-            margin-right: 10px;
+            color: #666;
         }
 
-        .debug-item {
+        .content {
+            left: 50%;
+            min-width: 400px;
+        }
+
+        .route-item {
             margin: 5px 0;
-            font-size: 12px;
+            font-size: 16px;
             line-height: 24px;
         }
 
-        .debug-value {
-            display: inline-block;
-            vertical-align: top;
+        .route-item .value {
+            padding-left: 10px;
         }
-
     </style>
 </head>
 
 <body>
     <div class="content">
         <p>
-            <img src="https://i.imgur.com/NZpRScX.png" alt="RSSHub" width="100">
+            <img src="https://i.imgur.com/NZpRScX.png" alt="context-rss" width="100">
         </p>
 
-        <h1>Welcome to
-            <span style="color: #F5712C;">RSSHub</span>!</h1>
+        <h1>
+            <span style="color: #F5712C;">Context RSS</span>
+        </h1>
+        <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
 
-        <p>If you see this page, the RSSHub{{ if hash }} ({{ hash }}){{ /if }} is successfully installed and working.</p>
-
-        <p>For online documentation and support please refer to
-            <a href="https://rsshub.js.org" target="_blank">rsshub.js.org</a>.</p>
-
-        <p>-- Made with
-            <i style="color:#d43f57">♥</i> by
-            <a href="https://diygod.me" target="_blank">DIYgod</a>
-        </p>
-
-        <details>
-            <summary>debug</summary>
-            {{ each debug }}
-            <div class="debug-item">
-                <span class="debug-key">{{ $value.name }}: </span>
-                <span class="debug-value">{{@ $value.value }}</span>
+        <div>
+            {{ each debug['routes'] }}
+            <div class="route-item">
+                <a href="{{ $value.url }}" class="">{{ $value.name }}</a>
+                <p class="value">路由： {{ $value.route }}</p>
+                <p class="value">参数： {{ $value.param }}</p>
             </div>
             {{ /each }}
-        </details>
+        </div>
     </div>
 </body>
 

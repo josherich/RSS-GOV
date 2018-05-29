@@ -3,8 +3,8 @@ const cheerio = require('cheerio');
 const config = require('../../config');
 const iconv = require('iconv-lite');
 
-const baseUrl = 'http://bjhdfy.chinacourt.org';
-const url = 'http://bjhdfy.chinacourt.org/public/more.php?LocationID=0202000000';
+const baseUrl = 'http://www.mof.gov.cn';
+const url = 'http://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/';
 
 module.exports = async (ctx) => {
     const response = await axios({
@@ -18,30 +18,38 @@ module.exports = async (ctx) => {
         responseType: 'arraybuffer',
     });
 
-    const responseHtml = iconv.decode(response.data, 'gb2312');
+    const responseHtml = iconv.decode(response.data, 'gbk');
     const $ = cheerio.load(responseHtml);
-    const list = $('tr', '.item_pad tbody').slice(0, 19);
+    const list = $('tr', '.ZIT tbody');
+
     const chapter_item = [];
     for (let i = 0; i < list.length; i++) {
-        const el = $(list[i])
+        const title = $(list[i])
+            .find('td')
+            .eq(0);
+        const link = $(list[i])
             .find('a')
             .eq(0);
         const time = $(list[i])
-            .find('.td_time')
-            .eq(0);
+            .find('td')
+            .eq(0)
+            .text()
+            .replace(/\s/g, '')
+            .slice(-11, -1);
+        console.log(time);
         const item = {
-            title: el.text(),
-            description: el.text(),
-            link: baseUrl + el.attr('href'),
-            pubDate: new Date(time.text().slice(1, -1)).toUTCString(),
+            title: title.attr('title'),
+            description: title.attr('title'),
+            link: link.attr('href'),
+            pubDate: new Date(time).toUTCString(),
         };
         chapter_item.push(item);
     }
     ctx.state.data = {
-        title: '海淀法院-案件快报',
+        title: '财政部-政策发布',
         link: url,
-        image: baseUrl + '/images/itemBg_54_1.jpg',
-        description: '海淀法院-案件快报',
+        image: 'http://www.mof.gov.cn/images/mj_02.jpg',
+        description: '财政部-政策发布',
         item: chapter_item,
     };
 };

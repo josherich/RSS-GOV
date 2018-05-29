@@ -3,8 +3,9 @@ const cheerio = require('cheerio');
 const config = require('../../config');
 const iconv = require('iconv-lite');
 
-const baseUrl = 'http://bjhdfy.chinacourt.org';
-const url = 'http://bjhdfy.chinacourt.org/public/more.php?LocationID=0202000000';
+const baseUrl = 'http://www.bjcourt.gov.cn';
+const url = 'http://www.bjcourt.gov.cn/cpws/index.htm';
+// http://www.bjcourt.gov.cn/cpws/index.htm;jsessionid=1C4FACB6420E698D108A6B9CB68B1367
 
 module.exports = async (ctx) => {
     const response = await axios({
@@ -18,30 +19,33 @@ module.exports = async (ctx) => {
         responseType: 'arraybuffer',
     });
 
-    const responseHtml = iconv.decode(response.data, 'gb2312');
+    const responseHtml = iconv.decode(response.data, 'gbk');
     const $ = cheerio.load(responseHtml);
-    const list = $('tr', '.item_pad tbody').slice(0, 19);
+    const list = $('li', '.ul_news_long');
     const chapter_item = [];
     for (let i = 0; i < list.length; i++) {
         const el = $(list[i])
             .find('a')
             .eq(0);
+        const des = $(list[i])
+            .find('.sp_name')
+            .eq(0);
         const time = $(list[i])
-            .find('.td_time')
+            .find('.sp_time')
             .eq(0);
         const item = {
             title: el.text(),
-            description: el.text(),
+            description: des.text(),
             link: baseUrl + el.attr('href'),
-            pubDate: new Date(time.text().slice(1, -1)).toUTCString(),
+            pubDate: new Date(time.text()).toUTCString(),
         };
         chapter_item.push(item);
     }
     ctx.state.data = {
-        title: '海淀法院-案件快报',
+        title: '北京法院-裁判文书',
         link: url,
-        image: baseUrl + '/images/itemBg_54_1.jpg',
-        description: '海淀法院-案件快报',
+        image: baseUrl + '/images/index_logo.png',
+        description: '北京法院-裁判文书',
         item: chapter_item,
     };
 };
