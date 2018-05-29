@@ -5,13 +5,15 @@
     <title>Welcome to RSSHub!</title>
     <style>
         body {
-            width: 35em;
-            margin: 0 auto;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 16px;
             color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         .rsshub {
@@ -20,7 +22,8 @@
         }
 
         .content {
-            left: 50%;
+            width: 500px;
+            margin: 0 auto;
             min-width: 400px;
         }
 
@@ -33,14 +36,95 @@
         .route-item .value {
             padding-left: 10px;
         }
+
+        header {
+          -webkit-font-smoothing: subpixel-antialiased;
+          padding: 20px 0;
+          margin: auto;
+          width: 960px;
+          text-transform: capitalize;
+        }
+
+        header > div {
+          width: 960px;
+          margin: 0 auto;
+        }
+
+        header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 270px; }
+
+        header li { width: 89px; float: left; border-right: 1px solid #e0e0e0; height: 40px; }
+
+        header li:first-child a { border-radius: 5px 0 0 5px; }
+
+        header li:last-child a { border-radius: 0 5px 5px 0; }
+
+        header ul a { line-height: 1; font-size: 11px; color: #999; display: block; text-align: center; padding-top: 6px; height: 34px; }
+
+        header ul a:hover { color: #999; }
+
+        header ul a:active { background-color: #f0f0f0; }
+
+        header ul li + li + li { border-right: none; width: 89px; }
+
+        header ul a strong { font-size: 14px; display: block; color: #222; }
+
+        .header-title {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .header-title h2 {
+          line-height: 35px;
+          margin: 0;
+          color: #2681ff;
+        }
+
+        #header_tools {
+          float: right;
+          display: block;
+          line-height: 1.1em;
+          vertical-align: bottom;
+          margin-left: 122px;
+          min-width: 670px;
+          text-transform: capitalize;
+        }
+
+        #header_tools a {
+          color: rgba(0,0,0,0.5);
+          font-weight: 500;
+          margin-right: 20px;
+          line-height: 35px;
+        }
+        #header_tools a:hover {
+          color: #2681ff;
+        }
+        #header_tools a.active {
+          color: #2681ff;
+        }
+        #header_tools .float-right {
+          margin-right: 0;
+          margin-left: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <a href="https://github.com/josherich/RSSHub"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    <header>
+      <div class="header-wrap">
+        <a class="header-title" href="https://news.mindynode.com/zh">
+          <h2>上下闻</h2>
+    </a>    <div id="header_tools">
+
+          <a class="header-now" href="https://news.mindynode.com/zh/links">正在发生</a>
+          <a class="header-event" href="https://news.mindynode.com/zh/events">事件</a>
+          <a class="header-trend" href="https://news.mindynode.com/zh/trends">趋势</a>
+
+        </div>
+      </div>
+    </header>
+
     <div class="content">
-        <p>
-            <img src="https://i.imgur.com/NZpRScX.png" alt="context-rss" width="100">
-        </p>
 
         <h1>
             <span style="color: #F5712C;">Context RSS</span>

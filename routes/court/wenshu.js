@@ -29,13 +29,11 @@ module.exports = async (ctx) => {
         title: '中国裁判文书网',
         link: 'http://wenshu.court.gov.cn/List/List',
         image: 'http://wenshu.court.gov.cn/Assets/img/Index/banner.jpg',
-        item: data.slice(1).map((item) => {
-            return {
-                title: item['案件名称'],
-                description: item['裁判要旨段原文'],
-                pubDate: new Date(item['裁判日期']).toUTCString(),
-                link: `http://wenshu.court.gov.cn/content/content?DocID=${item['文书ID']}`,
-            };
-        }),
+        item: data.slice(1).map((item) => ({
+            title: item['案件名称'],
+            description: item['裁判要旨段原文'],
+            pubDate: new Date(item['裁判日期']).toUTCString(),
+            link: `http://wenshu.court.gov.cn/content/content?DocID=${item['文书ID']}`,
+        })),
     };
 };

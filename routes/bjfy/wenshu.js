@@ -4,7 +4,7 @@ const config = require('../../config');
 const iconv = require('iconv-lite');
 
 const baseUrl = 'http://www.bjcourt.gov.cn';
-const url = 'http://www.bjcourt.gov.cn/cpws/index.htm';
+const url = 'http://www.bjcourt.gov.cn/cpws/index.htm;jsessionid=1C4FACB6420E698D108A6B9CB68B1367';
 // http://www.bjcourt.gov.cn/cpws/index.htm;jsessionid=1C4FACB6420E698D108A6B9CB68B1367
 
 module.exports = async (ctx) => {
