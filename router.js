@@ -2,32 +2,25 @@ const Router = require('koa-router');
 const router = new Router();
 const art = require('art-template');
 const path = require('path');
-const config = require('./config');
-const logger = require('./utils/logger');
 
-let gitHash;
-try {
-    gitHash = require('git-rev-sync').short();
-} catch (e) {
-    gitHash = (process.env.HEROKU_SLUG_COMMIT && process.env.HEROKU_SLUG_COMMIT.slice(0, 7)) || 'unknown';
-}
-const startTime = +new Date();
 const baseUrl = 'http://rss.mindynode.com';
 
-routerlist = [
+const routerlist = [
     {
         url: baseUrl + '/netease/guoji',
         name: '网易新闻',
-        route: '/netease/:category',
+        route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
-    { url: baseUrl + '/szse/300104', name: '深圳证券交易所上市公司公告', route: '/szse/:secode', param: 'secode: 股票代码' },
-    { url: baseUrl + '/shse/600687', name: '上海证券交易所上市公司公告', route: '/shse/:secode', param: 'secode: 股票代码' },
-    { url: baseUrl + '/hdfy/anjian', name: '海淀法院 案件快报', route: '/hdfy/anjian', param: '' },
-    { url: baseUrl + '/caizhengbu/zhengce', name: '财政部 政策发布', route: '/caizhengbu/zhengce', param: '' },
-    { url: baseUrl + '/shgov/bulletin', name: '上海市经济和信息化委员会 政务公开', route: '/shgov/bulletin', param: '' },
-    { url: baseUrl + '/jianchayuan/fabu', name: '最高人民检察院 权威发布', route: '/jianchayuan/fabu', param: '' },
-    { url: baseUrl + '/guofangbu/fabu', name: '国防部 权威发布', route: '/guofangbu/fabu', param: '' },
+    { url: baseUrl + '/szse/300104', name: '深圳证券交易所上市公司公告', route: 'http://rss.mindynode.com/szse/:secode', param: 'secode: 股票代码' },
+    { url: baseUrl + '/shse/600687', name: '上海证券交易所上市公司公告', route: 'http://rss.mindynode.com/shse/:secode', param: 'secode: 股票代码' },
+    { url: baseUrl + '/hdfy/anjian', name: '海淀法院 案件快报', route: 'http://rss.mindynode.com/hdfy/anjian', param: '' },
+    { url: baseUrl + '/caizhengbu/zhengce', name: '财政部 政策发布', route: 'http://rss.mindynode.com/caizhengbu/zhengce', param: '' },
+    { url: baseUrl + '/shgov/bulletin', name: '上海市经济和信息化委员会 政务公开', route: 'http://rss.mindynode.com/shgov/bulletin', param: '' },
+    { url: baseUrl + '/jianchayuan/fabu', name: '最高人民检察院 权威发布', route: 'http://rss.mindynode.com/jianchayuan/fabu', param: '' },
+    { url: baseUrl + '/guofangbu/fabu', name: '国防部 权威发布', route: 'http://rss.mindynode.com/guofangbu/fabu', param: '' },
+    { url: baseUrl + '/waijiaobu/lingdaoren', name: '外交部 领导人活动', route: 'http://rss.mindynode.com/waijiaobu/lingdaoren', param: '' },
+
     // TODO: fix
     // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
     // {url: baseUrl + '/jrtt/sports', name: '今日头条', route: '/jrtt/:category', param: 'category: []'},
@@ -37,23 +30,6 @@ routerlist = [
 router.get('/', async (ctx) => {
     ctx.set({
         'Content-Type': 'text/html; charset=UTF-8',
-    });
-
-    const time = (+new Date() - startTime) / 1000;
-
-    const routes = ctx.debug.routes;
-
-    const hotRoutes = routes.slice(0, 10);
-    let hotRoutesValue = '';
-    hotRoutes.forEach((item) => {
-        hotRoutesValue += `${ctx.debug.routes[item]}&nbsp;&nbsp;${item}<br>`;
-    });
-
-    const ips = Object.keys(ctx.debug.ips).sort((a, b) => ctx.debug.ips[b] - ctx.debug.ips[a]);
-    const hotIPs = ips.slice(0, 10);
-    let hotIPsValue = '';
-    hotIPs.forEach((item) => {
-        hotIPsValue += `${ctx.debug.ips[item]}&nbsp;&nbsp;${item}<br>`;
     });
 
     ctx.body = art(path.resolve(__dirname, './views/welcome.art'), {
@@ -87,6 +63,9 @@ router.get('/jianchayuan/fabu', require('./routes/jianchayuan/fabu'));
 // 国防部权威发布
 router.get('/guofangbu/fabu', require('./routes/guofangbu/fabu'));
 
+// 外交部 领导人活动
+router.get('/waijiaobu/lingdaoren', require('./routes/waijiaobu/lingdaoren'));
+
 // 北京法院 裁判文书
 // router.get('/bjfy/wenshu', require('./routes/bjfy/wenshu'));
 
@@ -98,9 +77,6 @@ router.get('/guofangbu/fabu', require('./routes/guofangbu/fabu'));
 
 // 外交部 驻外报道
 // http://www.fmprc.gov.cn/web/wjdt_674879/zwbd_674895/
-
-// 外交部 领导人活动
-// http://www.fmprc.gov.cn/web/wjdt_674879/gjldrhd_674881/
 
 // 最高人民法院新闻
 // http://www.court.gov.cn/zixun-gengduo-24.html
