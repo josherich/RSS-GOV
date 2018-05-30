@@ -36,7 +36,7 @@ module.exports = async (ctx) => {
             .text()
             .replace(/\s/g, '')
             .slice(-11, -1);
-        console.log(time);
+
         const item = {
             title: title.attr('title'),
             description: title.attr('title'),
