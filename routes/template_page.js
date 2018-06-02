@@ -23,7 +23,7 @@ module.exports = (options) => async (ctx) => {
     const time_map =
         options.time_map ||
         function(time) {
-            time;
+            return time;
         };
     const chapter_items = [];
     for (let i = 0; i < list.length; i++) {
