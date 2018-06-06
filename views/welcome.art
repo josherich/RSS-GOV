@@ -136,7 +136,7 @@
             <div class="route-item">
                 <a href="{{ $value.url }}" class="">{{ $value.name }}</a>
                 <p class="value">路由： {{ $value.route }}</p>
-                <p class="value">参数： {{ $value.param }}</p>
+                {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             </div>
             {{ /each }}
         </div>
