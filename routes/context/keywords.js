@@ -27,10 +27,10 @@ module.exports = async (ctx) => {
         link: `https://news.mindynode.com/zh/trends?q=${words}`,
         description: `上下闻 RSS - 关键词新闻订阅（${words}）`,
         item: items.map((item) => ({
-                title: item.title,
-                description: item.content + '\n 更多新闻请访问：https://news.mindynode.com/zh',
-                pubDate: item.created_at,
-                link: item.url,
-            })),
+            title: `${item.host}|${item.title}`,
+            description: item.content + '\n 更多新闻请访问：https://news.mindynode.com/zh',
+            pubDate: item.created_at,
+            link: item.url,
+        })),
     };
 };
