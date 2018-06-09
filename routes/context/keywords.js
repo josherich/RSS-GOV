@@ -27,8 +27,8 @@ module.exports = async (ctx) => {
         link: `https://news.mindynode.com/zh/trends?q=${words}`,
         description: `上下闻 RSS - 关键词新闻订阅（${words}）`,
         item: items.map((item) => ({
-            title: `${item.host}|${item.title}`,
-            description: item.content + '\n 更多新闻请访问：https://news.mindynode.com/zh',
+            title: `「${item.host}」${item.title}`,
+            description: item.content + '\n\n 由上下闻生成：<a href="https://news.mindynode.com/zh">https://news.mindynode.com/zh</a>',
             pubDate: item.created_at,
             link: item.url,
         })),
