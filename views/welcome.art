@@ -14,6 +14,15 @@
 
         a {
             text-decoration: none;
+            color: #666;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        a:visited {
+            color: #666;
         }
 
         .rsshub {
@@ -28,15 +37,28 @@
         }
 
         .route-item {
-            margin: 5px 0;
+            margin: 2.5em 0;
             font-size: 16px;
             line-height: 24px;
+        }
+
+        a.route-title {
+            font-size: 1.2em;
+            color: #333;
         }
 
         .route-item .value {
             padding-left: 10px;
         }
-
+        p.value, p.params {
+            color: #666;
+        }
+        p.params {
+            padding-left: 2em;
+        }
+        hr {
+            margin: 5em 0;
+        }
         header {
           -webkit-font-smoothing: subpixel-antialiased;
           padding: 20px 0;
@@ -130,11 +152,28 @@
             <span style="color: #F5712C;">Context RSS</span>
         </h1>
         <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
+        <div>
+            <div class="route-item">
+                <a href="http://rss.mindynode.com/context/+贾跃亭" class="route-title">关键词新闻</a>
+                <p class="value">路由： http://rss.mindynode.com/context/:query</p>
+                <p class="value">参数： query，支持与、或、非三个操作。注意操作符间的空格。(支持 MySQL 的 Boolean 全文索引，更多操作请参考 <a href="https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html">mysql fulltext boolean</a>)</p>
+                <p class="params">"+"表示与操作: +word1 +word2</p>
+                <p class="params">" "表示或操作: +word1 word2</p>
+                <p class="params">"-"表示非操作: +word1 -word2</p>
 
+                <p class="value">示例：</p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+贾跃亭 +乐视">http://rss.mindynode.com/context/+贾跃亭 +乐视</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+比特币 加密货币">http://rss.mindynode.com/context/+比特币 加密货币</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+特朗普 +朝鲜">http://rss.mindynode.com/context/+特朗普 +朝鲜</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+世界杯 +阿根廷">http://rss.mindynode.com/context/+世界杯 +阿根廷</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+白宫 -特朗普">http://rss.mindynode.com/context/+白宫 -特朗普</a></p>
+            </div>
+        </div>
+        <hr>
         <div>
             {{ each debug['routes'] }}
             <div class="route-item">
-                <a href="{{ $value.url }}" class="">{{ $value.name }}</a>
+                <a href="{{ $value.url }}" class="route-title">{{ $value.name }}</a>
                 <p class="value">路由： {{ $value.route }}</p>
                 {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             </div>
