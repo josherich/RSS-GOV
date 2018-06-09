@@ -51,6 +51,9 @@ router.get('/', async (ctx) => {
     });
 });
 
+// context news
+router.get('/context/:words', require('./routes/context/keywords'));
+
 // 网易新闻
 router.get('/netease/:category', require('./routes/netease/news'));
 
