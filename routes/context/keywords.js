@@ -5,8 +5,11 @@ const url = 'https://nlp1.mindynode.com/nlp/rss';
 // const url = 'http://localhost:7000/nlp/rss';
 
 module.exports = async (ctx) => {
-    const words = ctx.params.words;
-
+    let words = ctx.params.words;
+    words = words.replace(/\+/g, ' +');
+    words = words.replace(/-/g, ' -');
+    words = words.replace(/\|/g, ' ');
+    console.log(words);
     const response = await axios({
         method: 'post',
         url: url,
@@ -15,7 +18,7 @@ module.exports = async (ctx) => {
             Referer: 'http://news.mindynode.com',
         },
         data: {
-            keywords: words,
+            keywords: `+random${words}`,
             category: 'china',
         },
     });

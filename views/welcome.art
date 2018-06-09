@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Welcome to RSSHub!</title>
+    <title>Context News RSS</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -156,17 +156,17 @@
             <div class="route-item">
                 <a href="http://rss.mindynode.com/context/+贾跃亭" class="route-title">关键词新闻</a>
                 <p class="value">路由： http://rss.mindynode.com/context/:query</p>
-                <p class="value">参数： query，支持与、或、非三个操作。注意操作符间的空格。(支持 MySQL 的 Boolean 全文索引，更多操作请参考 <a href="https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html">mysql fulltext boolean</a>)</p>
-                <p class="params">"+"表示与操作: +word1 +word2</p>
-                <p class="params">" "表示或操作: +word1 word2</p>
-                <p class="params">"-"表示非操作: +word1 -word2</p>
+                <p class="value">参数： query，支持与、或、非三个操作。</p>
+                <p class="params">"+"表示与操作: +word1+word2</p>
+                <p class="params">"|"表示或操作: +word1|word2</p>
+                <p class="params">"-"表示非操作: +word1-word2</p>
 
                 <p class="value">示例：</p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+贾跃亭 +乐视">http://rss.mindynode.com/context/+贾跃亭 +乐视</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+比特币 加密货币">http://rss.mindynode.com/context/+比特币 加密货币</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+特朗普 +朝鲜">http://rss.mindynode.com/context/+特朗普 +朝鲜</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+世界杯 +阿根廷">http://rss.mindynode.com/context/+世界杯 +阿根廷</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+白宫 -特朗普">http://rss.mindynode.com/context/+白宫 -特朗普</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+比特币|加密货币">http://rss.mindynode.com/context/+比特币|加密货币</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+特朗普+朝鲜">http://rss.mindynode.com/context/+特朗普+朝鲜</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+世界杯+阿根廷">http://rss.mindynode.com/context/+世界杯+阿根廷</a></p>
+                <p class="params"><a href="http://rss.mindynode.com/context/+白宫-特朗普">http://rss.mindynode.com/context/+白宫-特朗普</a></p>
             </div>
         </div>
         <hr>
