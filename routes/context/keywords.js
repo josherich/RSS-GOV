@@ -26,9 +26,9 @@ module.exports = async (ctx) => {
     const items = response.data.data.pages;
 
     ctx.state.data = {
-        title: `上下闻 RSS ${words}`,
-        link: `https://news.mindynode.com/zh/trends?q=${words}`,
-        description: `上下闻 RSS - 关键词新闻订阅（${words}）`,
+        title: `上下闻 RSS ${ctx.params.words}`,
+        link: `https://news.mindynode.com/zh/trends?q=+random${words}`,
+        description: `上下闻 RSS - 关键词新闻订阅（${ctx.params.words}）`,
         item: items.map((item) => ({
             title: `「${item.host}」${item.title}`,
             description: item.content + '\n\n 由上下闻生成：<a href="https://news.mindynode.com/zh">https://news.mindynode.com/zh</a>',

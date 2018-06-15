@@ -33,6 +33,13 @@ const routerlist = [
 
     { url: baseUrl + '/gonganbu/bulletin', name: '公安部 通知', route: 'http://rss.mindynode.com/gonganbu/bulletin', param: '' },
 
+    {
+        url: baseUrl + '/guowuyuan/zhengce/all/all',
+        name: '国务院办公厅政府信息公开',
+        route: 'http://rss.mindynode.com/guowuyuan/zhengce/:topic/:category',
+        param: 'topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 \n category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电',
+    },
+
     // TODO: fix
     // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
     // {url: baseUrl + '/jrtt/sports', name: '今日头条', route: '/jrtt/:category', param: 'category: []'},
@@ -95,6 +102,9 @@ router.get('/jiaoyubu/jytz', require('./routes/jiaoyubu/jytz'));
 // 公安部 通知公告
 router.get('/gonganbu/bulletin', require('./routes/gonganbu/bulletin'));
 
+// 国务院办公厅政府信息公开
+router.get('/guowuyuan/zhengce/:topic/:category', require('./routes/guowuyuan/zhengce'));
+
 // 科技部工作
 // http://appweblogic.most.gov.cn/rss/kjbgz.xml
 
@@ -131,4 +141,10 @@ router.get('/gonganbu/bulletin', require('./routes/gonganbu/bulletin'));
 // 中国裁判文书网
 // router.get('/court/wenshu', require('./routes/court/wenshu'));
 
+// 国务院办公厅政府信息公开
+// 国发
+// http://new.sousuo.gov.cn/list.htm?sort=pubtime&advance=true&t=paper&n=15&pcodeJiguan=%E5%9B%BD%E5%8F%91&location=%E5%9B%BD%E5%8F%91
+// 国令
+// http://new.sousuo.gov.cn/list.htm?sort=pubtime&advance=true&t=paper&n=15&pcodeJiguan=%E5%9B%BD%E4%BB%A4&location=%E5%9B%BD%E4%BB%A4
+//
 module.exports = router;

@@ -64,4 +64,12 @@ http://rss.mindynode.com/
 
     /gonganbu/bulletin
 
+-   国务院办公厅政府信息公开
+
+    /guowuyuan/zhengce/:topic/:category
+
+    topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利
+
+    category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电
+
 > 本项目是 [RSSHub](https://github.com/DIYgod/RSSHub) 的一个分支
