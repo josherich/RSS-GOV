@@ -31,7 +31,7 @@
         }
 
         .content {
-            width: 500px;
+            width: 650px;
             margin: 0 auto;
             min-width: 400px;
         }
@@ -43,14 +43,19 @@
         }
 
         a.route-title {
-            font-size: 1.2em;
             color: #333;
+            text-align: center;
+            display: block;
+            margin: 100px;
+            font-size: 2em;
+            line-height: 2em;
         }
 
         .route-item .value {
             padding-left: 10px;
         }
         p.value, p.params {
+            font-size: 1.2em;
             color: #666;
         }
         p.params {
@@ -58,6 +63,46 @@
         }
         hr {
             margin: 5em 0;
+        }
+        .demo {
+            margin-bottom: 120px;
+        }
+        .demo .params {
+            text-align: center;
+        }
+        input#keywords {
+            width: 100%;
+            padding: 15px 18px;
+            font-size: 16px;
+            margin: 20px 0;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,0.2);
+            background-color: white;
+            color: #666;
+        }
+        #rss_url {
+            font-size: 16px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 3px;
+            border: none;
+            box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+            width: 100%;
+            min-height: 20px;
+        }
+        #rss_url svg {
+            width: 18px;
+            height: 18px;
+            fill: #666;
+            vertical-align: text-bottom;
+            margin-left: 0;
+            float: left;
+        }
+        #rss_url a {
+            display: block;
+            font-size: 1.2em;
+            margin-left: 20px;
+            text-decoration: underline;
         }
         header {
           -webkit-font-smoothing: subpixel-antialiased;
@@ -131,11 +176,11 @@
 </head>
 
 <body>
-    <a href="https://github.com/josherich/RSSHub"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    <a href="https://github.com/josherich/RSSHub"><img style="position: fixed; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
     <header>
       <div class="header-wrap">
         <a class="header-title" href="https://news.mindynode.com/zh">
-          <h2>上下闻</h2>
+          <h2>上下闻 RSS</h2>
     </a>    <div id="header_tools">
 
           <a class="header-now" href="https://news.mindynode.com/zh/links">正在发生</a>
@@ -148,25 +193,51 @@
 
     <div class="content">
 
-        <h1>
-            <span style="color: #F5712C;">Context RSS</span>
-        </h1>
-        <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
         <div>
             <div class="route-item">
-                <a href="http://rss.mindynode.com/context/+贾跃亭" class="route-title">关键词新闻</a>
+                <a href="http://rss.mindynode.com/context/+贾跃亭" class="route-title">组合关键词，生成新闻 RSS 源</a>
+                <div class="demo">
+
+                    <div class="">
+                        <input type="text" id="keywords" placeholder="输入关键词「使用+|-」">
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href=""></a>
+                    </div>
+                    <div class="more" style="text-align: center;color: #666;font-size: 14px;margin: 70px 0;">更多示例</div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a>
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a>
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+比特币|加密货币">http://rss.mindynode.com/context/+比特币|加密货币</a>
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+特朗普+朝鲜">http://rss.mindynode.com/context/+特朗普+朝鲜</a>
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+世界杯+阿根廷">http://rss.mindynode.com/context/+世界杯+阿根廷</a>
+                    </div>
+                    <div id="rss_url">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="http://rss.mindynode.com/context/+白宫-特朗普">http://rss.mindynode.com/context/+白宫-特朗普</a>
+                    </div>
+                </div>
+
                 <p class="value">路由： http://rss.mindynode.com/context/:query</p>
                 <p class="value">参数： query，支持与、或、非三个操作。</p>
                 <p class="params">"+"表示与操作: +word1+word2</p>
                 <p class="params">"|"表示或操作: +word1|word2</p>
                 <p class="params">"-"表示非操作: +word1-word2</p>
 
-                <p class="value">示例：</p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+比特币|加密货币">http://rss.mindynode.com/context/+比特币|加密货币</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+特朗普+朝鲜">http://rss.mindynode.com/context/+特朗普+朝鲜</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+世界杯+阿根廷">http://rss.mindynode.com/context/+世界杯+阿根廷</a></p>
-                <p class="params"><a href="http://rss.mindynode.com/context/+白宫-特朗普">http://rss.mindynode.com/context/+白宫-特朗普</a></p>
             </div>
         </div>
         <hr>
@@ -180,6 +251,18 @@
             {{ /each }}
         </div>
     </div>
+    <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
+
+    <script>
+        function getRssUrl(words) {
+            return "http://rss.mindynode.com/context/" + words;
+        }
+        document.querySelector('#keywords').addEventListener('keyup', function(e) {
+            let link = document.querySelector('#rss_url a');
+            link.textContent = getRssUrl(this.value);
+            link.href = getRssUrl(this.value);
+        })
+    </script>
 </body>
 
 </html>
