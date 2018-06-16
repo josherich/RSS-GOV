@@ -12,6 +12,12 @@ const routerlist = [
         route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
+    {
+        url: baseUrl + '/guowuyuan/zhengce/all/all',
+        name: '国务院办公厅政府信息公开',
+        route: 'http://rss.mindynode.com/guowuyuan/zhengce/:topic/:category',
+        param: 'topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 \n category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电',
+    },
     { url: baseUrl + '/szse/300104', name: '深圳证券交易所上市公司公告', route: 'http://rss.mindynode.com/szse/:secode', param: 'secode: 股票代码' },
     { url: baseUrl + '/shse/600687', name: '上海证券交易所上市公司公告', route: 'http://rss.mindynode.com/shse/:secode', param: 'secode: 股票代码' },
 
@@ -33,13 +39,6 @@ const routerlist = [
 
     { url: baseUrl + '/gonganbu/bulletin', name: '公安部 通知', route: 'http://rss.mindynode.com/gonganbu/bulletin', param: '' },
 
-    {
-        url: baseUrl + '/guowuyuan/zhengce/all/all',
-        name: '国务院办公厅政府信息公开',
-        route: 'http://rss.mindynode.com/guowuyuan/zhengce/:topic/:category',
-        param: 'topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 \n category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电',
-    },
-
     // TODO: fix
     // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
     // {url: baseUrl + '/jrtt/sports', name: '今日头条', route: '/jrtt/:category', param: 'category: []'},
@@ -53,7 +52,8 @@ router.get('/', async (ctx) => {
 
     ctx.body = art(path.resolve(__dirname, './views/welcome.art'), {
         debug: {
-            routes: routerlist,
+            routes_news: routerlist.slice(0, 1),
+            routes_gov: routerlist.slice(1),
         },
     });
 });

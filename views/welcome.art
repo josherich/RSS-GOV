@@ -101,7 +101,7 @@
         #rss_url a {
             display: block;
             font-size: 1.2em;
-            margin-left: 20px;
+            margin-left: 30px;
             text-decoration: underline;
         }
         header {
@@ -179,13 +179,13 @@
     <a href="https://github.com/josherich/RSSHub"><img style="position: fixed; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
     <header>
       <div class="header-wrap">
-        <a class="header-title" href="https://news.mindynode.com/zh">
+        <a class="header-title" href="https://rss.mindynode.com">
           <h2>上下闻 RSS</h2>
     </a>    <div id="header_tools">
 
-          <a class="header-now" href="https://news.mindynode.com/zh/links">正在发生</a>
-          <a class="header-event" href="https://news.mindynode.com/zh/events">事件</a>
-          <a class="header-trend" href="https://news.mindynode.com/zh/trends">趋势</a>
+          <a class="header-now" href="#rss_news">新闻</a>
+          <a class="header-event" href="#rss_gov">政府部门</a>
+          <a class="header-trend" href="https://news.mindynode.com/zh/">上下闻</a>
 
         </div>
       </div>
@@ -241,8 +241,8 @@
             </div>
         </div>
         <hr>
-        <div>
-            {{ each debug['routes'] }}
+        <div id="rss_news">
+            {{ each debug['routes_news'] }}
             <div class="route-item">
                 <a href="{{ $value.url }}" class="route-title">{{ $value.name }}</a>
                 <p class="value">路由： {{ $value.route }}</p>
@@ -250,6 +250,17 @@
             </div>
             {{ /each }}
         </div>
+
+        <div id="rss_gov">
+            {{ each debug['routes_gov'] }}
+            <div class="route-item">
+                <a href="{{ $value.url }}" class="route-title">{{ $value.name }}</a>
+                <p class="value">路由： {{ $value.route }}</p>
+                {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+            </div>
+            {{ /each }}
+        </div>
+
     </div>
     <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
 
