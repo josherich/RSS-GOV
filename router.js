@@ -54,6 +54,83 @@ router.get('/', async (ctx) => {
         debug: {
             routes_news: routerlist.slice(0, 1),
             routes_gov: routerlist.slice(1),
+            routes_examples: [
+                '+贾跃亭+乐视',
+                '+中国+美国+关税',
+                '+特朗普+朝鲜',
+                '+美国+枪杀',
+                '+比特币|加密货币',
+                '+世界杯+阿根廷',
+                '+白宫-特朗普',
+                '+亚裔+美国'
+            ],
+            news_host: [
+                { name: '澎湃', url :'http://www.thepaper.cn/'},
+                { name: 'QQ新闻国内', url :'http://news.qq.com/china_index.shtml'},
+                { name: '新京报', url :'http://www.bjnews.com.cn'},
+                { name: '纽约时报中文网', url :'https://cn.nytimes.com'},
+                { name: '南方周末-社会', url :'http://www.infzm.com'},
+                { name: 'FT中文网', url :'http://www.ftchinese.com'},
+                { name: 'BBC中文', url :'http://www.bbc.com/zhongwen/simp'},
+                { name: '端媒体', url :'https://theinitium.com'},
+                { name: '中国新闻网', url :'https://www.chinanews.com'},
+                { name: '联合早报', url :'http://www.zaobao.com.sg'},
+                { name: '新浪世界新闻', url :'http://www.sina.com.cn'},
+                { name: '法广', url :'http://cn.rfi.fr/'},
+                { name: '百度新闻', url :'http://news.baidu.com/'},
+                { name: '财新网', url :'http://international.caixin.com/'},
+                { name: '日经中文', url :'http://cn.nikkei.com'},
+                { name: '界面新闻', url :'http://www.jiemian.com/'},
+                { name: '华尔街日报', url :'http://cn.wsj.com/gb'},
+                { name: '华尔街见闻-经济', url :'https://wallstreetcn.com/news/economy'},
+                { name: '路透中国', url :'http://cn.reuters.com'},
+                { name: '路透财经', url :'http://cn.reuters.com'},
+                { name: '路透专栏', url :'http://cn.reuters.com'},
+                { name: '百度财经', url :'http://cn.reuters.com'},
+                { name: 'IBT中国', url :'http://www.ibtimes.com.cn'},
+                { name: '人民网财经', url :'http://www.people.com.cn'},
+                { name: '华尔街日报科技', url :'http://cn.wsj.com/gb/tech.php'},
+                { name: '爱范儿', url :'http://www.ifanr.com/'},
+                { name: '钛媒体', url :'http://www.tmtpost.com/'},
+                { name: '雷锋网', url :'http://www.leiphone.com'},
+                { name: '品玩', url :'http://www.pingwest.com'},
+                { name: '36kr', url :'http://www.36kr.com'},
+                { name: 'Solidot', url :'http://www.solidot.org'},
+                { name: '虎嗅网', url :'http://www.huxiu.com'},
+                { name: '腾讯科技', url :'http://tech.qq.com'},
+                { name: '极客公园', url :'http://www.geekpark.net'},
+                { name: 'Engadget中国', url :'http://cn.engadget.com'},
+                { name: '新浪科技', url :'http://tech.sina.com.cn'},
+                { name: 'cnBeta', url :'http://www.cnbeta.com'},
+                { name: 'TechCrunch中国', url :'http://techcrunch.cn'},
+                { name: '路透科技', url :'http://cn.reuters.com/life/technology'},
+                { name: '百度新闻互联网', url :'http://news.baidu.com/internet'},
+                { name: '百度新闻科技', url :'http://news.baidu.com/tech'},
+                { name: 'IBT中文', url :'http://www.ibtimes.com.cn/tech'},
+
+                { name: 'The Atlantic Tech', url :'https://www.theatlantic.com/technology/'},
+                { name: 'The Wired', url :'https://www.wired.com'},
+                { name: 'SlashDot', url :'http://slashdot.org/'},
+                { name: 'CNN', url :'http://rss.cnn.com/rss/edition_technology.rss'},
+                { name: 'ABC News', url :'http://abcnews.go.com/abcnews/technologyheadlines'},
+                { name: 'Economist', url :'http://www.economist.com/sections/science-technology/rss.xml'},
+                { name: 'WSJ', url :'http://www.wsj.com/xml/rss/3_7455.xml'},
+                { name: 'The Hill', url :'http://thehill.com/taxonomy/term/27/feed'},
+                { name: 'Fast Company', url :'https://www.fastcompany.com/technology'},
+                { name: 'New York Times', url :'https://www.nytimes.com'},
+                { name: 'The Guardian', url :'https://www.theguardian.com/us'},
+                { name: 'Quartz', url :'https://qz.com'},
+                { name: 'VOX', url :'https://www.vox.com'},
+                { name: 'CNN World', url :'http://www.cnn.com/'},
+                { name: 'NPR', url :'http://www.npr.org/'},
+                { name: 'BBC World', url :'http://www.bbc.com/news/world'},
+                { name: 'AP', url :'https://www.apnews.com/'},
+                { name: 'Reuters', url :'http://www.reuters.com/'},
+                { name: 'ABC News', url :'http://abcnews.go.com/'},
+                { name: 'Washington Post', url :'http://www.washingtonpost.com/'},
+                { name: 'Economist', url :'http://www.economist.com'},
+                { name: 'WSJ', url :'http://www.wsj.com'},
+            ]
         },
     });
 });
@@ -105,6 +182,11 @@ router.get('/gonganbu/bulletin', require('./routes/gonganbu/bulletin'));
 // 国务院办公厅政府信息公开
 router.get('/guowuyuan/zhengce/:topic/:category', require('./routes/guowuyuan/zhengce'));
 
+// 网信办 相关部门发布
+// http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
+// 办公室发布
+// http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192648%25%27
+
 // 科技部工作
 // http://appweblogic.most.gov.cn/rss/kjbgz.xml
 
@@ -141,10 +223,4 @@ router.get('/guowuyuan/zhengce/:topic/:category', require('./routes/guowuyuan/zh
 // 中国裁判文书网
 // router.get('/court/wenshu', require('./routes/court/wenshu'));
 
-// 国务院办公厅政府信息公开
-// 国发
-// http://new.sousuo.gov.cn/list.htm?sort=pubtime&advance=true&t=paper&n=15&pcodeJiguan=%E5%9B%BD%E5%8F%91&location=%E5%9B%BD%E5%8F%91
-// 国令
-// http://new.sousuo.gov.cn/list.htm?sort=pubtime&advance=true&t=paper&n=15&pcodeJiguan=%E5%9B%BD%E4%BB%A4&location=%E5%9B%BD%E4%BB%A4
-//
 module.exports = router;

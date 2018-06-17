@@ -11,7 +11,9 @@
             font-size: 16px;
             color: #2c3e50;
         }
-
+        * {
+            box-sizing: border-box;
+        }
         a {
             text-decoration: none;
             color: #666;
@@ -42,7 +44,7 @@
             line-height: 24px;
         }
 
-        a.route-title {
+        .route-title {
             color: #333;
             text-align: center;
             display: block;
@@ -63,6 +65,7 @@
         }
         hr {
             margin: 5em 0;
+            border-color: rgba(0,0,0,0.1);
         }
         .demo {
             margin-bottom: 120px;
@@ -88,11 +91,11 @@
             border: none;
             box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
             width: 100%;
-            min-height: 20px;
+            min-height: 24px;
         }
         #rss_url svg {
-            width: 18px;
-            height: 18px;
+            width: 24px;
+            height: 24px;
             fill: #666;
             vertical-align: text-bottom;
             margin-left: 0;
@@ -101,8 +104,31 @@
         #rss_url a {
             display: block;
             font-size: 1.2em;
-            margin-left: 30px;
+            margin-left: 40px;
             text-decoration: underline;
+        }
+        #host_list {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        #host_list .rss-host {
+            display: inline-block;
+            margin: 10px;
+            margin-left: 0;
+            padding: 20px;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,0.15);
+        }
+        #how {
+            display: block;
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+        }
+        .rss-egs {
+            height: 170px;
+            overflow: hidden;
+            padding: 1px;
         }
         header {
           -webkit-font-smoothing: subpixel-antialiased;
@@ -179,7 +205,7 @@
     <a href="https://github.com/josherich/RSSHub"><img style="position: fixed; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
     <header>
       <div class="header-wrap">
-        <a class="header-title" href="https://rss.mindynode.com">
+        <a class="header-title" href="http://rss.mindynode.com">
           <h2>上下闻 RSS</h2>
     </a>    <div id="header_tools">
 
@@ -195,48 +221,48 @@
 
         <div>
             <div class="route-item">
-                <a href="http://rss.mindynode.com/context/+贾跃亭" class="route-title">组合关键词，生成新闻 RSS 源</a>
+                <div class="route-title">组合关键词，生成新闻 RSS 源</div>
                 <div class="demo">
 
-                    <div class="">
-                        <input type="text" id="keywords" placeholder="输入关键词「使用+|-」">
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href=""></a>
-                    </div>
-                    <div class="more" style="text-align: center;color: #666;font-size: 14px;margin: 70px 0;">更多示例</div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a>
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+贾跃亭+乐视">http://rss.mindynode.com/context/+贾跃亭+乐视</a>
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+比特币|加密货币">http://rss.mindynode.com/context/+比特币|加密货币</a>
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+特朗普+朝鲜">http://rss.mindynode.com/context/+特朗普+朝鲜</a>
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+世界杯+阿根廷">http://rss.mindynode.com/context/+世界杯+阿根廷</a>
-                    </div>
-                    <div id="rss_url">
-                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                        <a href="http://rss.mindynode.com/context/+白宫-特朗普">http://rss.mindynode.com/context/+白宫-特朗普</a>
-                    </div>
-                </div>
+                    <input type="text" id="keywords" placeholder="输入关键词「使用+|-」">
 
-                <p class="value">路由： http://rss.mindynode.com/context/:query</p>
-                <p class="value">参数： query，支持与、或、非三个操作。</p>
-                <p class="params">"+"表示与操作: +word1+word2</p>
-                <p class="params">"|"表示或操作: +word1|word2</p>
-                <p class="params">"-"表示非操作: +word1-word2</p>
+                    <a href="#how_to" id="how">如何使用</a>
+
+                    <div id="rss_url" class="rss-generate" style="display: none;">
+                        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                        <a href="#">http://rss.mindynode.com/context/<span>关键词组合</span></a>
+                    </div>
+
+                    <div class="more" style="text-align: center;color: #666;font-size: 14px;margin: 70px 10px 0;">示例</div>
+
+                    <div class="rss-egs">
+                        {{ each debug['routes_examples'] }}
+                        <div id="rss_url">
+                            <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                            <a href="http://rss.mindynode.com/context/{{$value}}">http://rss.mindynode.com/context/{{$value}}</a>
+                        </div>
+                        {{ /each }}
+                    </div>
+                    <div class="egs-more" style="text-align: right;color: #666;font-size: 12px;margin: 10px 0; cursor: pointer;">显示全部</div>
+
+                    <div class="more" style="text-align: center;color: #666;font-size: 14px;margin: 70px 10px 0;">媒体列表</div>
+
+                    <div id="host_list">
+                        {{ each debug['news_host'] }}
+                            <div class="rss-host">
+                                <a href="{{ $value.url }}">{{ $value.name }}</a>
+                            </div>
+                        {{ /each }}
+                    </div>
+
+                </div>
+                <div id="how_to">
+                    <p class="value">路由： http://rss.mindynode.com/context/:query</p>
+                    <p class="value">参数： query，支持与、或、非三个操作。</p>
+                    <p class="params">"+"表示与操作: +word1+word2</p>
+                    <p class="params">"|"表示或操作: +word1|word2</p>
+                    <p class="params">"-"表示非操作: +word1-word2</p>
+                </div>
 
             </div>
         </div>
@@ -244,17 +270,27 @@
         <div id="rss_news">
             {{ each debug['routes_news'] }}
             <div class="route-item">
-                <a href="{{ $value.url }}" class="route-title">{{ $value.name }}</a>
+                <div class="route-title">{{ $value.name }}</div>
+                <div id="rss_url">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                    <a href="{{ $value.url }}">{{ $value.url }}</a>
+                </div>
                 <p class="value">路由： {{ $value.route }}</p>
                 {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             </div>
             {{ /each }}
         </div>
 
+        <hr>
+
         <div id="rss_gov">
             {{ each debug['routes_gov'] }}
             <div class="route-item">
-                <a href="{{ $value.url }}" class="route-title">{{ $value.name }}</a>
+                <div class="route-title">{{ $value.name }}</div>
+                <div id="rss_url">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+                    <a href="{{ $value.url }}">{{ $value.url }}</a>
+                </div>
                 <p class="value">路由： {{ $value.route }}</p>
                 {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             </div>
@@ -272,7 +308,14 @@
             let link = document.querySelector('#rss_url a');
             link.textContent = getRssUrl(this.value);
             link.href = getRssUrl(this.value);
-        })
+            document.querySelector('.rss-generate').style.display = 'block';
+        });
+
+        document.querySelector('.egs-more').addEventListener('click', function(e) {
+            document.querySelector('.rss-egs').style.height = "initial";
+            this.style.display = "none";
+        });
+
     </script>
 </body>
 
