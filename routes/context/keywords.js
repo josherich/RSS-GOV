@@ -1,7 +1,7 @@
 const axios = require('axios');
 const config = require('../../config');
 
-const url = 'https://nlp1.mindynode.com/nlp/rss';
+const url = 'https://nlp1.mindynode.com/1.0/rss/search';
 // const url = 'http://localhost:7000/nlp/rss';
 
 module.exports = async (ctx) => {
