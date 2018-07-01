@@ -36,7 +36,7 @@ module.exports = async (ctx) => {
         item: items.map((item) => {
             const title = `「${item.host}」${item.title}`;
             const origin_link = `<a href="${item.url}">${item.url}</a><br/>`;
-            const description = item.content.replace(/[\u3000\\n]/g, '<br/>');
+            const description = item.content.replace(/\u3000|\\n/g, '<br/>');
             const sign =
                 lang === 'zh'
                     ? '<br/> 由上下闻生成：<a href="https://news.mindynode.com/zh">https://news.mindynode.com/zh</a>'
