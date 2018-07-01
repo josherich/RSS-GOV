@@ -3,10 +3,9 @@
     <channel>
         <title><![CDATA[{{ title || 'RSSHub' }}]]></title>
         <link>{{ link || 'https://github.com/DIYgod/RSSHub' }}</link>
-        <description><![CDATA[{{ description || title }} - 使用 RSSHub(https://github.com/DIYgod/RSSHub) 构建]]></description>
-        <generator>RSSHub</generator>
+        <description><![CDATA[{{ description || title }}]]></description>
+        <generator>Context RSS</generator>
         <webMaster>i@html.love</webMaster>
-        <language>zh-cn</language>
         {{ if image }}
         <image>
             <url>{{ image }}</url>
