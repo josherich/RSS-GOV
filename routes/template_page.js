@@ -4,13 +4,17 @@ const config = require('../config');
 const iconv = require('iconv-lite');
 
 module.exports = (options) => async (ctx) => {
+    let headers = {
+        'User-Agent': config.ua,
+        Referer: options.baseUrl || '',
+    };
+    if (options.headers) {
+        headers = Object.assign(headers, options.headers);
+    }
     const response = await axios({
         method: 'get',
         url: options.url,
-        headers: {
-            'User-Agent': config.ua,
-            Referer: options.baseUrl || '',
-        },
+        headers: headers,
         responseType: 'arraybuffer',
     });
 
