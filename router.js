@@ -45,6 +45,21 @@ const routerlist = [
     { url: baseUrl + '/tiyu/tongzhi', name: '国家体育总局 通知公告', route: 'http://rss.mindynode.com/tiyu/tongzhi', param: '' },
     { url: baseUrl + '/tiyu/difang', name: '国家体育总局 地方动态', route: 'http://rss.mindynode.com/tiyu/difang', param: '' },
 
+    { url: baseUrl + '/shichang/zhaohui', name: '国家市场监督管理总局 召回公告', route: 'http://rss.mindynode.com/shichang/zhaohui', param: '' },
+    { url: baseUrl + '/shichang/gonggao', name: '国家市场监督管理总局 公告', route: 'http://rss.mindynode.com/shichang/gonggao', param: '' },
+    { url: baseUrl + '/shichang/tonggao', name: '国家市场监督管理总局 通告', route: 'http://rss.mindynode.com/shichang/tonggao', param: '' },
+    { url: baseUrl + '/shichang/xinwen', name: '国家市场监督管理总局 新闻发布', route: 'http://rss.mindynode.com/shichang/xinwen', param: '' },
+    { url: baseUrl + '/shichang/wenjian', name: '国家市场监督管理总局 文件发布', route: 'http://rss.mindynode.com/shichang/wenjian', param: '' },
+
+    { url: baseUrl + '/zongjiao/bu', name: '国家宗教事务局 部工作动态', route: 'http://rss.mindynode.com/zongjiao/bu', param: '' },
+    { url: baseUrl + '/zongjiao/difang', name: '国家宗教事务局 地方工作动态', route: 'http://rss.mindynode.com/zongjiao/difang', param: '' },
+    { url: baseUrl + '/zongjiao/zongjiao', name: '国家宗教事务局 宗教界动态', route: 'http://rss.mindynode.com/zongjiao/zongjiao', param: '' },
+
+    { url: baseUrl + '/haiguan/dongtai', name: '海关总署 动态', route: 'http://rss.mindynode.com/haiguan/dongtai', param: '' },
+
+    { url: baseUrl + '/ip/dongtai', name: '国家知识产权局 - 知识产权工作', route: 'http://rss.mindynode.com/ip/dongtai', param: '' },
+    { url: baseUrl + '/ip/tongzhi', name: '国家知识产权局 - 工作通知', route: 'http://rss.mindynode.com/ip/tongzhi', param: '' },
+
     // TODO: fix
     // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
     // {url: baseUrl + '/jrtt/sports', name: '今日头条', route: '/jrtt/:category', param: 'category: []'},
@@ -120,6 +135,25 @@ router.get('/shuiwu/yaowen', require('./routes/shuiwu/yaowen'));
 // 国家体育总局
 router.get('/tiyu/tongzhi', require('./routes/tiyu/tongzhi'));
 router.get('/tiyu/difang', require('./routes/tiyu/difang'));
+
+// 国家市场监督管理总局 通告
+router.get('/shichang/zhaohui', require('./routes/shichang/zhaohui'));
+router.get('/shichang/gonggao', require('./routes/shichang/gonggao'));
+router.get('/shichang/tonggao', require('./routes/shichang/tonggao'));
+router.get('/shichang/xinwen', require('./routes/shichang/xinwen'));
+router.get('/shichang/wenjian', require('./routes/shichang/wenjian'));
+
+// 国家宗教事务局
+router.get('/zongjiao/bu', require('./routes/zongjiao/bu'));
+router.get('/zongjiao/difang', require('./routes/zongjiao/difang'));
+router.get('/zongjiao/zongjiao', require('./routes/zongjiao/zongjiao'));
+
+// 海关总署
+router.get('/haiguan/dongtai', require('./routes/haiguan/dongtai'));
+
+// 国家知识产权局
+router.get('/ip/dongtai', require('./routes/ip/dongtai'));
+router.get('/ip/tongzhi', require('./routes/ip/tongzhi'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27

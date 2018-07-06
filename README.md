@@ -72,4 +72,48 @@ http://rss.mindynode.com/
 
     category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电
 
+-   国家广播电视总局
+
+    /guangdian/tongzhi
+
+-   国家税务总局
+
+    /shuiwu/yaowen
+
+-   国家体育总局
+
+    /tiyu/tongzhi
+
+    /tiyu/difang
+
+-   国家市场监督管理总局 通告
+
+    /shichang/zhaohui
+
+    /shichang/gonggao
+
+    /shichang/tonggao
+
+    /shichang/xinwen
+
+    /shichang/wenjian
+
+-   国家宗教事务局
+
+    /zongjiao/bu
+
+    /zongjiao/difang
+
+    /zongjiao/zongjiao
+
+-   海关总署
+
+    /haiguan/dongtai
+
+-   国家知识产权局
+
+    /ip/dongtai
+
+    /ip/tongzhi
+
 > 本项目是 [RSSHub](https://github.com/DIYgod/RSSHub) 的一个分支
