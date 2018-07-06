@@ -57,7 +57,7 @@ const routerlist = [
 
     { url: baseUrl + '/haiguan/dongtai', name: '海关总署 动态', route: 'http://rss.mindynode.com/haiguan/dongtai', param: '' },
 
-    { url: baseUrl + '/ip/dongtai', name: '国家知识产权局 - 知识产权工作', route: 'http://rss.mindynode.com/ip/dongtai', param: '' },
+    { url: baseUrl + '/ip/gongzuo', name: '国家知识产权局 - 知识产权工作', route: 'http://rss.mindynode.com/ip/gongzuo', param: '' },
     { url: baseUrl + '/ip/tongzhi', name: '国家知识产权局 - 工作通知', route: 'http://rss.mindynode.com/ip/tongzhi', param: '' },
 
     // TODO: fix
@@ -152,7 +152,7 @@ router.get('/zongjiao/zongjiao', require('./routes/zongjiao/zongjiao'));
 router.get('/haiguan/dongtai', require('./routes/haiguan/dongtai'));
 
 // 国家知识产权局
-router.get('/ip/dongtai', require('./routes/ip/dongtai'));
+router.get('/ip/gongzuo', require('./routes/ip/gongzuo'));
 router.get('/ip/tongzhi', require('./routes/ip/tongzhi'));
 
 // 网信办 相关部门发布

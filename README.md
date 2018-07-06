@@ -112,7 +112,7 @@ http://rss.mindynode.com/
 
 -   国家知识产权局
 
-    /ip/dongtai
+    /ip/gongzuo
 
     /ip/tongzhi
 
