@@ -33,6 +33,8 @@ const routerlist = [
 
     { url: baseUrl + '/zgfy/zuigao', name: '最高人民法院 新闻', route: 'http://rss.mindynode.com/zgfy/zuigao', param: '' },
     { url: baseUrl + '/zgfy/difang', name: '最高人民法院 地方新闻', route: 'http://rss.mindynode.com/zgfy/difang', param: '' },
+    { url: baseUrl + '/zgfy/jieshi', name: '最高人民法院 司法解释', route: 'http://rss.mindynode.com/zgfy/jieshi', param: '' },
+    { url: baseUrl + '/zgfy/zhongda', name: '最高人民法院 重大案件', route: 'http://rss.mindynode.com/zgfy/zhongda', param: '' },
 
     { url: baseUrl + '/jiaoyubu/jyyw', name: '教育部 教育要闻', route: 'http://rss.mindynode.com/jiaoyubu/jyyw', param: '' },
     { url: baseUrl + '/jiaoyubu/jytz', name: '教育部 教育通知', route: 'http://rss.mindynode.com/jiaoyubu/jytz', param: '' },
@@ -59,6 +61,10 @@ const routerlist = [
 
     { url: baseUrl + '/ip/gongzuo', name: '国家知识产权局 - 知识产权工作', route: 'http://rss.mindynode.com/ip/gongzuo', param: '' },
     { url: baseUrl + '/ip/tongzhi', name: '国家知识产权局 - 工作通知', route: 'http://rss.mindynode.com/ip/tongzhi', param: '' },
+
+    { url: baseUrl + '/zhufang/yaowen', name: '住房和城乡建设部 要闻', route: 'http://rss.mindynode.com/zhufang/yaowen', param: '' },
+    { url: baseUrl + '/zhufang/xinxi', name: '住房和城乡建设部 信息公示', route: 'http://rss.mindynode.com/zhufang/xinxi', param: '' },
+    { url: baseUrl + '/zhufang/difang', name: '住房和城乡建设部 地方动态', route: 'http://rss.mindynode.com/zhufang/difang', param: '' },
 
     // TODO: fix
     // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
@@ -114,6 +120,8 @@ router.get('/waijiaobu/zwbd', require('./routes/waijiaobu/zwbd'));
 // 最高人民法院 新闻
 router.get('/zgfy/zuigao', require('./routes/zgfy/zuigaoxw'));
 router.get('/zgfy/difang', require('./routes/zgfy/difangxw'));
+router.get('/zgfy/jieshi', require('./routes/zgfy/jieshi'));
+router.get('/zgfy/zhongda', require('./routes/zgfy/zhongda'));
 
 // 教育部 要闻
 router.get('/jiaoyubu/jyyw', require('./routes/jiaoyubu/jyyw'));
@@ -154,6 +162,11 @@ router.get('/haiguan/dongtai', require('./routes/haiguan/dongtai'));
 // 国家知识产权局
 router.get('/ip/gongzuo', require('./routes/ip/gongzuo'));
 router.get('/ip/tongzhi', require('./routes/ip/tongzhi'));
+
+// 住房和城乡建设部
+router.get('/zhufang/yaowen', require('./routes/zhufang/yaowen'));
+router.get('/zhufang/xinxi', require('./routes/zhufang/xinxi'));
+router.get('/zhufang/difang', require('./routes/zhufang/difang'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
