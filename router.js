@@ -168,6 +168,8 @@ router.get('/zhufang/yaowen', require('./routes/zhufang/yaowen'));
 router.get('/zhufang/xinxi', require('./routes/zhufang/xinxi'));
 router.get('/zhufang/difang', require('./routes/zhufang/difang'));
 
+router.get('/chart/exports', require('./routes/datajournal/exports'));
+
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
 // 办公室发布

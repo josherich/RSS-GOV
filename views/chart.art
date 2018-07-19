@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Context News - Chart</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            color: #2c3e50;
+            line-height: 24px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        a:visited {
+            color: #666;
+        }
+
+        .rsshub {
+            text-align: right;
+            color: #666;
+        }
+
+        .content {
+            width: 650px;
+            margin: 0 auto;
+            min-width: 400px;
+        }
+
+        .route-item {
+            margin: 2.5em 0;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .route-title {
+            color: #333;
+            text-align: center;
+            display: block;
+            margin: 100px;
+            font-size: 1.6em;
+            line-height: 2em;
+        }
+
+        .route-item .value {
+            padding-left: 10px;
+        }
+        p.value, p.params {
+            font-size: 1.2em;
+            color: #666;
+        }
+        p.params {
+            padding-left: 2em;
+        }
+        hr {
+            margin: 5em 0;
+            border-color: rgba(0,0,0,0.1);
+        }
+        .exp {
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+            position: relative;
+        }
+        .points {
+            position: absolute;
+            left: 0;
+            top: 34px;
+            width: 160px;
+            font-size: 0;
+            line-height: 0;
+        }
+        .gdp {
+            width: 160px;
+            font-size: 0;
+            line-height: 0;
+        }
+        .point, .point-leg, .gdp-leg {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            margin: 2px;
+            background: rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+        .gdp .point, .gdp-leg {
+            width: 8px;
+            height: 8px;
+            margin: 0;
+            background: rgba(2, 184, 117, 0.1);
+        }
+        .country {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 160px;
+            margin-bottom: 10px;
+        }
+        .point-leg, .gdp-leg {
+            margin-right: 20px;
+        }
+        section.title {
+            margin: 20px;
+        }
+        h1 a {
+            font-size: 10px;
+            color: #eee;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="title">
+        <h1>List of countries by exports <a href="https://en.wikipedia.org/wiki/List_of_countries_by_exports?oldformat=true">source</a></h1>
+        <div>
+        <span class="point-leg"></span><span>Exports</span>
+        </div>
+        <div>
+        <span class="gdp-leg"></span><span>GDP</span>
+    </section>
+
+    <section>
+    </div>
+
+        {{ each item }}
+        <div class="exp">
+            <div class="country" title="{{ $value.name }}">{{ $index+1 }}. {{ $value.name }}</div>
+            <div class="exports" data-amount="{{ $value.amount }}"></div>
+            <div class="gdp">
+            {{ each $value.gdp_arr }}
+                <div class="point"></div>
+            {{ /each }}
+            </div>
+            <div class="points">
+            {{ each $value.exp_arr }}
+                <div class="point"></div>
+            {{ /each }}
+            </div>
+        </div>
+        {{ /each }}
+
+    </section>
+
+</body>
+
+</html>
