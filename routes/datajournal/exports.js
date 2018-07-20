@@ -50,7 +50,7 @@ module.exports = async (ctx) => {
         };
         chapter_item.push(item);
     }
-    ctx.state.type = 'chart';
+    ctx.state.template = 'chart';
     ctx.state.data = {
         title: 'list of countries by exports',
         link: url,
