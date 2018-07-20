@@ -78,7 +78,7 @@
         .points {
             position: absolute;
             left: 0;
-            top: 34px;
+            top: 65px;
             width: 160px;
             font-size: 0;
             line-height: 0;
@@ -87,13 +87,14 @@
             width: 160px;
             font-size: 0;
             line-height: 0;
+            padding-bottom: 40px;
         }
-        .point, .point-leg, .gdp-leg {
+        .point, .point-leg, .gdp-leg, .import-leg {
             display: inline-block;
             width: 4px;
             height: 4px;
             margin: 2px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(2, 184, 117, 0.7);
             font-size: 14px;
         }
         .gdp .point, .gdp-leg {
@@ -102,6 +103,12 @@
             margin: 0;
             background: rgba(2, 184, 117, 0.1);
         }
+        .import-leg {
+            background: rgba(232, 70, 44, 0.7);
+        }
+        .point.imp {
+            background: rgba(232, 70, 44, 0.7);
+        }
         .country {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -109,7 +116,7 @@
             width: 160px;
             margin-bottom: 10px;
         }
-        .point-leg, .gdp-leg {
+        .point-leg, .gdp-leg, .import-leg {
             margin-right: 20px;
         }
         section.title {
@@ -119,18 +126,34 @@
             font-size: 10px;
             color: #eee;
         }
+        .amount {
+            font-size: 8px;
+            line-height: 15px;
+            color: rgba(0,0,0,0.4);
+            position: relative;
+            top: -7px;
+        }
+        .amount.ex {
+            color: rgba(2, 184, 117, 0.4);
+        }
+        .amount.im {
+            color: rgba(232, 70, 44, 0.4);
+        }
 
     </style>
 </head>
 
 <body>
     <section class="title">
-        <h1>List of countries by exports <a href="https://en.wikipedia.org/wiki/List_of_countries_by_exports?oldformat=true">source</a></h1>
+        <h1>List of countries by exports/imports - 2017 <a href="https://en.wikipedia.org/wiki/List_of_countries_by_exports?oldformat=true">source</a></h1>
         <div>
-        <span class="point-leg"></span><span>Exports</span>
+        <span class="point-leg"></span><span>Exports<span>($million)</span></span>
         </div>
         <div>
-        <span class="gdp-leg"></span><span>GDP</span>
+        <span class="import-leg"></span><span>Imports<span>($million)</span></span>
+        </div>
+        <div>
+        <span class="gdp-leg"></span><span>GDP<span>($million)</span></span>
     </section>
 
     <section>
@@ -139,7 +162,8 @@
         {{ each item }}
         <div class="exp">
             <div class="country" title="{{ $value.name }}">{{ $index+1 }}. {{ $value.name }}</div>
-            <div class="exports" data-amount="{{ $value.amount }}"></div>
+            <div class="amount ex" >{{ $value.exp_amount }}</div>
+            <div class="amount im" >{{ $value.imp_amount }}</div>
             <div class="gdp">
             {{ each $value.gdp_arr }}
                 <div class="point"></div>
@@ -147,7 +171,10 @@
             </div>
             <div class="points">
             {{ each $value.exp_arr }}
-                <div class="point"></div>
+                <div class="point exp"></div>
+            {{ /each }}
+            {{ each $value.imp_arr }}
+                <div class="point imp"></div>
             {{ /each }}
             </div>
         </div>
