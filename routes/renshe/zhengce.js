@@ -12,7 +12,7 @@ const options = {
     link_slr: 'a',
     link_rel: true,
     desc_slr: 'a',
-    time_slr: '.organMenuTxtLink',
+    time_slr: 'li font',
     cn: false,
 };
 
