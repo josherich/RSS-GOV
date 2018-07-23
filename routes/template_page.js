@@ -23,7 +23,14 @@ module.exports = (options) => async (ctx) => {
         responseHtml = iconv.decode(response.data, 'gb2312');
     }
     const $ = cheerio.load(responseHtml);
-    const list = $(options.list_slr[0], options.list_slr[1]);
+    let list = $(options.list_slr[0], options.list_slr[1]);
+
+    if (options.list_filter) {
+        list = list.filter(function(item) {
+            return options.list_filter($(item))
+        });
+    }
+
     const time_map =
         options.time_map ||
         function(time) {
@@ -31,35 +38,47 @@ module.exports = (options) => async (ctx) => {
         };
     const chapter_items = [];
     for (let i = 0; i < list.length; i++) {
-        const title = $(list[i])
-            .find(options.title_slr)
-            .eq(0)
-            .text();
-        const desc = $(list[i])
-            .find(options.desc_slr)
-            .eq(0)
-            .text();
-        const link = $(list[i])
-            .find(options.link_slr)
-            .eq(0)
-            .attr('href');
-
-        let time = $(list[i]);
-        if (options.time_slr) {
-            time = time
-                .find(options.time_slr)
+        let item = {};
+        try {
+            const title = $(list[i])
+                .find(options.title_slr)
                 .eq(0)
                 .text();
-        } else {
-            time = time.eq(0).text();
-        }
 
-        const item = {
-            title: title,
-            description: desc,
-            link: options.link_rel ? options.baseUrl + link : link,
-            pubDate: new Date(time_map(time)).toUTCString(),
-        };
+            const desc = $(list[i])
+                .find(options.desc_slr)
+                .eq(0)
+                .text();
+
+            const link = $(list[i])
+                .find(options.link_slr)
+                .eq(0)
+                .attr('href');
+
+            let time = $(list[i]);
+            if (options.time_slr) {
+                time = time
+                    .find(options.time_slr)
+                    .eq(0)
+                    .text();
+            } else {
+                time = time.eq(0).text();
+            }
+
+            if (title == "") {
+                continue;
+            }
+
+            item = {
+                title: title,
+                description: desc,
+                link: options.link_rel ? options.baseUrl + link : link,
+                pubDate: new Date(time_map(time)).toUTCString(),
+            };
+        } catch (e) {
+            console.log(e);
+            continue;
+        }
         chapter_items.push(item);
     }
     ctx.state.data = {

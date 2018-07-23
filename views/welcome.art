@@ -2,239 +2,330 @@
 <html>
 
 <head>
-    <title>Context News RSS</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-size: 16px;
-            color: #2c3e50;
-            line-height: 24px;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        a {
-            text-decoration: none;
-            color: #666;
-        }
+  <title>Context News RSS</title>
+  <style>
+  html, body {
+    height: 100%;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    color: #2c3e50;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+    color: #666;
+  }
 
-        a:hover {
-            color: #333;
-        }
+  a:hover {
+    color: #333;
+  }
 
-        a:visited {
-            color: #666;
-        }
+  a:visited {
+    color: #666;
+  }
 
-        .rsshub {
-            text-align: right;
-            color: #666;
-        }
+  .rsshub {
+    text-align: right;
+    color: #666;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .content-table {
+    width: 30%;
+    padding: 0 10px;
+    min-width: 250px;
+    margin-top: 50px;
+    overflow: auto;
+  }
+  .content {
+    width: 70%;
+    padding: 20px 50px;
+    min-width: 400px;
+    overflow: auto;
+  }
+  .content .rss-title {
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+    margin: 2em;
+    margin-bottom: 4em;
+    display: block;
+  }
+  .route-item {
+    margin: 1.5em 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
 
-        .content {
-            width: 650px;
-            margin: 0 auto;
-            min-width: 400px;
-        }
+  .route-title {
+    color: #333;
+    display: block;
+    font-size: 1em;
+    line-height: 1.6em;
+    cursor: pointer;
+  }
+  .route-title:hover {
+    color: #2681ff;
+  }
+  .route-title.active {
+    color: #2681ff;
+  }
 
-        .route-item {
-            margin: 2.5em 0;
-            font-size: 16px;
-            line-height: 24px;
-        }
+  .rss-url {
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 20px;
+    width: 100%;
+    word-wrap: break-word;
+  }
+  .rss-url svg {
+    width: 12px;
+    height: 12px;
+    fill: #666;
+    vertical-align: text-bottom;
+    margin-left: 0;
+    float: left;
+    position: relative;
+    top: 7px;
+  }
+  .rss-url a {
+    display: block;
+    font-size: .9em;
+    margin-left: 20px;
+    text-decoration: underline;
+  }
 
-        .route-title {
-            color: #333;
-            text-align: center;
-            display: block;
-            margin: 100px;
-            font-size: 1.6em;
-            line-height: 2em;
-        }
+  .route-item .value {
+    padding-left: 20px;
+  }
 
-        .route-item .value {
-            padding-left: 10px;
-        }
-        p.value, p.params {
-            font-size: 1.2em;
-            color: #666;
-        }
-        p.params {
-            padding-left: 2em;
-        }
-        hr {
-            margin: 5em 0;
-            border-color: rgba(0,0,0,0.1);
-        }
-        .demo {
-            margin-bottom: 120px;
-            width: 1110px;
-            margin: auto;
-            margin-top: 170px;
-        }
-        .demo .title {
-            color: #333;
-            text-align: center;
-            display: block;
-            margin: 20px;
-            margin-top: 0;
-            font-size: 1.6em;
-            line-height: 1.6em;
-        }
-        .demo .params {
-            text-align: center;
-        }
-        input#keywords {
-            width: 100%;
-            padding: 15px 18px;
-            font-size: 16px;
-            margin: 20px 0;
-            border-radius: 3px;
-            border: 1px solid rgba(0,0,0,0.2);
-            background-color: white;
-            color: #666;
-        }
-        #rss_url {
-            font-size: 16px;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 3px;
-            border: none;
-            box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
-            width: 100%;
-            min-height: 24px;
-            word-wrap: break-word;
-        }
-        #rss_url svg {
-            width: 24px;
-            height: 24px;
-            fill: #666;
-            vertical-align: text-bottom;
-            margin-left: 0;
-            float: left;
-        }
-        #rss_url a {
-            display: block;
-            font-size: 1.2em;
-            margin-left: 40px;
-            text-decoration: underline;
-        }
-        #host_list {
-            overflow-x: auto;
-            white-space: nowrap;
-            margin: 20px 0;
-        }
-        #host_list .rss-host {
-            display: inline-block;
-            margin: 10px;
-            margin-left: 0;
-            padding: 20px;
-            border-radius: 3px;
-            border: 1px solid rgba(0,0,0,0.15);
-        }
-        #how {
-            display: block;
-            text-align: right;
-            font-size: 12px;
-            color: #666;
-        }
-        .rss-egs {
-            height: 170px;
-            overflow: hidden;
-            padding: 1px;
-        }
-        .demo-left, .demo-right {
-            display: inline-block;
-            width: 650px;
-            vertical-align: top;
-        }
-        .demo-left {
-            width: 400px;
-            margin-right: 50px;
-        }
-        .demo-right img {
-            width: 641px;
-        }
-        header {
-          -webkit-font-smoothing: subpixel-antialiased;
-          padding: 20px 0;
-          margin: auto;
-          width: 960px;
-          text-transform: capitalize;
-        }
+  p.value, p.params {
+    word-wrap: normal;
+    word-break: break-all;
+    font-size: .9em;
+    color: #666;
+    margin: 10px 0;
+  }
+  p.params {
+    padding-left: 2em;
+  }
 
-        header > div {
-          width: 960px;
-          margin: 0 auto;
-        }
+  hr {
+    margin: 5em 0;
+    border-color: rgba(0,0,0,0.1);
+  }
 
-        header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 270px; }
+  .content .item {
+    margin: 20px 0;
+  }
 
-        header li { width: 89px; float: left; border-right: 1px solid #e0e0e0; height: 40px; }
+  .content .title {
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+  }
 
-        header li:first-child a { border-radius: 5px 0 0 5px; }
+  .content .description {
+    color: #999;
+    font-size: .9em;
+  }
 
-        header li:last-child a { border-radius: 0 5px 5px 0; }
+  .content .pubDate {
+    font-size: .9em;
+    color: #ccc;
+    text-align: right;
+  }
+  .content .content-loading {
+    display: block;
+  }
+  .content-loading {
+    display: none;
+  }
+  .content-loading .rss-title {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 4em;
+    height: 1.2em;
+    background: rgba(0,0,0,0.04);
+  }
+  .content-loading .title, .content-loading .description, .content-loading .pubDate {
+    width: 60%;
+    height: 1.2em;
+    background: rgba(0,0,0,0.04);
+  }
+  .content-loading .description {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .content-loading .pubDate {
+    width: 20%;
+    text-align: right;
+  }
+  .demo {
+    margin-bottom: 120px;
+    width: 1110px;
+    margin: auto;
+    margin-top: 170px;
+  }
+  .demo .title {
+    color: #333;
+    text-align: center;
+    display: block;
+    margin: 20px;
+    margin-top: 0;
+    font-size: 1.6em;
+    line-height: 1.6em;
+  }
+  .demo .params {
+    text-align: center;
+  }
+  input#keywords {
+    width: 100%;
+    padding: 15px 18px;
+    font-size: 16px;
+    margin: 20px 0;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    color: #666;
+  }
 
-        header ul a { line-height: 1; font-size: 11px; color: #999; display: block; text-align: center; padding-top: 6px; height: 34px; }
+  #host_list {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 20px 0;
+  }
+  #host_list .rss-host {
+    display: inline-block;
+    margin: 10px;
+    margin-left: 0;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+  #how {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+  }
+  .rss-egs {
+    height: 170px;
+    overflow: hidden;
+    padding: 1px;
+  }
+  .demo-left, .demo-right {
+    display: inline-block;
+    width: 650px;
+    vertical-align: top;
+  }
+  .demo-left {
+    width: 400px;
+    margin-right: 50px;
+  }
+  .demo-right img {
+    width: 641px;
+  }
+  header {
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 20px 0;
+    margin: auto;
+    width: 960px;
+    text-transform: capitalize;
+  }
 
-        header ul a:hover { color: #999; }
+  header > div {
+    width: 960px;
+    margin: 0 auto;
+  }
 
-        header ul a:active { background-color: #f0f0f0; }
+  header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 270px; }
 
-        header ul li + li + li { border-right: none; width: 89px; }
+  header li { width: 89px; float: left; border-right: 1px solid #e0e0e0; height: 40px; }
 
-        header ul a strong { font-size: 14px; display: block; color: #222; }
+  header li:first-child a { border-radius: 5px 0 0 5px; }
 
-        .header-title {
-          display: inline-block;
-          vertical-align: middle;
-        }
+  header li:last-child a { border-radius: 0 5px 5px 0; }
 
-        .header-title h2 {
-          line-height: 35px;
-          margin: 0;
-          color: #2681ff;
-        }
+  header ul a { line-height: 1; font-size: 11px; color: #999; display: block; text-align: center; padding-top: 6px; height: 34px; }
 
-        #header_tools {
-          float: right;
-          display: block;
-          line-height: 1.1em;
-          vertical-align: bottom;
-          margin-left: 122px;
-          min-width: 670px;
-          text-transform: capitalize;
-        }
+  header ul a:hover { color: #999; }
 
-        #header_tools a {
-          color: rgba(0,0,0,0.5);
-          font-weight: 500;
-          margin-right: 20px;
-          line-height: 35px;
-        }
-        #header_tools a:hover {
-          color: #2681ff;
-        }
-        #header_tools a.active {
-          color: #2681ff;
-        }
-        #header_tools .float-right {
-          margin-right: 0;
-          margin-left: 20px;
-        }
-    </style>
+  header ul a:active { background-color: #f0f0f0; }
+
+  header ul li + li + li { border-right: none; width: 89px; }
+
+  header ul a strong { font-size: 14px; display: block; color: #222; }
+
+  .header-title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .header-title h2 {
+    line-height: 35px;
+    margin: 0;
+    color: #2681ff;
+  }
+
+  #header_tools {
+    float: right;
+    display: block;
+    line-height: 1.1em;
+    vertical-align: bottom;
+    margin-left: 122px;
+    min-width: 670px;
+    text-transform: capitalize;
+  }
+
+  #header_tools a {
+    color: rgba(0,0,0,0.5);
+    font-weight: 500;
+    margin-right: 20px;
+    line-height: 35px;
+  }
+  #header_tools a:hover {
+    color: #2681ff;
+  }
+  #header_tools a.active {
+    color: #2681ff;
+  }
+  #header_tools .float-right {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+</style>
 </head>
 
 <body>
-    <a href="https://github.com/josherich/RSSHub"><img style="position: fixed; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <a href="https://github.com/josherich/RSSHub"><img style="position: fixed; top: 0; right: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <div class="wrapper">
     <header>
       <div class="header-wrap">
-        <a class="header-title" href="http://rss.mindynode.com">
-          <h2>政府部门 RSS</h2>
-    </a>    <div id="header_tools">
+        <a class="header-title" href="http://rss.mindynode.com"><h2>政府部门 RSS</h2></a>
+        <div id="header_tools">
 
           <a class="header-now" href="#rss_news">更多新闻</a>
           <a class="header-trend" href="https://news.mindynode.com/zh/">上下闻</a>
@@ -243,60 +334,111 @@
       </div>
     </header>
 
-    <div class="content">
+    <div class="container">
+
+      <div class="content-table">
 
         <div id="rss_gov">
-            {{ each debug['routes_gov'] }}
-            <div class="route-item">
-                <div class="route-title">{{ $value.name }}</div>
-                <div id="rss_url">
-                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                    <a href="{{ $value.url }}">{{ $value.url }}</a>
-                </div>
-                <p class="value">路由： {{ $value.route }}</p>
-                {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+          {{ each debug['routes_gov'] }}
+          <div class="route-item">
+            <div class="route-title" data-url="{{ $value.url }}?type=fragment">{{ $value.name }}</div>
+            <div class="rss-url">
+              <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+              <a href="{{ $value.url }}">{{ $value.url }}</a>
             </div>
-            {{ /each }}
+            <p class="value">路由： {{ $value.route }}</p>
+            {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+          </div>
+          {{ /each }}
         </div>
 
         <hr>
 
         <div id="rss_news">
-            {{ each debug['routes_news'] }}
-            <div class="route-item">
-                <div class="route-title">{{ $value.name }}</div>
-                <div id="rss_url">
-                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-                    <a href="{{ $value.url }}">{{ $value.url }}</a>
-                </div>
-                <p class="value">路由： {{ $value.route }}</p>
-                {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+          {{ each debug['routes_news'] }}
+          <div class="route-item">
+            <div class="route-title" data-url="{{ $value.url }}?type=fragment">{{ $value.name }}</div>
+            <div class="rss-url">
+              <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
+              <a href="{{ $value.url }}">{{ $value.url }}</a>
             </div>
-            {{ /each }}
+            <p class="value">路由： {{ $value.route }}</p>
+            {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+          </div>
+          {{ /each }}
         </div>
 
+        <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
+
+      </div>
+
+      <div class="content">
+
+
+      </div>
+
+      <div class="content-loading">
+        <div class="rss-title"></div>
+        <div class="item">
+          <a href="" class="title"></a>
+          <div class="description"></div>
+          <div class="pubDate"></div>
+        </div>
+        <div class="item">
+          <a href="" class="title"></a>
+          <div class="description"></div>
+          <div class="pubDate"></div>
+        </div>
+        <div class="item">
+          <a href="" class="title"></a>
+          <div class="description"></div>
+          <div class="pubDate"></div>
+        </div>
+        <div class="item">
+          <a href="" class="title"></a>
+          <div class="description"></div>
+          <div class="pubDate"></div>
+        </div>
+        <div class="item">
+          <a href="" class="title"></a>
+          <div class="description"></div>
+          <div class="pubDate"></div>
+        </div>
+      </div>
 
     </div>
 
-    <h5 class="rsshub">a fork of <a href="https://docs.rsshub.app/">RSSHub</a></h5>
+  </div>
 
-    <script>
-        function getRssUrl(words) {
-            return "http://rss.mindynode.com/context/" + words;
-        }
-        document.querySelector('#keywords').addEventListener('keyup', function(e) {
-            let link = document.querySelector('#rss_url a');
-            link.textContent = getRssUrl(this.value);
-            link.href = getRssUrl(this.value);
-            document.querySelector('.rss-generate').style.display = 'block';
-        });
+  <script>
+    window.onload = function() {
+      document.querySelector('.route-title').click();
+    };
 
-        document.querySelector('.egs-more').addEventListener('click', function(e) {
-            document.querySelector('.rss-egs').style.height = "initial";
-            this.style.display = "none";
-        });
+    function onShowFeed(el, url) {
+      document.querySelector('.content').innerHTML = "";
+      document.querySelector('.content').appendChild(document.querySelector('.content-loading').cloneNode(true));
 
-    </script>
+      document.querySelectorAll('.content-table .route-title').forEach((title) => {
+        title.classList.remove('active');
+      });
+
+      el.classList.add('active');
+
+      fetch(url)
+      .then(function(resp) {
+        return resp.text();
+      })
+      .then(function(resp) {
+        document.querySelector('.content').innerHTML = resp
+      })
+    }
+
+    document.querySelectorAll('.route-title').forEach((el) => {
+      el.addEventListener('click', onShowFeed.bind(this, el, el.getAttribute('data-url')));
+    })
+
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,9 @@
+<a class="rss-title" href="{{ link }}" target="_blank">{{ title }}</a>
+{{ each item }}
+    <div class="item">
+        <a class="title" href="{{ $value.link }}" target="_blank">{{ $value.title }}</a>
+        <div class="description">{{ $value.description || $value.title }}</div>
+        <div class="pubDate">{{ $value.pubDate }}</div>
+    </div>
+{{ /each }}
+

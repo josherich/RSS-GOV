@@ -6,71 +6,324 @@ const path = require('path');
 const baseUrl = 'http://rss.mindynode.com';
 
 const routerlist = [
-    {
-        url: baseUrl + '/netease/guoji',
-        name: '网易新闻',
-        route: 'http://rss.mindynode.com/netease/:category',
-        param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
-    },
-    {
-        url: baseUrl + '/guowuyuan/zhengce/all/all',
-        name: '国务院办公厅政府信息公开',
-        route: 'http://rss.mindynode.com/guowuyuan/zhengce/:topic/:category',
-        param: 'topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 \n category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电',
-    },
-    { url: baseUrl + '/szse/300104', name: '深圳证券交易所上市公司公告', route: 'http://rss.mindynode.com/szse/:secode', param: 'secode: 股票代码' },
-    { url: baseUrl + '/shse/600687', name: '上海证券交易所上市公司公告', route: 'http://rss.mindynode.com/shse/:secode', param: 'secode: 股票代码' },
+            {
 
-    { url: baseUrl + '/hdfy/anjian', name: '海淀法院 案件快报', route: 'http://rss.mindynode.com/hdfy/anjian', param: '' },
-    { url: baseUrl + '/caizhengbu/zhengce', name: '财政部 政策发布', route: 'http://rss.mindynode.com/caizhengbu/zhengce', param: '' },
-    { url: baseUrl + '/shgov/bulletin', name: '上海市经济和信息化委员会 政务公开', route: 'http://rss.mindynode.com/shgov/bulletin', param: '' },
-    { url: baseUrl + '/jianchayuan/fabu', name: '最高人民检察院 权威发布', route: 'http://rss.mindynode.com/jianchayuan/fabu', param: '' },
-    { url: baseUrl + '/guofangbu/fabu', name: '国防部 权威发布', route: 'http://rss.mindynode.com/guofangbu/fabu', param: '' },
+                "url": "/netease/guoji",
+                "name": "网易新闻",
+                "route": "http://rss.mindynode.com/netease/:category",
+                "param": "category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]",
+            },
+            {
 
-    { url: baseUrl + '/waijiaobu/lingdaoren', name: '外交部 领导人活动', route: 'http://rss.mindynode.com/waijiaobu/lingdaoren', param: '' },
-    { url: baseUrl + '/waijiaobu/sjxw', name: '外交部 司局新闻', route: 'http://rss.mindynode.com/waijiaobu/sjxw', param: '' },
-    { url: baseUrl + '/waijiaobu/zwbd', name: '外交部 驻外报道', route: 'http://rss.mindynode.com/waijiaobu/zwbd', param: '' },
+                "url": "/guowuyuan/zhengce/all/all",
+                "name": "国务院办公厅政府信息公开",
+                "route": "http://rss.mindynode.com/guowuyuan/zhengce/:topic/:category",
+                "param": "topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 \n category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电",
+            },
+            {
+                "url": "/szse/300104",
+                "name": "深圳证券交易所上市公司公告",
+                "route": "/szse/:secode",
+                "param": "secode: 股票代码"
+            },
+            {
+                "url": "/shse/600687",
+                "name": "上海证券交易所上市公司公告",
+                "route": "/shse/:secode",
+                "param": "secode: 股票代码"
+            },
 
-    { url: baseUrl + '/zgfy/zuigao', name: '最高人民法院 新闻', route: 'http://rss.mindynode.com/zgfy/zuigao', param: '' },
-    { url: baseUrl + '/zgfy/difang', name: '最高人民法院 地方新闻', route: 'http://rss.mindynode.com/zgfy/difang', param: '' },
-    { url: baseUrl + '/zgfy/jieshi', name: '最高人民法院 司法解释', route: 'http://rss.mindynode.com/zgfy/jieshi', param: '' },
-    { url: baseUrl + '/zgfy/zhongda', name: '最高人民法院 重大案件', route: 'http://rss.mindynode.com/zgfy/zhongda', param: '' },
+            {
+                "url": "/hdfy/anjian",
+                "name": "海淀法院 案件快报",
+                "route": "/hdfy/anjian",
+                "param": ""
+            },
+            {
+                "url": "/caizhengbu/zhengce",
+                "name": "财政部 政策发布",
+                "route": "/caizhengbu/zhengce",
+                "param": ""
+            },
+            {
+                "url": "/shgov/bulletin",
+                "name": "上海市经济和信息化委员会 政务公开",
+                "route": "/shgov/bulletin",
+                "param": ""
+            },
+            {
+                "url": "/jianchayuan/fabu",
+                "name": "最高人民检察院 权威发布",
+                "route": "/jianchayuan/fabu",
+                "param": ""
+            },
+            {
+                "url": "/guofangbu/fabu",
+                "name": "国防部 权威发布",
+                "route": "/guofangbu/fabu",
+                "param": ""
+            },
 
-    { url: baseUrl + '/jiaoyubu/jyyw', name: '教育部 教育要闻', route: 'http://rss.mindynode.com/jiaoyubu/jyyw', param: '' },
-    { url: baseUrl + '/jiaoyubu/jytz', name: '教育部 教育通知', route: 'http://rss.mindynode.com/jiaoyubu/jytz', param: '' },
+            {
+                "url": "/waijiaobu/lingdaoren",
+                "name": "外交部 领导人活动",
+                "route": "/waijiaobu/lingdaoren",
+                "param": ""
+            },
+            {
+                "url": "/waijiaobu/sjxw",
+                "name": "外交部 司局新闻",
+                "route": "/waijiaobu/sjxw",
+                "param": ""
+            },
+            {
+                "url": "/waijiaobu/zwbd",
+                "name": "外交部 驻外报道",
+                "route": "/waijiaobu/zwbd",
+                "param": ""
+            },
 
-    { url: baseUrl + '/gonganbu/bulletin', name: '公安部 通知', route: 'http://rss.mindynode.com/gonganbu/bulletin', param: '' },
+            {
+                "url": "/zgfy/zuigao",
+                "name": "最高人民法院 新闻",
+                "route": "/zgfy/zuigao",
+                "param": ""
+            },
+            {
+                "url": "/zgfy/difang",
+                "name": "最高人民法院 地方新闻",
+                "route": "/zgfy/difang",
+                "param": ""
+            },
+            {
+                "url": "/zgfy/jieshi",
+                "name": "最高人民法院 司法解释",
+                "route": "/zgfy/jieshi",
+                "param": ""
+            },
+            {
+                "url": "/zgfy/zhongda",
+                "name": "最高人民法院 重大案件",
+                "route": "/zgfy/zhongda",
+                "param": ""
+            },
 
-    { url: baseUrl + '/guangdian/tongzhi', name: '国家广播电视总局 通知公告', route: 'http://rss.mindynode.com/guangdian/tongzhi', param: '' },
-    { url: baseUrl + '/shuiwu/yaowen', name: '国家税务总局 税务要闻', route: 'http://rss.mindynode.com/shuiwu/yaowen', param: '' },
+            {
+                "url": "/jiaoyubu/jyyw",
+                "name": "教育部 教育要闻",
+                "route": "/jiaoyubu/jyyw",
+                "param": ""
+            },
+            {
+                "url": "/jiaoyubu/jytz",
+                "name": "教育部 教育通知",
+                "route": "/jiaoyubu/jytz",
+                "param": ""
+            },
 
-    { url: baseUrl + '/tiyu/tongzhi', name: '国家体育总局 通知公告', route: 'http://rss.mindynode.com/tiyu/tongzhi', param: '' },
-    { url: baseUrl + '/tiyu/difang', name: '国家体育总局 地方动态', route: 'http://rss.mindynode.com/tiyu/difang', param: '' },
+            {
+                "url": "/gonganbu/bulletin",
+                "name": "公安部 通知",
+                "route": "/gonganbu/bulletin",
+                "param": ""
+            },
 
-    { url: baseUrl + '/shichang/zhaohui', name: '国家市场监督管理总局 召回公告', route: 'http://rss.mindynode.com/shichang/zhaohui', param: '' },
-    { url: baseUrl + '/shichang/gonggao', name: '国家市场监督管理总局 公告', route: 'http://rss.mindynode.com/shichang/gonggao', param: '' },
-    { url: baseUrl + '/shichang/tonggao', name: '国家市场监督管理总局 通告', route: 'http://rss.mindynode.com/shichang/tonggao', param: '' },
-    { url: baseUrl + '/shichang/xinwen', name: '国家市场监督管理总局 新闻发布', route: 'http://rss.mindynode.com/shichang/xinwen', param: '' },
-    { url: baseUrl + '/shichang/wenjian', name: '国家市场监督管理总局 文件发布', route: 'http://rss.mindynode.com/shichang/wenjian', param: '' },
+            {
+                "url": "/guangdian/tongzhi",
+                "name": "国家广播电视总局 通知公告",
+                "route": "/guangdian/tongzhi",
+                "param": ""
+            },
+            {
+                "url": "/shuiwu/yaowen",
+                "name": "国家税务总局 税务要闻",
+                "route": "/shuiwu/yaowen",
+                "param": ""
+            },
 
-    { url: baseUrl + '/zongjiao/bu', name: '国家宗教事务局 部工作动态', route: 'http://rss.mindynode.com/zongjiao/bu', param: '' },
-    { url: baseUrl + '/zongjiao/difang', name: '国家宗教事务局 地方工作动态', route: 'http://rss.mindynode.com/zongjiao/difang', param: '' },
-    { url: baseUrl + '/zongjiao/zongjiao', name: '国家宗教事务局 宗教界动态', route: 'http://rss.mindynode.com/zongjiao/zongjiao', param: '' },
+            {
+                "url": "/tiyu/tongzhi",
+                "name": "国家体育总局 通知公告",
+                "route": "/tiyu/tongzhi",
+                "param": ""
+            },
+            {
+                "url": "/tiyu/difang",
+                "name": "国家体育总局 地方动态",
+                "route": "/tiyu/difang",
+                "param": ""
+            },
 
-    { url: baseUrl + '/haiguan/dongtai', name: '海关总署 动态', route: 'http://rss.mindynode.com/haiguan/dongtai', param: '' },
+            {
+                "url": "/shichang/zhaohui",
+                "name": "国家市场监督管理总局 召回公告",
+                "route": "/shichang/zhaohui",
+                "param": ""
+            },
+            {
+                "url": "/shichang/gonggao",
+                "name": "国家市场监督管理总局 公告",
+                "route": "/shichang/gonggao",
+                "param": ""
+            },
+            {
+                "url": "/shichang/tonggao",
+                "name": "国家市场监督管理总局 通告",
+                "route": "/shichang/tonggao",
+                "param": ""
+            },
+            {
+                "url": "/shichang/xinwen",
+                "name": "国家市场监督管理总局 新闻发布",
+                "route": "/shichang/xinwen",
+                "param": ""
+            },
+            {
+                "url": "/shichang/wenjian",
+                "name": "国家市场监督管理总局 文件发布",
+                "route": "/shichang/wenjian",
+                "param": ""
+            },
 
-    { url: baseUrl + '/ip/gongzuo', name: '国家知识产权局 - 知识产权工作', route: 'http://rss.mindynode.com/ip/gongzuo', param: '' },
-    { url: baseUrl + '/ip/tongzhi', name: '国家知识产权局 - 工作通知', route: 'http://rss.mindynode.com/ip/tongzhi', param: '' },
+            {
+                "url": "/zongjiao/bu",
+                "name": "国家宗教事务局 部工作动态",
+                "route": "/zongjiao/bu",
+                "param": ""
+            },
+            {
+                "url": "/zongjiao/difang",
+                "name": "国家宗教事务局 地方工作动态",
+                "route": "/zongjiao/difang",
+                "param": ""
+            },
+            {
+                "url": "/zongjiao/zongjiao",
+                "name": "国家宗教事务局 宗教界动态",
+                "route": "/zongjiao/zongjiao",
+                "param": ""
+            },
 
-    { url: baseUrl + '/zhufang/yaowen', name: '住房和城乡建设部 要闻', route: 'http://rss.mindynode.com/zhufang/yaowen', param: '' },
-    { url: baseUrl + '/zhufang/xinxi', name: '住房和城乡建设部 信息公示', route: 'http://rss.mindynode.com/zhufang/xinxi', param: '' },
-    { url: baseUrl + '/zhufang/difang', name: '住房和城乡建设部 地方动态', route: 'http://rss.mindynode.com/zhufang/difang', param: '' },
+            {
+                "url": "/haiguan/dongtai",
+                "name": "海关总署 动态",
+                "route": "/haiguan/dongtai",
+                "param": ""
+            },
 
-    // TODO: fix
-    // { url: baseUrl + '/bjfy/wenshu', name: '北京法院 裁判文书', route: '/bjfy/wenshu', param: '' },
-    // {url: baseUrl + '/jrtt/sports', name: '今日头条', route: '/jrtt/:category', param: 'category: []'},
-    // { url: baseUrl + '/court/wenshu', name: '中国裁判文书网', route: '/court/wenshu', param: '' },
-];
+            {
+                "url": "/ip/gongzuo",
+                "name": "国家知识产权局 - 知识产权工作",
+                "route": "/ip/gongzuo",
+                "param": ""
+            },
+            {
+                "url": "/ip/tongzhi",
+                "name": "国家知识产权局 - 工作通知",
+                "route": "/ip/tongzhi",
+                "param": ""
+            },
+
+            {
+                "url": "/zhufang/yaowen",
+                "name": "住房和城乡建设部 要闻",
+                "route": "/zhufang/yaowen",
+                "param": ""
+            },
+            {
+                "url": "/zhufang/xinxi",
+                "name": "住房和城乡建设部 信息公示",
+                "route": "/zhufang/xinxi",
+                "param": ""
+            },
+            {
+                "url": "/zhufang/difang",
+                "name": "住房和城乡建设部 地方动态",
+                "route": "/zhufang/difang",
+                "param": ""
+            },
+
+            {
+                "url": "/gov/sichuan/jijian",
+                "name": "四川省纪检委",
+                "route": "/gov-sichuan/jijian",
+                "param": ""
+            },
+
+            {
+                "url": "/jijian/yaowen",
+                "name": "纪检委 要闻",
+                "route": "/jijian/yaowen",
+                "param": ""
+            },
+            {
+                "url": "/jijian/zhongguansc",
+                "name": "纪检委 中管审查",
+                "route": "/jijian/zhongguansc",
+                "param": ""
+            },
+            {
+                "url": "/jijian/zhongguancf",
+                "name": "纪检委 中管处分",
+                "route": "/jijian/zhongguancf",
+                "param": ""
+            },
+            {
+                "url": "/jijian/zhongyangsc",
+                "name": "纪检委 中央审查",
+                "route": "/jijian/zhongyangsc",
+                "param": ""
+            },
+            {
+                "url": "/jijian/zhongyangcf",
+                "name": "纪检委 中央处分",
+                "route": "/jijian/zhongyangcf",
+                "param": ""
+            },
+            {
+                "url": "/jijian/shenguansc",
+                "name": "纪检委 省管审查",
+                "route": "/jijian/shenguansc",
+                "param": ""
+            },
+            {
+                "url": "/jijian/shenguancf",
+                "name": "纪检委 省管处分",
+                "route": "/jijian/shenguancf",
+                "param": ""
+            },
+            {
+                "url": "/renshe/shebao",
+                "name": "人力资源和社保部 工作动态",
+                "route": "/renshe/shebao",
+                "param": ""
+            },
+            {
+                "url": "/renshe/xinwen",
+                "name": "人力资源和社保部 新闻",
+                "route": "/renshe/xinwen",
+                "param": ""
+            },
+            {
+                "url": "/renshe/zhengce",
+                "name": "人力资源和社保部 政策文件",
+                "route": "/renshe/zhengce",
+                "param": ""
+            },
+
+            {
+                "url": "/waihui/yaowen",
+                "name": "外汇管理局 要闻",
+                "route": "/waihui/yaowen",
+                "param": ""
+            }
+
+        ];
+
+// TODO: fix
+// { "url": "/bjfy/wenshu", "name": "北京法院 裁判文书", "route": "/bjfy/wenshu", "param": "" },
+// {"url": "/jrtt/sports", "name": "今日头条", "route": "/jrtt/:category", "param": "category: []"},
+// { "url": "/court/wenshu", "name": "中国裁判文书网", "route": "/court/wenshu", "param": "" },
 
 router.get('/', async (ctx) => {
     ctx.set({
@@ -168,6 +421,27 @@ router.get('/zhufang/yaowen', require('./routes/zhufang/yaowen'));
 router.get('/zhufang/xinxi', require('./routes/zhufang/xinxi'));
 router.get('/zhufang/difang', require('./routes/zhufang/difang'));
 
+// 四川省纪检委
+router.get('/gov/sichuan/jijian', require('./routes/gov-sichuan/jijian'));
+
+// 纪检委
+router.get('/jijian/yaowen', require('./routes/jijian/yaowen'));
+router.get('/jijian/zhongguansc', require('./routes/jijian/zhongguansc'));
+router.get('/jijian/zhongguancf', require('./routes/jijian/zhongguancf'));
+router.get('/jijian/zhongyangsc', require('./routes/jijian/zhongyangsc'));
+router.get('/jijian/zhongyangcf', require('./routes/jijian/zhongyangcf'));
+router.get('/jijian/shenguansc', require('./routes/jijian/shenguansc'));
+router.get('/jijian/shenguancf', require('./routes/jijian/shenguancf'));
+
+// 人力资源和社保部
+router.get('/renshe/shebao', require('./routes/renshe/shebao'));
+router.get('/renshe/xinwen', require('./routes/renshe/xinwen'));
+router.get('/renshe/zhengce', require('./routes/renshe/zhengce'));
+
+// 外汇管理局
+router.get('/waihui/yaowen', require('./routes/waihui/yaowen'));
+
+// 进出口图表
 router.get('/chart/exports', require('./routes/datajournal/exports'));
 
 // 网信办 相关部门发布

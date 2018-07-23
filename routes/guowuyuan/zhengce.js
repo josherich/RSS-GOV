@@ -84,7 +84,6 @@ module.exports = async (ctx) => {
             .slice(0, -1)
             .join('-');
 
-        console.log(time);
         const item = {
             title: title.text() + info1,
             description: title.text() + `<br/>发文字号：${info1}<br/>成文日期：${info2}`,
