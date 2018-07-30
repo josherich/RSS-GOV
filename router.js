@@ -444,6 +444,9 @@ router.get('/waihui/yaowen', require('./routes/waihui/yaowen'));
 // 进出口图表
 router.get('/chart/exports', require('./routes/datajournal/exports'));
 
+router.get('/chart/stats/category', require('./routes/stats/category'));
+router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquery'));
+
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
 // 办公室发布

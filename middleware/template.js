@@ -19,7 +19,7 @@ module.exports = async (ctx, next) => {
                 ttl: config.cacheExpire,
                 ...ctx.state.data,
             });
-        } else if (ctx.query.type === 'json') {
+        } else if (ctx.query.type === 'json' || ctx.url.includes('/chart/stats/')) {
             ctx.body = JSON.stringify(ctx.state.data);
             ctx.set({
                 'Content-Type': 'application/json; charset=UTF-8',
