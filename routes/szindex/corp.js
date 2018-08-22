@@ -17,7 +17,6 @@ module.exports = async (ctx) => {
         responseType: 'arraybuffer',
     });
     const raw = iconv.decode(response.data, 'gb2312').slice(17, -3);
-    console.log(raw);
     const list = JSON.parse(raw);
     ctx.state.data = {
         title: `深圳证券交易所 ${secode}`,

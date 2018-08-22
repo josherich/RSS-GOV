@@ -21,7 +21,6 @@ module.exports = async (ctx) => {
     const responseHtml = iconv.decode(response.data, 'gbk');
     const $ = cheerio.load(responseHtml);
     const list = $('.li', '.list.clearfix');
-    console.log(list.length);
     const chapter_item = [];
     for (let i = 0; i < list.length; i++) {
         const el = $(list[i])

@@ -318,22 +318,65 @@ const routerlist = [
                 "param": ""
             }
 
-        ];
+];
 
 // TODO: fix
 // { "url": "/bjfy/wenshu", "name": "北京法院 裁判文书", "route": "/bjfy/wenshu", "param": "" },
 // {"url": "/jrtt/sports", "name": "今日头条", "route": "/jrtt/:category", "param": "category: []"},
 // { "url": "/court/wenshu", "name": "中国裁判文书网", "route": "/court/wenshu", "param": "" },
-
+const startTime = +new Date();
 router.get('/', async (ctx) => {
     ctx.set({
         'Content-Type': 'text/html; charset=UTF-8',
+    });
+    // https://github.com/DIYgod/RSSHub/blob/master/router.js
+    const time = (+new Date() - startTime) / 1000;
+    const routes = Object.keys(ctx.debug.routes).sort((a, b) => ctx.debug.routes[b] - ctx.debug.routes[a]);
+    const hotRoutes = routes.slice(0, 100);
+    let hotRoutesValue = '';
+    hotRoutes.forEach((item) => {
+        hotRoutesValue += `${ctx.debug.routes[item]}&nbsp;&nbsp;${item}<br>`;
+    });
+
+    const ips = Object.keys(ctx.debug.ips).sort((a, b) => ctx.debug.ips[b] - ctx.debug.ips[a]);
+    const hotIPs = ips.slice(0, 100);
+    let hotIPsValue = '';
+    hotIPs.forEach((item) => {
+        hotIPsValue += `${ctx.debug.ips[item]}&nbsp;&nbsp;${item}<br>`;
+    });
+
+    ctx.set({
+        'Cache-Control': 'no-cache',
     });
 
     ctx.body = art(path.resolve(__dirname, './views/welcome.art'), {
         debug: {
             routes_news: routerlist.slice(0, 1),
             routes_gov: routerlist.slice(1),
+            hotRoutes: hotRoutes,
+            hotIPs: hotIPs,
+            status: [
+                {
+                    name: '请求数',
+                    value: ctx.debug.request,
+                },
+                {
+                    name: '请求频率',
+                    value: ((ctx.debug.request / time) * 60).toFixed(3) + ' 次/分钟',
+                },
+                {
+                    name: '缓存命中率',
+                    value: ctx.debug.request ? (ctx.debug.hitCache / ctx.debug.request).toFixed(3) : 0,
+                },
+                {
+                    name: '内存占用',
+                    value: process.memoryUsage().rss / 1000000 + ' MB',
+                },
+                {
+                    name: '运行时间',
+                    value: time + ' 秒',
+                },
+            ],
         },
     });
 });
