@@ -34,13 +34,6 @@ module.exports = async (ctx, next) => {
             template = path.resolve(__dirname, '../views/chart.art');
         }
 
-        if (ctx.url.includes('/chart/stats/')) {
-            template = path.resolve(__dirname, '../views/json.art');
-            ctx.set({
-                'Content-Type': 'application/json; charset=UTF-8',
-            });
-        }
-
         const data = {
             lastBuildDate: new Date().toUTCString(),
             updated: new Date().toISOString(),
@@ -49,6 +42,12 @@ module.exports = async (ctx, next) => {
         };
         if (template) {
             ctx.body = art(template, data);
+        }
+        if (ctx.url.includes('/chart/stats/')) {
+            ctx.body = JSON.stringify(ctx.state.data);
+            ctx.set({
+                'Content-Type': 'application/json; charset=UTF-8',
+            });
         }
     }
 };
