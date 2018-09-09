@@ -1,4 +1,3 @@
-
 const template = require('../template_page');
 
 const options = {
@@ -7,7 +6,7 @@ const options = {
     feed_image: 'http://www.mohrss.gov.cn/images/logo1_20160310.png',
     feed_url: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/dongtaixinwen/buneiyaowen/',
     url: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/dongtaixinwen/buneiyaowen/',
-    baseUrl: 'http://www.mohrss.gov.cn/',
+    baseUrl: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/dongtaixinwen/buneiyaowen/',
     list_slr: ['.serviceMainListTabCon', '.serviceMainListConType'],
     title_slr: 'a',
     link_slr: 'a',

@@ -10,7 +10,7 @@ const options = {
     list_slr: ['.row', '#documentContainer'],
     title_slr: 'a',
     link_slr: 'a',
-    link_rel: true,
+    link_rel: false,
     desc_slr: 'a',
     time_slr: 'li font',
     cn: false,

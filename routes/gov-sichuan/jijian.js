@@ -1,20 +1,17 @@
+const template = require('../../utils/template-page');
 
-const template = require('../template_page');
-
-const options = {
-    feed_title: '四川省检查委员会',
-    feed_desc: '四川省检查委员会',
-    feed_image: 'http://www.scjc.gov.cn/public/images/image/logo.jpg',
-    feed_url: 'http://www.scjc.gov.cn/zhyw/qwfb/',
+const getOptions = () => ({
+    rss_title: '四川省检查委员会',
+    rss_desc: '四川省检查委员会',
+    rss_image: 'http://www.scjc.gov.cn/public/images/image/logo.jpg',
+    rss_url: 'http://www.scjc.gov.cn/zhyw/qwfb/',
     url: 'http://www.scjc.gov.cn/zhyw/qwfb/',
-    baseUrl: 'http://www.scjc.gov.cn/',
-    list_slr: ['li', '.imglist_ul.txtlist_ul.hover_ul'],
-    title_slr: 'a',
-    link_slr: 'a',
-    link_rel: true,
-    desc_slr: 'p.daoyu',
-    time_slr: '.time_p',
-    cn: false,
-};
+    base_url: 'http://www.scjc.gov.cn/',
+    list_selector: ['li', '.imglist_ul.txtlist_ul.hover_ul'],
+    title_selector: 'a',
+    link_selector: 'a',
+    desc_selector: 'p.daoyu',
+    time_selector: '.time_p',
+});
 
-module.exports = template(options);
+module.exports = template(getOptions);

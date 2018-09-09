@@ -6,7 +6,7 @@ const options = {
     feed_image: 'http://www.mohrss.gov.cn/images/logo1_20160310.png',
     feed_url: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/gzdt/',
     url: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/gzdt/',
-    baseUrl: 'http://www.mohrss.gov.cn/',
+    baseUrl: 'http://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/gzdt/',
     list_slr: ['.serviceMainListTabCon', '.serviceMainListConType'],
     title_slr: 'a',
     link_slr: 'a',
