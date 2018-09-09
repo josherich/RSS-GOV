@@ -49,5 +49,20 @@ module.exports = async (ctx, next) => {
                 'Content-Type': 'application/json; charset=UTF-8',
             });
         }
+        if (ctx.query.type === 'fragment') {
+            ctx.state.data.item = ctx.state.data.item.map((e) => {
+                e.pubDate = new Date(e.pubDate).toLocaleDateString();
+                e.description = e.description ? e.description.replace('<br/>', '\n') : '';
+                return e;
+            });
+            ctx.set({
+                'Content-Type': 'text/html; charset=UTF-8',
+            });
+            ctx.body = art(path.resolve(__dirname, '../views/list.art'), {
+                lastBuildDate: new Date().toUTCString(),
+                ttl: config.cacheExpire,
+                ...ctx.state.data,
+            });
+        }
     }
 };
