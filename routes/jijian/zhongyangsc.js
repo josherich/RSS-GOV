@@ -6,7 +6,7 @@ const options = {
     feed_image: 'http://www.ccdi.gov.cn/banner.png',
     feed_url: 'http://www.ccdi.gov.cn/scdc/zyyj/zjsc/',
     url: 'http://www.ccdi.gov.cn/scdc/zyyj/zjsc/',
-    baseUrl: 'http://www.ccdi.gov.cn/',
+    baseUrl: 'http://www.ccdi.gov.cn/zyyj/zjsc/',
     list_slr: ['li', '.list_news_dl.fixed'],
     title_slr: 'a',
     link_slr: 'a',
@@ -17,4 +17,3 @@ const options = {
 };
 
 module.exports = template(options);
-

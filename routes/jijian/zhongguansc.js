@@ -6,7 +6,7 @@ const options = {
     feed_image: 'http://www.ccdi.gov.cn/banner.png',
     feed_url: 'http://www.ccdi.gov.cn/scdc/zggb/zjsc/',
     url: 'http://www.ccdi.gov.cn/scdc/zggb/zjsc/',
-    baseUrl: 'http://www.ccdi.gov.cn/',
+    baseUrl: 'http://www.ccdi.gov.cn/zggb/zjsc/',
     list_slr: ['li', '.list_news_dl.fixed'],
     title_slr: 'a',
     link_slr: 'a',
