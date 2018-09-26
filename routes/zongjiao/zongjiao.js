@@ -6,7 +6,7 @@ const options = {
     feed_image: 'http://www.sara.gov.cn/images/logo.png',
     feed_url: 'http://www.sara.gov.cn/xwfb/dfgz20170906202831621887/index.htm',
     url: 'http://www.sara.gov.cn/xwfb/dfgz20170906202831621887/index.htm',
-    baseUrl: 'http://www.sara.gov.cn/dfgz20170906202831621887/',
+    baseUrl: 'http://www.sara.gov.cn/xwfb/dfgz20170906202831621887/',
     list_slr: ['li:not(.list_line)', '.list01'],
     title_slr: 'a',
     link_slr: 'a',

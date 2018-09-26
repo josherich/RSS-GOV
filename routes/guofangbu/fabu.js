@@ -6,7 +6,7 @@ const options = {
     feed_image: 'http://www.spp.gov.cn/spp/xhtml/images/public/logo_qwfb.png',
     feed_url: 'http://www.mod.gov.cn/topnews/node_46932.htm',
     url: 'http://www.mod.gov.cn/topnews/node_46932.htm',
-    baseUrl: 'http://www.mod.gov.cn/',
+    baseUrl: 'http://www.mod.gov.cn/topnews/',
     list_slr: ['li', '.list-unstyled.article-list'],
     title_slr: 'a',
     link_slr: 'a',

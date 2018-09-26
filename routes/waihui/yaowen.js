@@ -1,12 +1,11 @@
-
 const template = require('../template_page');
 
 const options = {
     feed_title: '外汇管理局 要闻发布',
     feed_desc: '外汇管理局 要闻发布',
     feed_image: 'http://www.chengchen.com.cn/upload/fck/20160311142828_fck.jpg',
-    feed_url: 'http://www.safe.gov.cn/wps/portal/sy/news_ywfb',
-    url: 'http://www.safe.gov.cn/wps/portal/sy/news_ywfb',
+    feed_url: 'http://www.safe.gov.cn/safe/ywfb/index.html',
+    url: 'http://www.safe.gov.cn/safe/ywfb/index.html',
     baseUrl: 'http://www.safe.gov.cn/',
     list_slr: ['tr', '.menulist tbody'],
     list_filter: function(item) {
