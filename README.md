@@ -10,31 +10,39 @@
 
 ### 中国政府网
 
-#### 1. 国务院-动态
-http://www.gov.cn/guowuyuan/xinwen.htm
+#### 1. [国务院-动态](http://rss.mindynode.com/guowuyuan/dongtai)
 
-#### 2. 新闻-要闻
-http://www.gov.cn/xinwen/yaowen.htm
+    路由： http://rss.mindynode.com/guowuyuan/dongtai
 
-#### 3. 政策-最新
-http://www.gov.cn/zhengce/zuixin.htm
+#### 2. [新闻-要闻](http://rss.mindynode.com/guowuyuan/xinwen)
 
-#### 4. 数据-要闻
-http://www.gov.cn/shuju/yaowen.htm
+    路由： http://rss.mindynode.com/guowuyuan/xinwen
+
+#### 3. [政策-最新](http://rss.mindynode.com/guowuyuan/zhengce-zuixin)
+
+    路由： http://rss.mindynode.com/guowuyuan/zhengce-zuixin
+
+#### 4. [数据-要闻](http://rss.mindynode.com/guowuyuan/shuju)
+
+    路由： http://rss.mindynode.com/guowuyuan/shuju
 
 ### 政协
 
-#### 1. 要闻
-http://www.cppcc.gov.cn/zxww/newcppcc/zxyw/index.shtml
+#### 1. [要闻](http://rss.mindynode.com/zhengxie/yaowen)
 
-#### 2. 领导讲话
-http://www.cppcc.gov.cn/zxww/newcppcc/ldjh/index.shtml
+    路由： http://rss.mindynode.com/zhengxie/yaowen
 
-#### 3. 人事任免
-http://www.cppcc.gov.cn/zxww/newcppcc/rsrm/index.shtml
+#### 2. [领导讲话](http://rss.mindynode.com/zhengxie/lingdao)
 
-#### 4. 通知公告
-http://www.cppcc.gov.cn/zxww/newcppcc/tzgg/index.shtml
+    路由： http://rss.mindynode.com/zhengxie/lingdao
+
+#### 3. [人事任免](http://rss.mindynode.com/zhengxie/renshi)
+
+    路由： http://rss.mindynode.com/zhengxie/renshi
+
+#### 4. [通知公告](http://rss.mindynode.com/zhengxie/tongzhi)
+
+    路由： http://rss.mindynode.com/zhengxie/tongzhi
 
 ### 纪检委
 
@@ -90,8 +98,9 @@ http://www.cppcc.gov.cn/zxww/newcppcc/tzgg/index.shtml
 
     路由： http://rss.mindynode.com/jianchayuan/fabu
 
-#### 2. [新闻]
-http://www.spp.gov.cn/spp/gjybs/index.shtml
+#### 2. [新闻](http://rss.mindynode.com/jianchayuan/xinwen)
+
+    路由： http://rss.mindynode.com/jianchayuan/xinwen
 
 ## 国务院组成部门
 
