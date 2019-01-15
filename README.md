@@ -28,22 +28,6 @@
 
 ### 政协
 
-#### 1. [要闻](http://rss.mindynode.com/zhengxie/yaowen)
-
-    路由： http://rss.mindynode.com/zhengxie/yaowen
-
-#### 2. [领导讲话](http://rss.mindynode.com/zhengxie/lingdao)
-
-    路由： http://rss.mindynode.com/zhengxie/lingdao
-
-#### 3. [人事任免](http://rss.mindynode.com/zhengxie/renshi)
-
-    路由： http://rss.mindynode.com/zhengxie/renshi
-
-#### 4. [通知公告](http://rss.mindynode.com/zhengxie/tongzhi)
-
-    路由： http://rss.mindynode.com/zhengxie/tongzhi
-
 ### 纪检委
 
 #### 1. [要闻](http://rss.mindynode.com/jijian/yaowen)

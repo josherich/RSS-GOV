@@ -38,30 +38,30 @@ const routerlist = [
         param: '',
     },
     // 政协
-    {
-        url: '/zhengxie/yaowen',
-        name: '政协-要闻',
-        route: 'http://rss.mindynode.com/zhengxie/yaowen',
-        param: '',
-    },
-    {
-        url: '/zhengxie/lingdao',
-        name: '政协-领导讲话',
-        route: 'http://rss.mindynode.com/zhengxie/lingdao',
-        param: '',
-    },
-    {
-        url: '/zhengxie/renshi',
-        name: '政协-人事任免',
-        route: 'http://rss.mindynode.com/zhengxie/renshi',
-        param: '',
-    },
-    {
-        url: '/zhengxie/tongzhi',
-        name: '政协-通知公告',
-        route: 'http://rss.mindynode.com/zhengxie/tongzhi',
-        param: '',
-    },
+    // {
+    //     url: '/zhengxie/yaowen',
+    //     name: '政协-要闻',
+    //     route: 'http://rss.mindynode.com/zhengxie/yaowen',
+    //     param: '',
+    // },
+    // {
+    //     url: '/zhengxie/lingdao',
+    //     name: '政协-领导讲话',
+    //     route: 'http://rss.mindynode.com/zhengxie/lingdao',
+    //     param: '',
+    // },
+    // {
+    //     url: '/zhengxie/renshi',
+    //     name: '政协-人事任免',
+    //     route: 'http://rss.mindynode.com/zhengxie/renshi',
+    //     param: '',
+    // },
+    // {
+    //     url: '/zhengxie/tongzhi',
+    //     name: '政协-通知公告',
+    //     route: 'http://rss.mindynode.com/zhengxie/tongzhi',
+    //     param: '',
+    // },
     // 其它
     {
         url: '/szse/300104',
@@ -92,6 +92,13 @@ const routerlist = [
         url: '/gov/sichuan/jijian',
         name: '四川省纪检委',
         route: '/gov-sichuan/jijian',
+        param: '',
+    },
+    // 科技部
+    {
+        url: '/kejibu/gengxin',
+        name: '科技部 最近更新',
+        route: '/kejibu/gengxin',
         param: '',
     },
     // 纪检委
@@ -463,6 +470,7 @@ router.get('/shgov/bulletin', require('./routes/shgov/bulletin'));
 
 // 最高人民检察院权威发布
 router.get('/jianchayuan/fabu', require('./routes/jianchayuan/fabu'));
+router.get('/jianchayuan/xinwen', require('./routes/jianchayuan/xinwen'));
 
 // 国防部权威发布
 router.get('/guofangbu/fabu', require('./routes/guofangbu/fabu'));
@@ -482,6 +490,12 @@ router.get('/zgfy/zhongda', require('./routes/zgfy/zhongda'));
 router.get('/jiaoyubu/jyyw', require('./routes/jiaoyubu/jyyw'));
 // 教育部 通知
 router.get('/jiaoyubu/jytz', require('./routes/jiaoyubu/jytz'));
+
+// 发改委 新闻
+router.get('/fagaiwei/xinwen', require('./routes/fagaiwei/xinwen'));
+
+// 科技部 最近更新
+router.get('/kejibu/gengxin', require('./routes/kejibu/gengxin'));
 
 // 公安部 通知公告
 router.get('/gonganbu/bulletin', require('./routes/gonganbu/bulletin'));
