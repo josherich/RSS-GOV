@@ -106,40 +106,48 @@
 
 ### 外交部
 
-#### 1. [外交部 领导人活动](http://rss.mindynode.com/waijiaobu/lingdaoren)
+#### 1. [领导人活动](http://rss.mindynode.com/waijiaobu/lingdaoren)
 
     路由： http://rss.mindynode.com/waijiaobu/lingdaoren
 
-#### 2. [外交部 司局新闻](http://rss.mindynode.com/waijiaobu/sjxw)
+#### 2. [司局新闻](http://rss.mindynode.com/waijiaobu/sjxw)
 
     路由： http://rss.mindynode.com/waijiaobu/sjxw
 
-#### 3. [外交部 驻外报道](http://rss.mindynode.com/waijiaobu/zwbd)
+#### 3. [驻外报道](http://rss.mindynode.com/waijiaobu/zwbd)
 
     路由： http://rss.mindynode.com/waijiaobu/zwbd
 
 
 ### 国防部
 
-#### 1. [国防部 权威发布](http://rss.mindynode.com/guofangbu/fabu)
+#### 1. [权威发布](http://rss.mindynode.com/guofangbu/fabu)
 
     路由： http://rss.mindynode.com/guofangbu/fabu
 
 
 ### 国家发展和改革委员会
 
+#### 1. [新闻](http://rss.mindynode.com/fagaiwei/xinwen)
+
+    路由： http://rss.mindynode.com/fagaiwei/xinwen
+
 ### 教育部
 
-#### 1. [教育部 教育要闻](http://rss.mindynode.com/jiaoyubu/jyyw)
+#### 1. [教育要闻](http://rss.mindynode.com/jiaoyubu/jyyw)
 
     路由： http://rss.mindynode.com/jiaoyubu/jyyw
 
-#### 1. [教育部 教育通知](http://rss.mindynode.com/jiaoyubu/jytz)
+#### 2. [教育通知](http://rss.mindynode.com/jiaoyubu/jytz)
 
     路由： http://rss.mindynode.com/jiaoyubu/jytz
 
 
 ### 科学技术部
+
+#### 1. [最近更新](http://rss.mindynode.com/kejibu/gengxin)
+
+    路由： http://rss.mindynode.com/kejibu/gengxin
 
 ### 工业和信息化部
 
@@ -147,7 +155,7 @@
 
 ### 公安部
 
-#### 1. [公安部 通知](http://rss.mindynode.com/gonganbu/bulletin)
+#### 1. [通知](http://rss.mindynode.com/gonganbu/bulletin)
 
     路由： http://rss.mindynode.com/gonganbu/bulletin
 
@@ -159,22 +167,22 @@
 
 ### 财政部
 
-#### 1. [财政部 政策发布](http://rss.mindynode.com/caizhengbu/zhengce)
+#### 1. [政策发布](http://rss.mindynode.com/caizhengbu/zhengce)
 
     路由： http://rss.mindynode.com/caizhengbu/zhengce
 
 
 ### 人力资源和社会保障部
 
-#### 1. [人力资源和社保部 工作动态](http://rss.mindynode.com/renshe/shebao)
+#### 1. [工作动态](http://rss.mindynode.com/renshe/shebao)
 
     路由： http://rss.mindynode.com/renshe/shebao
 
-#### 1. [人力资源和社保部 新闻](http://rss.mindynode.com/renshe/xinwen)
+#### 1. [新闻](http://rss.mindynode.com/renshe/xinwen)
 
     路由： http://rss.mindynode.com/renshe/xinwen
 
-#### 1. [人力资源和社保部 政策文件](http://rss.mindynode.com/renshe/zhengce)
+#### 1. [政策文件](http://rss.mindynode.com/renshe/zhengce)
 
     路由： http://rss.mindynode.com/renshe/zhengce
 
@@ -185,15 +193,15 @@
 
 ### 住房和城乡建设部
 
-#### 1. [住房和城乡建设部 要闻](http://rss.mindynode.com/zhufang/yaowen)
+#### 1. [要闻](http://rss.mindynode.com/zhufang/yaowen)
 
     路由： http://rss.mindynode.com/zhufang/yaowen
 
-#### 2. [住房和城乡建设部 信息公示](http://rss.mindynode.com/zhufang/xinxi)
+#### 2. [信息公示](http://rss.mindynode.com/zhufang/xinxi)
 
     路由： http://rss.mindynode.com/zhufang/xinxi
 
-#### 3. [住房和城乡建设部 地方动态](http://rss.mindynode.com/zhufang/difang)
+#### 3. [地方动态](http://rss.mindynode.com/zhufang/difang)
 
     路由： http://rss.mindynode.com/zhufang/difang
 
@@ -229,14 +237,14 @@
 
 ### 海关总署
 
-#### 1. [海关总署 动态](http://rss.mindynode.com/haiguan/dongtai)
+#### 1. [动态](http://rss.mindynode.com/haiguan/dongtai)
 
     路由： http://rss.mindynode.com/haiguan/dongtai
 
 
 ### 国家税务总局
 
-#### 1. [国家税务总局 税务要闻](http://rss.mindynode.com/shuiwu/yaowen)
+#### 1. [税务要闻](http://rss.mindynode.com/shuiwu/yaowen)
 
     路由： http://rss.mindynode.com/shuiwu/yaowen
 
@@ -272,11 +280,11 @@
 ### 国家体育总局
 
 
-#### 1. [国家体育总局 通知公告](http://rss.mindynode.com/tiyu/tongzhi)
+#### 1. [通知公告](http://rss.mindynode.com/tiyu/tongzhi)
 
     路由： http://rss.mindynode.com/tiyu/tongzhi
 
-#### 2. [国家体育总局 地方动态](http://rss.mindynode.com/tiyu/difang)
+#### 2. [地方动态](http://rss.mindynode.com/tiyu/difang)
 
     路由： http://rss.mindynode.com/tiyu/difang
 
@@ -345,11 +353,11 @@
 
 ### 知识产权局
 
-#### 1. [国家知识产权局 - 知识产权工作](http://rss.mindynode.com/ip/gongzuo)
+#### 1. [知识产权工作](http://rss.mindynode.com/ip/gongzuo)
 
     路由： http://rss.mindynode.com/ip/gongzuo
 
-#### 2. [国家知识产权局 - 工作通知](http://rss.mindynode.com/ip/tongzhi)
+#### 2. [工作通知](http://rss.mindynode.com/ip/tongzhi)
 
     路由： http://rss.mindynode.com/ip/tongzhi
 

@@ -83,216 +83,18 @@ const routerlist = [
         param: '',
     },
     {
-        url: '/caizhengbu/zhengce',
-        name: '财政部 政策发布',
-        route: '/caizhengbu/zhengce',
-        param: '',
-    },
-    {
         url: '/shgov/bulletin',
         name: '上海市经济和信息化委员会 政务公开',
         route: '/shgov/bulletin',
         param: '',
     },
     {
-        url: '/jianchayuan/fabu',
-        name: '最高人民检察院 权威发布',
-        route: '/jianchayuan/fabu',
-        param: '',
-    },
-    {
-        url: '/guofangbu/fabu',
-        name: '国防部 权威发布',
-        route: '/guofangbu/fabu',
-        param: '',
-    },
-
-    {
-        url: '/waijiaobu/lingdaoren',
-        name: '外交部 领导人活动',
-        route: '/waijiaobu/lingdaoren',
-        param: '',
-    },
-    {
-        url: '/waijiaobu/sjxw',
-        name: '外交部 司局新闻',
-        route: '/waijiaobu/sjxw',
-        param: '',
-    },
-    {
-        url: '/waijiaobu/zwbd',
-        name: '外交部 驻外报道',
-        route: '/waijiaobu/zwbd',
-        param: '',
-    },
-
-    {
-        url: '/zgfy/zuigao',
-        name: '最高人民法院 新闻',
-        route: '/zgfy/zuigao',
-        param: '',
-    },
-    {
-        url: '/zgfy/difang',
-        name: '最高人民法院 地方新闻',
-        route: '/zgfy/difang',
-        param: '',
-    },
-    {
-        url: '/zgfy/jieshi',
-        name: '最高人民法院 司法解释',
-        route: '/zgfy/jieshi',
-        param: '',
-    },
-    {
-        url: '/zgfy/zhongda',
-        name: '最高人民法院 重大案件',
-        route: '/zgfy/zhongda',
-        param: '',
-    },
-
-    {
-        url: '/jiaoyubu/jyyw',
-        name: '教育部 教育要闻',
-        route: '/jiaoyubu/jyyw',
-        param: '',
-    },
-    {
-        url: '/jiaoyubu/jytz',
-        name: '教育部 教育通知',
-        route: '/jiaoyubu/jytz',
-        param: '',
-    },
-
-    {
-        url: '/gonganbu/bulletin',
-        name: '公安部 通知',
-        route: '/gonganbu/bulletin',
-        param: '',
-    },
-
-    {
-        url: '/guangdian/tongzhi',
-        name: '国家广播电视总局 通知公告',
-        route: '/guangdian/tongzhi',
-        param: '',
-    },
-    {
-        url: '/shuiwu/yaowen',
-        name: '国家税务总局 税务要闻',
-        route: '/shuiwu/yaowen',
-        param: '',
-    },
-
-    {
-        url: '/tiyu/tongzhi',
-        name: '国家体育总局 通知公告',
-        route: '/tiyu/tongzhi',
-        param: '',
-    },
-    {
-        url: '/tiyu/difang',
-        name: '国家体育总局 地方动态',
-        route: '/tiyu/difang',
-        param: '',
-    },
-
-    {
-        url: '/shichang/zhaohui',
-        name: '国家市场监督管理总局 召回公告',
-        route: '/shichang/zhaohui',
-        param: '',
-    },
-    {
-        url: '/shichang/gonggao',
-        name: '国家市场监督管理总局 公告',
-        route: '/shichang/gonggao',
-        param: '',
-    },
-    {
-        url: '/shichang/tonggao',
-        name: '国家市场监督管理总局 通告',
-        route: '/shichang/tonggao',
-        param: '',
-    },
-    {
-        url: '/shichang/xinwen',
-        name: '国家市场监督管理总局 新闻发布',
-        route: '/shichang/xinwen',
-        param: '',
-    },
-    {
-        url: '/shichang/wenjian',
-        name: '国家市场监督管理总局 文件发布',
-        route: '/shichang/wenjian',
-        param: '',
-    },
-
-    {
-        url: '/zongjiao/bu',
-        name: '国家宗教事务局 部工作动态',
-        route: '/zongjiao/bu',
-        param: '',
-    },
-    {
-        url: '/zongjiao/difang',
-        name: '国家宗教事务局 地方工作动态',
-        route: '/zongjiao/difang',
-        param: '',
-    },
-    {
-        url: '/zongjiao/zongjiao',
-        name: '国家宗教事务局 宗教界动态',
-        route: '/zongjiao/zongjiao',
-        param: '',
-    },
-
-    {
-        url: '/haiguan/dongtai',
-        name: '海关总署 动态',
-        route: '/haiguan/dongtai',
-        param: '',
-    },
-
-    {
-        url: '/ip/gongzuo',
-        name: '国家知识产权局 - 知识产权工作',
-        route: '/ip/gongzuo',
-        param: '',
-    },
-    {
-        url: '/ip/tongzhi',
-        name: '国家知识产权局 - 工作通知',
-        route: '/ip/tongzhi',
-        param: '',
-    },
-
-    {
-        url: '/zhufang/yaowen',
-        name: '住房和城乡建设部 要闻',
-        route: '/zhufang/yaowen',
-        param: '',
-    },
-    {
-        url: '/zhufang/xinxi',
-        name: '住房和城乡建设部 信息公示',
-        route: '/zhufang/xinxi',
-        param: '',
-    },
-    {
-        url: '/zhufang/difang',
-        name: '住房和城乡建设部 地方动态',
-        route: '/zhufang/difang',
-        param: '',
-    },
-
-    {
         url: '/gov/sichuan/jijian',
         name: '四川省纪检委',
         route: '/gov-sichuan/jijian',
         param: '',
     },
-
+    // 纪检委
     {
         url: '/jijian/yaowen',
         name: '纪检委 要闻',
@@ -335,6 +137,221 @@ const routerlist = [
         route: '/jijian/shenguancf',
         param: '',
     },
+    // 财政部
+    {
+        url: '/caizhengbu/zhengce',
+        name: '财政部 政策发布',
+        route: '/caizhengbu/zhengce',
+        param: '',
+    },
+    // 最高检
+    {
+        url: '/jianchayuan/fabu',
+        name: '最高人民检察院 权威发布',
+        route: '/jianchayuan/fabu',
+        param: '',
+    },
+    {
+        url: '/jianchayuan/xinwen',
+        name: '最高人民检察院 新闻',
+        route: '/jianchayuan/xinwen',
+        param: '',
+    },
+    // 发改委
+    {
+        url: '/fagaiwei/xinwen',
+        name: '发改委 新闻',
+        route: '/fagaiwei/xinwen',
+        param: '',
+    },
+    // 国防部
+    {
+        url: '/guofangbu/fabu',
+        name: '国防部 权威发布',
+        route: '/guofangbu/fabu',
+        param: '',
+    },
+    // 外交部
+    {
+        url: '/waijiaobu/lingdaoren',
+        name: '外交部 领导人活动',
+        route: '/waijiaobu/lingdaoren',
+        param: '',
+    },
+    {
+        url: '/waijiaobu/sjxw',
+        name: '外交部 司局新闻',
+        route: '/waijiaobu/sjxw',
+        param: '',
+    },
+    {
+        url: '/waijiaobu/zwbd',
+        name: '外交部 驻外报道',
+        route: '/waijiaobu/zwbd',
+        param: '',
+    },
+    // 最高法
+    {
+        url: '/zgfy/zuigao',
+        name: '最高人民法院 新闻',
+        route: '/zgfy/zuigao',
+        param: '',
+    },
+    {
+        url: '/zgfy/difang',
+        name: '最高人民法院 地方新闻',
+        route: '/zgfy/difang',
+        param: '',
+    },
+    {
+        url: '/zgfy/jieshi',
+        name: '最高人民法院 司法解释',
+        route: '/zgfy/jieshi',
+        param: '',
+    },
+    {
+        url: '/zgfy/zhongda',
+        name: '最高人民法院 重大案件',
+        route: '/zgfy/zhongda',
+        param: '',
+    },
+    // 教育部
+    {
+        url: '/jiaoyubu/jyyw',
+        name: '教育部 教育要闻',
+        route: '/jiaoyubu/jyyw',
+        param: '',
+    },
+    {
+        url: '/jiaoyubu/jytz',
+        name: '教育部 教育通知',
+        route: '/jiaoyubu/jytz',
+        param: '',
+    },
+    // 公安部
+    {
+        url: '/gonganbu/bulletin',
+        name: '公安部 通知',
+        route: '/gonganbu/bulletin',
+        param: '',
+    },
+    // 广电总局
+    {
+        url: '/guangdian/tongzhi',
+        name: '国家广播电视总局 通知公告',
+        route: '/guangdian/tongzhi',
+        param: '',
+    },
+    // 税务总局
+    {
+        url: '/shuiwu/yaowen',
+        name: '国家税务总局 税务要闻',
+        route: '/shuiwu/yaowen',
+        param: '',
+    },
+    // 体育总局
+    {
+        url: '/tiyu/tongzhi',
+        name: '国家体育总局 通知公告',
+        route: '/tiyu/tongzhi',
+        param: '',
+    },
+    {
+        url: '/tiyu/difang',
+        name: '国家体育总局 地方动态',
+        route: '/tiyu/difang',
+        param: '',
+    },
+    // 市监局
+    {
+        url: '/shichang/zhaohui',
+        name: '国家市场监督管理总局 召回公告',
+        route: '/shichang/zhaohui',
+        param: '',
+    },
+    {
+        url: '/shichang/gonggao',
+        name: '国家市场监督管理总局 公告',
+        route: '/shichang/gonggao',
+        param: '',
+    },
+    {
+        url: '/shichang/tonggao',
+        name: '国家市场监督管理总局 通告',
+        route: '/shichang/tonggao',
+        param: '',
+    },
+    {
+        url: '/shichang/xinwen',
+        name: '国家市场监督管理总局 新闻发布',
+        route: '/shichang/xinwen',
+        param: '',
+    },
+    {
+        url: '/shichang/wenjian',
+        name: '国家市场监督管理总局 文件发布',
+        route: '/shichang/wenjian',
+        param: '',
+    },
+    // 宗教事务局
+    {
+        url: '/zongjiao/bu',
+        name: '国家宗教事务局 部工作动态',
+        route: '/zongjiao/bu',
+        param: '',
+    },
+    {
+        url: '/zongjiao/difang',
+        name: '国家宗教事务局 地方工作动态',
+        route: '/zongjiao/difang',
+        param: '',
+    },
+    {
+        url: '/zongjiao/zongjiao',
+        name: '国家宗教事务局 宗教界动态',
+        route: '/zongjiao/zongjiao',
+        param: '',
+    },
+    // 海关
+    {
+        url: '/haiguan/dongtai',
+        name: '海关总署 动态',
+        route: '/haiguan/dongtai',
+        param: '',
+    },
+
+    {
+        url: '/ip/gongzuo',
+        name: '国家知识产权局 - 知识产权工作',
+        route: '/ip/gongzuo',
+        param: '',
+    },
+    {
+        url: '/ip/tongzhi',
+        name: '国家知识产权局 - 工作通知',
+        route: '/ip/tongzhi',
+        param: '',
+    },
+
+    {
+        url: '/zhufang/yaowen',
+        name: '住房和城乡建设部 要闻',
+        route: '/zhufang/yaowen',
+        param: '',
+    },
+    {
+        url: '/zhufang/xinxi',
+        name: '住房和城乡建设部 信息公示',
+        route: '/zhufang/xinxi',
+        param: '',
+    },
+    {
+        url: '/zhufang/difang',
+        name: '住房和城乡建设部 地方动态',
+        route: '/zhufang/difang',
+        param: '',
+    },
+
     {
         url: '/renshe/shebao',
         name: '人力资源和社保部 工作动态',
