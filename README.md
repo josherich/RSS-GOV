@@ -135,6 +135,54 @@
 
 ### 工业和信息化部
 
+#### 1. [工作动态](http://rss.mindynode.com/gongxinbu/dongtai)
+
+    路由： http://rss.mindynode.com/gongxinbu/dongtai
+
+#### 2. [对外交流](http://rss.mindynode.com/gongxinbu/duiwai)
+
+    路由： http://rss.mindynode.com/gongxinbu/duiwai
+
+#### 3. [重点工作](http://rss.mindynode.com/gongxinbu/gongzuo)
+
+    路由： http://rss.mindynode.com/gongxinbu/gongzuo
+
+#### 4. [领导活动](http://rss.mindynode.com/gongxinbu/lingdao)
+
+    路由： http://rss.mindynode.com/gongxinbu/lingdao
+
+#### 5. [政策文件](http://rss.mindynode.com/gongxinbu/wenjian)
+
+    路由： http://rss.mindynode.com/gongxinbu/wenjian
+
+#### 6. [统计 综合](http://rss.mindynode.com/gongxinbu/tongji-zonghe)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-zonghe
+
+#### 7. [统计 电子](http://rss.mindynode.com/gongxinbu/tongji-dianzi)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-dianzi
+
+#### 8. [统计 软件](http://rss.mindynode.com/gongxinbu/tongji-ruanjian)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-ruanjian
+
+#### 9. [统计 通信](http://rss.mindynode.com/gongxinbu/tongji-tongxin)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-tongxin
+
+#### 10. [统计 消费品](http://rss.mindynode.com/gongxinbu/tongji-xiaofeipin)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-xiaofeipin
+
+#### 11. [统计 原材料](http://rss.mindynode.com/gongxinbu/tongji-yuancailiao)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-yuancailiao
+
+#### 12. [统计 装备](http://rss.mindynode.com/gongxinbu/tongji-zhuangbei)
+
+    路由： http://rss.mindynode.com/gongxinbu/tongji-zhuangbei
+
 ### 国家民族事务委员会
 
 ### 公安部
@@ -378,5 +426,7 @@
 
     参数： category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]
 
+## 电影备案公示
+http://dy.chinasarft.gov.cn/html/www/catalog/0129dffcccb1015d402881cd29de91ec.html
 
 > 本项目是 [RSSHub](https://github.com/DIYgod/RSSHub) 的一个分支

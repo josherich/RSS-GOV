@@ -101,6 +101,79 @@ const routerlist = [
         route: '/kejibu/gengxin',
         param: '',
     },
+    // 工信部
+    {
+        url: '/gongxinbu/dongtai',
+        name: '工信部 工作动态',
+        route: '/gongxinbu/dongtai',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/duiwai',
+        name: '工信部 对外交流',
+        route: '/gongxinbu/duiwai',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/gongzuo',
+        name: '工信部 重点工作',
+        route: '/gongxinbu/gongzuo',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/lingdao',
+        name: '工信部 领导活动',
+        route: '/gongxinbu/lingdao',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/wenjian',
+        name: '工信部 政策文件',
+        route: '/gongxinbu/wenjian',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-zonghe',
+        name: '工信部 统计 综合',
+        route: '/gongxinbu/tongji-zonghe',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-dianzi',
+        name: '工信部 统计 电子',
+        route: '/gongxinbu/tongji-dianzi',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-ruanjian',
+        name: '工信部 统计 软件',
+        route: '/gongxinbu/tongji-ruanjian',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-tongxin',
+        name: '工信部 统计 通信',
+        route: '/gongxinbu/tongji-tongxin',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-xiaofeipin',
+        name: '工信部 统计 消费品',
+        route: '/gongxinbu/tongji-xiaofeipin',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-yuancailiao',
+        name: '工信部 统计 原材料',
+        route: '/gongxinbu/tongji-yuancailiao',
+        param: '',
+    },
+    {
+        url: '/gongxinbu/tongji-zhuangbei',
+        name: '工信部 统计 装备',
+        route: '/gongxinbu/tongji-zhuangbei',
+        param: '',
+    },
     // 纪检委
     {
         url: '/jijian/yaowen',
@@ -497,6 +570,20 @@ router.get('/fagaiwei/xinwen', require('./routes/fagaiwei/xinwen'));
 // 科技部 最近更新
 router.get('/kejibu/gengxin', require('./routes/kejibu/gengxin'));
 
+// 工业和信息化部
+router.get('/gongxinbu/dongtai', require('./routes/gongxinbu/dongtai'));
+router.get('/gongxinbu/duiwai', require('./routes/gongxinbu/duiwai'));
+router.get('/gongxinbu/gongzuo', require('./routes/gongxinbu/gongzuo'));
+router.get('/gongxinbu/lingdao', require('./routes/gongxinbu/lingdao'));
+router.get('/gongxinbu/wenjian', require('./routes/gongxinbu/wenjian'));
+router.get('/gongxinbu/tongji-zonghe', require('./routes/gongxinbu/tongji-zonghe'));
+router.get('/gongxinbu/tongji-dianzi', require('./routes/gongxinbu/tongji-dianzi'));
+router.get('/gongxinbu/tongji-ruanjian', require('./routes/gongxinbu/tongji-ruanjian'));
+router.get('/gongxinbu/tongji-tongxin', require('./routes/gongxinbu/tongji-tongxin'));
+router.get('/gongxinbu/tongji-xiaofeipin', require('./routes/gongxinbu/tongji-xiaofeipin'));
+router.get('/gongxinbu/tongji-yuancailiao', require('./routes/gongxinbu/tongji-yuancailiao'));
+router.get('/gongxinbu/tongji-zhuangbei', require('./routes/gongxinbu/tongji-zhuangbei'));
+
 // 公安部 通知公告
 router.get('/gonganbu/bulletin', require('./routes/gonganbu/bulletin'));
 
@@ -508,6 +595,7 @@ router.get('/guowuyuan/xinwen', require('./routes/guowuyuan/xinwen'));
 router.get('/guowuyuan/zhengce-zuixin', require('./routes/guowuyuan/zhengce-zuixin'));
 
 // 政协
+// code in html code
 router.get('/zhengxie/lingdao', require('./routes/zhengxie/lingdao'));
 router.get('/zhengxie/renshi', require('./routes/zhengxie/renshi'));
 router.get('/zhengxie/tongzhi', require('./routes/zhengxie/tongzhi'));
@@ -594,6 +682,8 @@ router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquer
 // http://www.seac.gov.cn/module/rss/rssfeed.jsp?colid=31
 
 // 工业信息部
+// 领导活动
+// http://www.miit.gov.cn/n1146290/n1146397/index.html
 // 工作动态
 // http://www.miit.gov.cn/n1146290/n1146402/index.html
 // 信息公示
