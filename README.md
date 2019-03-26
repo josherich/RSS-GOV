@@ -302,12 +302,37 @@
 
     路由： http://rss.mindynode.com/shichang/wenjian
 
+### 网信办
+
+#### 1. [网信办 办公室发布](http://rss.mindynode.com/wangxinban/fabu)
+
+    路由： http://rss.mindynode.com/wangxinban/fabu
+
+#### 2. [网信办 办公室工作](http://rss.mindynode.com/wangxinban/bangongshi)
+
+    路由： http://rss.mindynode.com/wangxinban/bangongshi
+
+#### 3. [网信办 网络安全动态](http://rss.mindynode.com/wangxinban/anquan)
+
+    路由： http://rss.mindynode.com/wangxinban/anquan
+
+#### 4. [网信办 网络安全管理](http://rss.mindynode.com/wangxinban/anquan-guanli)
+
+    路由： http://rss.mindynode.com/wangxinban/anquan-guanli
+
 ### 国家广播电视总局
 
 #### 1. [国家广播电视总局 通知公告](http://rss.mindynode.com/guangdian/tongzhi)
 
     路由： http://rss.mindynode.com/guangdian/tongzhi
 
+#### 2. [国家广播电视总局 电影剧本备案](http://rss.mindynode.com/guangdian/movie-beian)
+
+    路由： http://rss.mindynode.com/guangdian/movie-beian
+
+#### 3. [国家广播电视总局 电影放映许可](http://rss.mindynode.com/guangdian/movie-xuke)
+
+    路由： http://rss.mindynode.com/guangdian/movie-xuke
 
 ### 国家体育总局
 

@@ -12,6 +12,31 @@ const routerlist = [
         route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
+    // 网信部
+    {
+        url: '/wangxinban/fabu',
+        name: '网信办 办公室发布',
+        route: 'http://rss.mindynode.com/wangxinban/fabu',
+        param: '',
+    },
+    {
+        url: '/wangxinban/bangongshi',
+        name: '网信办 办公室工作',
+        route: 'http://rss.mindynode.com/wangxinban/bangongshi',
+        param: '',
+    },
+    {
+        url: '/wangxinban/anquan',
+        name: '网信办 网络安全动态',
+        route: 'http://rss.mindynode.com/wangxinban/anquan',
+        param: '',
+    },
+    {
+        url: '/wangxinban/anquan-guanli',
+        name: '网信办 网络安全管理',
+        route: 'http://rss.mindynode.com/wangxinban/anquan-guanli',
+        param: '',
+    },
     // 国务院
     {
         url: '/guowuyuan/xinwen',
@@ -322,6 +347,18 @@ const routerlist = [
         route: '/guangdian/tongzhi',
         param: '',
     },
+    {
+        url: '/guangdian/movie-beian',
+        name: '国家广播电视总局 电影剧本备案',
+        route: '/guangdian/movie-beian',
+        param: '',
+    },
+    {
+        url: '/guangdian/movie-xuke',
+        name: '国家广播电视总局 电影放映许可',
+        route: '/guangdian/movie-xuke',
+        param: '',
+    },
     // 税务总局
     {
         url: '/shuiwu/yaowen',
@@ -526,6 +563,12 @@ router.get('/context/:words', require('./routes/context/keywords'));
 // 网易新闻
 router.get('/netease/:category', require('./routes/netease/news'));
 
+// 网信办
+router.get('/wangxinban/fabu', require('./routes/wangxinban/fabu'));
+router.get('/wangxinban/bangongshi', require('./routes/wangxinban/bangongshi'));
+router.get('/wangxinban/anquan', require('./routes/wangxinban/anquan'));
+router.get('/wangxinban/anquan-guanli', require('./routes/wangxinban/anquan-guanli'));
+
 // 深圳证券交易所上市公司公告[pdf]
 router.get('/szse/:secode', require('./routes/szindex/corp'));
 
@@ -603,6 +646,8 @@ router.get('/zhengxie/yaowen', require('./routes/zhengxie/yaowen'));
 
 // 国家广播电视总局
 router.get('/guangdian/tongzhi', require('./routes/guangdian/tongzhi'));
+router.get('/guangdian/movie-beian', require('./routes/guangdian/movie-beian'));
+router.get('/guangdian/movie-xuke', require('./routes/guangdian/movie-xuke'));
 
 // 国家税务总局
 router.get('/shuiwu/yaowen', require('./routes/shuiwu/yaowen'));
