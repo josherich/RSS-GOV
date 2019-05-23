@@ -2,31 +2,38 @@ const axios = require('axios');
 const config = require('../../config');
 const iconv = require('iconv-lite');
 
-const baseUrl = 'http://disclosure.szse.cn/';
+const baseUrl = 'http://www.szse.cn/disclosure/listed/notice/index.html';
 
 module.exports = async (ctx) => {
     const secode = ctx.params.secode;
-    const url = `http://disclosure.szse.cn/disclosure/fulltext/stocks/szse/gsgg1y/${secode}.js`;
+    const url = `http://www.szse.cn/api/disc/announcement/annList?random=${Math.random()}`;
     const response = await axios({
-        method: 'get',
+        method: 'post',
         url: url,
         headers: {
             'User-Agent': config.ua,
             Referer: baseUrl,
         },
+        data: {
+            "seDate":["",""],
+            "stock":[secode],
+            "channelCode":["listedNotice_disc"],
+            "pageSize":30,
+            "pageNum":1
+        },
         responseType: 'arraybuffer',
     });
-    const raw = iconv.decode(response.data, 'gb2312').slice(17, -3);
-    const list = JSON.parse(raw);
+    const raw = response.data;
+    const list = JSON.parse(raw)['data'];
     ctx.state.data = {
         title: `深圳证券交易所 ${secode}`,
-        link: `http://disclosure.szse.cn/m/drgg_search.htm?secode=${secode}`,
+        link: `http://www.szse.cn/disclosure/listed/notice/index.html`,
         description: `深圳证券交易所 ${secode}`,
-        item: list.slice(0, 79).map((item) => ({
-                title: item[2],
-                description: item[2],
-                link: baseUrl + item[1],
-                pubDate: new Date(item[5]).toUTCString(),
+        item: list.map((item) => ({
+                title: item['title'],
+                description: item['title'],
+                link: baseUrl + item['attachPath'],
+                pubDate: new Date(item['publishTime']).toUTCString(),
             })),
     };
 };
