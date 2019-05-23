@@ -13,30 +13,30 @@ const routerlist = [
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
     // 网信部
-    {
-        url: '/wangxinban/fabu',
-        name: '网信办 办公室发布',
-        route: 'http://rss.mindynode.com/wangxinban/fabu',
-        param: '',
-    },
-    {
-        url: '/wangxinban/bangongshi',
-        name: '网信办 办公室工作',
-        route: 'http://rss.mindynode.com/wangxinban/bangongshi',
-        param: '',
-    },
-    {
-        url: '/wangxinban/anquan',
-        name: '网信办 网络安全动态',
-        route: 'http://rss.mindynode.com/wangxinban/anquan',
-        param: '',
-    },
-    {
-        url: '/wangxinban/anquan-guanli',
-        name: '网信办 网络安全管理',
-        route: 'http://rss.mindynode.com/wangxinban/anquan-guanli',
-        param: '',
-    },
+    // {
+    //     url: '/wangxinban/fabu',
+    //     name: '网信办 办公室发布',
+    //     route: 'http://rss.mindynode.com/wangxinban/fabu',
+    //     param: '',
+    // },
+    // {
+    //     url: '/wangxinban/bangongshi',
+    //     name: '网信办 办公室工作',
+    //     route: 'http://rss.mindynode.com/wangxinban/bangongshi',
+    //     param: '',
+    // },
+    // {
+    //     url: '/wangxinban/anquan',
+    //     name: '网信办 网络安全动态',
+    //     route: 'http://rss.mindynode.com/wangxinban/anquan',
+    //     param: '',
+    // },
+    // {
+    //     url: '/wangxinban/anquan-guanli',
+    //     name: '网信办 网络安全管理',
+    //     route: 'http://rss.mindynode.com/wangxinban/anquan-guanli',
+    //     param: '',
+    // },
     // 国务院
     {
         url: '/guowuyuan/xinwen',
