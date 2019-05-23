@@ -7,18 +7,15 @@ const options = {
     feed_url: 'http://www.safe.gov.cn/safe/ywfb/index.html',
     url: 'http://www.safe.gov.cn/safe/ywfb/index.html',
     baseUrl: 'http://www.safe.gov.cn/',
-    list_slr: ['tr', '.menulist tbody'],
-    list_filter: function(item) {
-        return item.find('a li').length > 0;
+    list_slr: ['li', '.list_conr ul'],
+    list_filter: function(i, item) {
+        return item.find('a').length > 0;
     },
-    title_slr: 'a li',
-    link_slr: 'a',
+    title_slr: 'dt a',
+    link_slr: 'dt a',
     link_rel: true,
-    desc_slr: 'a li',
-    time_slr: 'td[align=right]',
-    time_map: function(time) {
-        return time.slice(2, -1);
-    },
+    desc_slr: 'dt a',
+    time_slr: 'dd',
     cn: false,
 };
 

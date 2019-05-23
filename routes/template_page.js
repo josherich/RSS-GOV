@@ -26,8 +26,8 @@ module.exports = (options) => async (ctx) => {
     let list = $(options.list_slr[0], options.list_slr[1]);
 
     if (options.list_filter) {
-        list = list.filter(function(item) {
-            return options.list_filter($(item))
+        list = list.filter(function(i, item) {
+            return options.list_filter(i, $(item))
         });
     }
 
