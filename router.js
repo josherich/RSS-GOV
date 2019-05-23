@@ -5,7 +5,7 @@ const path = require('path');
 
 const baseUrl = 'http://rss.mindynode.com';
 
-const routerlist = [
+let routerlist = [
     {
         url: '/netease/guoji',
         name: '网易新闻',
@@ -16,50 +16,50 @@ const routerlist = [
     // {
     //     url: '/wangxinban/fabu',
     //     name: '网信办 办公室发布',
-    //     route: 'http://rss.mindynode.com/wangxinban/fabu',
+    //     route: '/wangxinban/fabu',
     //     param: '',
     // },
     // {
     //     url: '/wangxinban/bangongshi',
     //     name: '网信办 办公室工作',
-    //     route: 'http://rss.mindynode.com/wangxinban/bangongshi',
+    //     route: '/wangxinban/bangongshi',
     //     param: '',
     // },
     // {
     //     url: '/wangxinban/anquan',
     //     name: '网信办 网络安全动态',
-    //     route: 'http://rss.mindynode.com/wangxinban/anquan',
+    //     route: '/wangxinban/anquan',
     //     param: '',
     // },
     // {
     //     url: '/wangxinban/anquan-guanli',
     //     name: '网信办 网络安全管理',
-    //     route: 'http://rss.mindynode.com/wangxinban/anquan-guanli',
+    //     route: '/wangxinban/anquan-guanli',
     //     param: '',
     // },
     // 国务院
     {
         url: '/guowuyuan/xinwen',
         name: '国务院-新闻-要闻',
-        route: 'http://rss.mindynode.com/guowuyuan/xinwen',
+        route: '/guowuyuan/xinwen',
         param: '',
     },
     {
         url: '/guowuyuan/dongtai',
         name: '国务院-动态',
-        route: 'http://rss.mindynode.com/guowuyuan/dongtai',
+        route: '/guowuyuan/dongtai',
         param: '',
     },
     {
         url: '/guowuyuan/zhengce-zuixin',
         name: '国务院-政策-最新',
-        route: 'http://rss.mindynode.com/guowuyuan/zhengce-zuixin',
+        route: '/guowuyuan/zhengce-zuixin',
         param: '',
     },
     {
         url: '/guowuyuan/shuju',
         name: '国务院-数据-要闻',
-        route: 'http://rss.mindynode.com/guowuyuan/shuju',
+        route: '/guowuyuan/shuju',
         param: '',
     },
     // 政协
@@ -500,6 +500,8 @@ const routerlist = [
 // { "url": "/bjfy/wenshu", "name": "北京法院 裁判文书", "route": "/bjfy/wenshu", "param": "" },
 // {"url": "/jrtt/sports", "name": "今日头条", "route": "/jrtt/:category", "param": "category: []"},
 // { "url": "/court/wenshu", "name": "中国裁判文书网", "route": "/court/wenshu", "param": "" },
+// /wangxinban/fabu
+
 const startTime = +new Date();
 router.get('/', async (ctx) => {
     ctx.set({
@@ -523,6 +525,11 @@ router.get('/', async (ctx) => {
 
     ctx.set({
         'Cache-Control': 'no-cache',
+    });
+
+    routerlist = routerlist.map((route) => {
+        route['status'] = ctx.debug.status[route['route']];
+        return route;
     });
 
     ctx.body = art(path.resolve(__dirname, './views/welcome.art'), {

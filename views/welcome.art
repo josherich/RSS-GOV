@@ -91,6 +91,7 @@
     display: block;
   }
   .route-item {
+    position: relative;
     margin: 1.5em 0;
     font-size: 16px;
     line-height: 24px;
@@ -333,6 +334,15 @@
     margin-right: 0;
     margin-left: 20px;
   }
+  .status.online {
+    position: absolute;
+    top: 11px;
+    left: -10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(2, 184, 117, 1.00);
+  }
 </style>
 </head>
 
@@ -365,6 +375,7 @@
             </div>
             <p class="value">路由： {{ $value.route }}</p>
             {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+            {{ if $value.status }}<div class="status online"></div>{{ /if }}
           </div>
           {{ /each }}
         </div>
@@ -381,6 +392,7 @@
             </div>
             <p class="value">路由： {{ $value.route }}</p>
             {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
+            {{ if $value.status }}<div class="status online"></div>{{ /if }}
           </div>
           {{ /each }}
         </div>

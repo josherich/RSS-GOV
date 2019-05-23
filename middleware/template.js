@@ -64,5 +64,6 @@ module.exports = async (ctx, next) => {
                 ...ctx.state.data,
             });
         }
+        ctx.debug.status[ctx.request.path] = true;
     }
 };

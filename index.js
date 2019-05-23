@@ -26,6 +26,14 @@ logger.info('🍻 RSSHub start! Cheers!');
 const app = new Koa();
 app.proxy = true;
 
+app.context.debug = {
+    hitCache: 0,
+    request: 0,
+    routes: [],
+    ips: [],
+    status: {},
+};
+
 // favicon
 app.use(favicon(__dirname + '/favicon.png'));
 
@@ -36,12 +44,6 @@ app.use(onerror);
 app.use(header);
 
 // 6 debug
-app.context.debug = {
-    hitCache: 0,
-    request: 0,
-    routes: [],
-    ips: [],
-};
 app.use(debug);
 
 // 5 fix incorrect `utf-8` characters

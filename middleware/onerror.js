@@ -10,5 +10,6 @@ module.exports = async (ctx, next) => {
         });
         ctx.body = 'RSS Context: Bad things happened ' + err;
         ctx.status = 500;
+        ctx.debug.status[ctx.request.path] = false;
     }
 };
