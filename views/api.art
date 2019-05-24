@@ -55,12 +55,9 @@
   }
   .wrapper {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-  }
-  .wrapper > * {
-    flex: 1 100%;
   }
   .container {
     display: flex;
@@ -84,6 +81,7 @@
     padding: 20px 50px;
     min-width: 400px;
     overflow: auto;
+    white-space: pre-wrap;
   }
   .content .rss-title {
     font-size: 1.2em;
@@ -393,8 +391,8 @@
             <a href="http://data.mindynode.com"><h2>上下闻</h2>&nbsp;<h4>数据</h4></a>
         </div>
         <div class="header-tabs inb">
-            <a class="tab current" href="/rss">RSS</a>
-            <a class="tab" href="/api">API</a>
+            <a class="tab" href="/rss">RSS</a>
+            <a class="tab current" href="/api">API</a>
         </div>
         <div class="header-tools inb">
           <a class="header-now" href="#rss_news">更多新闻</a>
@@ -410,12 +408,12 @@
         <div id="rss_gov">
           {{ each debug['routes_gov'] }}
           <div class="route-item">
-            <div class="route-title" data-url="{{ $value.url }}?type=fragment">{{ $value.name }}</div>
+            <div class="route-title" data-url="{{ $value.url }}.json">{{ $value.name }}</div>
             <div class="rss-url">
-              <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-              <a href="{{ $value.url }}">{{ $value.url }}</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-terminal"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <a href="{{ $value.url }}.json">{{ $value.url }}.json</a>
             </div>
-            <p class="value">路由： {{ $value.route }}</p>
+            <p class="value">路由： {{ $value.route }}.json</p>
             {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             {{ if $value.status }}<div class="status online"></div>{{ /if }}
           </div>
@@ -427,12 +425,12 @@
         <div id="rss_news">
           {{ each debug['routes_news'] }}
           <div class="route-item">
-            <div class="route-title" data-url="{{ $value.url }}?type=fragment">{{ $value.name }}</div>
+            <div class="route-title" data-url="{{ $value.url }}.json">{{ $value.name }}</div>
             <div class="rss-url">
-              <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" id="icon-rss" width="100%" height="100%"><path d="M0 866q0-55 39-94t94-39 94 39 39 94q0 56-39 94.5T133 999t-94-39-39-94zm0-335V340q179 0 331 88.5T571.5 669t88.5 331H468q0-194-137-331Q193 531 0 531zm0-339V0q203 0 388 79.5T707 293t213.5 319 79.5 388H808q0-164-64-314T571.5 428t-258-172T0 192z"></path></svg>
-              <a href="{{ $value.url }}">{{ $value.url }}</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-terminal"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <a href="{{ $value.url }}.json">{{ $value.url }}.json</a>
             </div>
-            <p class="value">路由： {{ $value.route }}</p>
+            <p class="value">路由： {{ $value.route }}.json</p>
             {{ if $value.param }}<p class="value">参数： {{ $value.param }}</p>{{ /if }}
             {{ if $value.status }}<div class="status online"></div>{{ /if }}
           </div>
@@ -477,10 +475,10 @@
 
       </div>
 
-      <div class="content noscrollbar">
+      <code class="content noscrollbar">
 
 
-      </div>
+      </code>
 
       <div class="content-loading">
         <div class="rss-title"></div>
@@ -514,7 +512,8 @@
     </div>
 
   </div>
-
+  <script src="https://unpkg.com/prettier@1.13.0/standalone.js"></script>
+  <script src="https://unpkg.com/prettier@1.13.0/parser-babylon.js"></script>
   <script>
     window.onload = function() {
       document.querySelector('.route-title').click();
@@ -535,7 +534,8 @@
         return resp.text();
       })
       .then(function(resp) {
-        document.querySelector('.content').innerHTML = resp
+        console.log(resp);
+        document.querySelector('.content').innerHTML = prettier.format(resp, {parser: "json", plugins: prettierPlugins});
       })
     }
 

@@ -1,10 +1,10 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "{{ title || 'RSSHub' }}",
-    "home_page_url": "{{ link || 'https://github.com/DIYgod/RSSHub' }}",
-    "description": "{{ description || title }} - Made with love by RSSHub(https://github.com/DIYgod/RSSHub)",
+    "title": "{{ title || 'Context News' }}",
+    "home_page_url": "{{ link || 'https://https://news.mindynode.com' }}",
+    "description": "{{ description || title }} - Made by Context News: https://news.mindynode.com/",
     "author": {
-        "name": "{{@ author || 'RSSHub' }}"
+        "name": "{{@ author || 'Context News' }}"
     },
     "items": [
         {{each item}}

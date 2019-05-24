@@ -502,67 +502,72 @@ let routerlist = [
 // { "url": "/court/wenshu", "name": "中国裁判文书网", "route": "/court/wenshu", "param": "" },
 // /wangxinban/fabu
 
+const homepage = (template) => {
+    return async (ctx) => {
+        ctx.set({
+            'Content-Type': 'text/html; charset=UTF-8',
+        });
+        // https://github.com/DIYgod/RSSHub/blob/master/router.js
+        const time = (+new Date() - startTime) / 1000;
+        const routes = Object.keys(ctx.debug.routes).sort((a, b) => ctx.debug.routes[b] - ctx.debug.routes[a]);
+        const hotRoutes = routes.slice(0, 100).map((e) => decodeURIComponent(e));
+        let hotRoutesValue = '';
+        hotRoutes.forEach((item) => {
+            hotRoutesValue += `${ctx.debug.routes[item]}&nbsp;&nbsp;${item}<br>`;
+        });
+
+        const ips = Object.keys(ctx.debug.ips).sort((a, b) => ctx.debug.ips[b] - ctx.debug.ips[a]);
+        const hotIPs = ips.slice(0, 100);
+        let hotIPsValue = '';
+        hotIPs.forEach((item) => {
+            hotIPsValue += `${ctx.debug.ips[item]}&nbsp;&nbsp;${item}<br>`;
+        });
+
+        ctx.set({
+            'Cache-Control': 'no-cache',
+        });
+
+        routerlist = routerlist.map((route) => {
+            route['status'] = ctx.debug.status[route['route']];
+            return route;
+        });
+
+        ctx.body = art(path.resolve(__dirname, `./views/${template}.art`), {
+            debug: {
+                routes_news: routerlist.slice(0, 1),
+                routes_gov: routerlist.slice(1),
+                hotRoutes: hotRoutes,
+                hotIPs: hotIPs,
+                status: [
+                    {
+                        name: '请求数',
+                        value: ctx.debug.request,
+                    },
+                    {
+                        name: '请求频率',
+                        value: ((ctx.debug.request / time) * 60).toFixed(3) + ' 次/分钟',
+                    },
+                    {
+                        name: '缓存命中率',
+                        value: ctx.debug.request ? (ctx.debug.hitCache / ctx.debug.request).toFixed(3) : 0,
+                    },
+                    {
+                        name: '内存占用',
+                        value: process.memoryUsage().rss / 1000000 + ' MB',
+                    },
+                    {
+                        name: '运行时间',
+                        value: time + ' 秒',
+                    },
+                ],
+            },
+        });
+    };
+};
+
 const startTime = +new Date();
-router.get('/', async (ctx) => {
-    ctx.set({
-        'Content-Type': 'text/html; charset=UTF-8',
-    });
-    // https://github.com/DIYgod/RSSHub/blob/master/router.js
-    const time = (+new Date() - startTime) / 1000;
-    const routes = Object.keys(ctx.debug.routes).sort((a, b) => ctx.debug.routes[b] - ctx.debug.routes[a]);
-    const hotRoutes = routes.slice(0, 100).map((e) => decodeURIComponent(e));
-    let hotRoutesValue = '';
-    hotRoutes.forEach((item) => {
-        hotRoutesValue += `${ctx.debug.routes[item]}&nbsp;&nbsp;${item}<br>`;
-    });
-
-    const ips = Object.keys(ctx.debug.ips).sort((a, b) => ctx.debug.ips[b] - ctx.debug.ips[a]);
-    const hotIPs = ips.slice(0, 100);
-    let hotIPsValue = '';
-    hotIPs.forEach((item) => {
-        hotIPsValue += `${ctx.debug.ips[item]}&nbsp;&nbsp;${item}<br>`;
-    });
-
-    ctx.set({
-        'Cache-Control': 'no-cache',
-    });
-
-    routerlist = routerlist.map((route) => {
-        route['status'] = ctx.debug.status[route['route']];
-        return route;
-    });
-
-    ctx.body = art(path.resolve(__dirname, './views/welcome.art'), {
-        debug: {
-            routes_news: routerlist.slice(0, 1),
-            routes_gov: routerlist.slice(1),
-            hotRoutes: hotRoutes,
-            hotIPs: hotIPs,
-            status: [
-                {
-                    name: '请求数',
-                    value: ctx.debug.request,
-                },
-                {
-                    name: '请求频率',
-                    value: ((ctx.debug.request / time) * 60).toFixed(3) + ' 次/分钟',
-                },
-                {
-                    name: '缓存命中率',
-                    value: ctx.debug.request ? (ctx.debug.hitCache / ctx.debug.request).toFixed(3) : 0,
-                },
-                {
-                    name: '内存占用',
-                    value: process.memoryUsage().rss / 1000000 + ' MB',
-                },
-                {
-                    name: '运行时间',
-                    value: time + ' 秒',
-                },
-            ],
-        },
-    });
-});
+router.get(['/', '/rss'], homepage('welcome'));
+router.get('/api', homepage('api'));
 
 // context news
 router.get('/context/:words', require('./routes/context/keywords'));
