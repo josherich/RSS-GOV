@@ -5,6 +5,7 @@ const wrapper = require('co-redis');
 const readall = require('readall');
 const crypto = require('crypto');
 const Redis = require('redis');
+const config = require('../config');
 
 module.exports = function(options = {}) {
     let redisAvailable = false;
@@ -42,6 +43,26 @@ module.exports = function(options = {}) {
     options.app.context.cache = {
         get: async (key) => await redisClient.get(key),
         set: async (key, value, maxAge) => await redisClient.setex(key, maxAge, value),
+    };
+
+    options.app.context.cache.tryGet = async function(key, getValueFunc, maxAge = config.contentExpire) {
+        let v = await this.get(key);
+        if (!v) {
+            v = await getValueFunc();
+            this.set(key, v, maxAge);
+        } else {
+            let parsed;
+            try {
+                parsed = JSON.parse(v);
+            } catch (e) {
+                parsed = null;
+            }
+            if (parsed) {
+                v = parsed;
+            }
+        }
+
+        return v;
     };
 
     return async function cache(ctx, next) {

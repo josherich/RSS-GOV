@@ -12,6 +12,12 @@ let routerlist = [
         route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
+    {
+        url: '/un/veto',
+        name: '联合国决议否决',
+        route: '/un/veto',
+        param: '',
+    },
     // 网信部
     // {
     //     url: '/wangxinban/fabu',
@@ -717,6 +723,11 @@ router.get('/chart/exports', require('./routes/datajournal/exports'));
 
 router.get('/chart/stats/category', require('./routes/stats/category'));
 router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquery'));
+
+// un veto
+router.get('/un/veto', require('./routes/un/veto'));
+
+router.get('/sina/:cate', require('./routes/sina/rollnews'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
