@@ -1,4 +1,4 @@
-const template = require('../template_page');
+const template = require('../template_page_chrome');
 
 const options = {
     feed_title: '公安部 通知公告',
@@ -13,10 +13,11 @@ const options = {
     link_rel: true,
     desc_slr: 'a',
     time_slr: 'span',
+    timeout: 2000,
     time_map: function(time) {
         return time.slice(1, -1);
     },
-    cn: false,
+    cn: false
 };
 
 module.exports = template(options);
