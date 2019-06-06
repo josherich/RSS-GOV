@@ -2,7 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const config = require('../config');
 const iconv = require('iconv-lite');
-const Page = require('../utils/chrome');
+const puppeteer = require('puppeteer');
 
 module.exports = (options) => async (ctx) => {
     let headers = {
@@ -12,13 +12,18 @@ module.exports = (options) => async (ctx) => {
     if (options.headers) {
         headers = Object.assign(headers, options.headers);
     }
-    const page = await Page();
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const page = await browser.newPage();
     await page.goto(options.url, {waitUntil: 'networkidle0'});
     await page.waitFor(options.timeout || 1000);
-    // Wait for window.onload before doing stuff.
     const responseHtml = await page.evaluate(() => {
         return document.querySelector('html').innerHTML;
     })
+    await browser.close();
 
     if (options.cn) {
         responseHtml = iconv.decode(response.data, 'gb2312');

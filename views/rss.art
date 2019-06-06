@@ -9,7 +9,7 @@
         <link>{{ link || 'https://https://news.mindynode.com' }}</link>
         <description><![CDATA[{{@ description || title }} - Made by Context News(https://https://news.mindynode.com)]]></description>
         <generator>Context News</generator>
-        <webMaster>i@html.love (DIYgod)</webMaster>
+        <webMaster></webMaster>
         {{ if itunes_author }}<itunes:author>{{ itunes_author}}</itunes:author>{{ /if }}
         {{ if itunes_category }}<itunes:category text="{{ itunes_category }}"/>{{ /if }}
         <language>zh-cn</language>
