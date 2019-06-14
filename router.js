@@ -12,12 +12,12 @@ let routerlist = [
         route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
-    {
-        url: '/un/veto',
-        name: '联合国决议否决',
-        route: '/un/veto',
-        param: '',
-    },
+    // {
+    //     url: '/un/veto',
+    //     name: '联合国决议否决',
+    //     route: '/un/veto',
+    //     param: '',
+    // },
     // 网信部
     // {
     //     url: '/wangxinban/fabu',
@@ -66,6 +66,12 @@ let routerlist = [
         url: '/guowuyuan/shuju',
         name: '国务院-数据-要闻',
         route: '/guowuyuan/shuju',
+        param: '',
+    },
+    {
+        url: '/guowuyuan/fazhiban',
+        name: '国务院-公开征求意见',
+        route: '/guowuyuan/fazhiban',
         param: '',
     },
     // 政协
@@ -654,6 +660,7 @@ router.get('/guowuyuan/dongtai', require('./routes/guowuyuan/dongtai'));
 router.get('/guowuyuan/shuju', require('./routes/guowuyuan/shuju'));
 router.get('/guowuyuan/xinwen', require('./routes/guowuyuan/xinwen'));
 router.get('/guowuyuan/zhengce-zuixin', require('./routes/guowuyuan/zhengce-zuixin'));
+router.get('/guowuyuan/fazhiban', require('./routes/guowuyuan/fazhiban'));
 
 // 政协
 // code in html code

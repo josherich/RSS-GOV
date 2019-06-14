@@ -22,6 +22,7 @@ module.exports = (options) => async (ctx) => {
     if (options.cn) {
         responseHtml = iconv.decode(response.data, 'gb2312');
     }
+
     const $ = cheerio.load(responseHtml);
     let list = $(options.list_slr[0], options.list_slr[1]);
 
@@ -31,11 +32,10 @@ module.exports = (options) => async (ctx) => {
         });
     }
 
-    const time_map =
-        options.time_map ||
-        function(time) {
-            return time;
-        };
+    const time_map = options.time_map || function(time) {
+        return time; };
+    const link_map = options.link_map || function(link) {
+        return link; };
     const chapter_items = [];
     for (let i = 0; i < list.length; i++) {
         let item = {};
@@ -72,7 +72,7 @@ module.exports = (options) => async (ctx) => {
             item = {
                 title: title,
                 description: desc,
-                link: options.link_rel ? options.baseUrl + link : link,
+                link: options.link_rel ? options.baseUrl + link_map(link) : link_map(link),
                 pubDate: new Date(time_map(time)).toUTCString(),
             };
         } catch (e) {

@@ -26,6 +26,10 @@
 
     路由： http://rss.mindynode.com/guowuyuan/shuju
 
+#### 5. [数据-公开征求意见](http://rss.mindynode.com/guowuyuan/fazhiban)
+
+    路由： http://rss.mindynode.com/guowuyuan/fazhiban
+
 ### 政协
 
 ### 纪检委
