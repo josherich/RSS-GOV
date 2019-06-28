@@ -17,7 +17,7 @@ const cates = {
 module.exports = async (ctx) => {
     const cate = ctx.params.cate;
     const cate_name = cates[cate];
-    const response = await axios.get(`https://feed.mix.sina.com.cn/api/roll/get?pageid=372&lid=${cate}&k=&num=50&page=1&r=${Math.random()}&callback=&_=${new Date().getTime()}`);
+    const response = await axios.get(`https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=${cate}&k=&num=50&page=1&r=${Math.random()}&callback=&_=${new Date().getTime()}`);
     const list = response.data.result.data;
 
     const out = await Promise.all(
