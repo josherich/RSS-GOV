@@ -45,7 +45,7 @@ module.exports = async (ctx) => {
 
     ctx.state.data = {
         title: `新浪${cate_name} 滚动新闻`,
-        link: `https://tech.sina.com.cn/roll/rollnews.shtml#pageid=372&lid=${cate}&k=&num=50&page=1`,
+        link: `https://tech.sina.com.cn/roll/rollnews.shtml#pageid=153&lid=${cate}&k=&num=50&page=1`,
         item: out,
     };
 };
