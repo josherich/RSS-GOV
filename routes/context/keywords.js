@@ -1,7 +1,7 @@
 const axios = require('axios');
 const config = require('../../config');
-// const url = 'http://search.mindynode.com/page_entity-*/_search';
-const url = 'http://localhost:9200/page_entity-*/_search';
+const url = 'http://search.mindynode.com/page_entity-*/_search';
+// const url = 'http://localhost:9200/page_entity-*/_search';
 
 host_name = (id) => {
     const keys = {
