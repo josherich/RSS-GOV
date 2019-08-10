@@ -1,23 +1,30 @@
-version: '2.1'
+version: '3'
 
 services:
-  rsshub:
-    image: rsshub
-    container_name: rsshub
-    build: .
+
+  service.rsshub:
+    image: josherich/rsshub
+    restart: always
+    ports:
+      - "1200:1200"
     environment:
       NODE_ENV: production
       CACHE_TYPE: redis
-      REDIS_URL: 'redis://redis:6379/'
-    ports:
-      - 1200:1200
-    links:
-      - redis
+      REDIS_URL: 'redis://db.redis:6379/'
+      PUPPETEER_WS_ENDPOINT: 'ws://service.browserless:3000'
+    depends_on:
+      - db.redis
+      - service.browserless
 
-  redis:
-    image: redis:alpine
+  service.browserless:
+    image: browserless/chrome
+    restart: always
+
+  db.redis:
+    image: redis
+    restart: always
     volumes:
-      - redis-data:/data
+        - redis-data:/data
 
 volumes:
   redis-data:
