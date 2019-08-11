@@ -202,7 +202,7 @@ module.exports = async (ctx) => {
     const items = response2.data['hits']['hits'].map( page => {
         return {
             "title": page['_source']['page_title'].replace('\"','"').replace('\n',''),
-            "content": page['_source']['page_content'].replace('\"','"').replace('\n',''),
+            "content": page['_source']['page_raw'].replace('\"','"').replace('\n',''),
             "host": host_name(page['_source']['page_host_id']),
             "url": page['_source']['page_url'],
             "image": page['_source']['page_image'],
