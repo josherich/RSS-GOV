@@ -163,13 +163,14 @@ module.exports = async (ctx) => {
             Referer: 'http://news.mindynode.com',
         },
         data: {
-          "min_score": 8.0,
-          "query": {
-            "multi_match": {
-              "query": words,
-              "fields": [ "page_title", "page_content"]
+            "min_score": 8.0,
+            "query": {
+                "query_string": {
+                    "query": words,
+                    "fields": [ "page_title^2", "page_content" ],
+                    "type": "most_fields"
+                }
             }
-          }
         }
     });
 
@@ -183,17 +184,18 @@ module.exports = async (ctx) => {
             Referer: 'http://news.mindynode.com',
         },
         data: {
-          "min_score": min_score,
-          "query": {
-            "multi_match": {
-              "query": words,
-              "fields": [ "page_title", "page_content"]
-            }
-          },
-          "sort": [
-            {"@timestamp": "desc"},
-            "_score"
-          ]
+            "min_score": min_score,
+            "query": {
+                "query_string": {
+                    "query": words,
+                    "fields": [ "page_title^2", "page_content" ],
+                    "type": "most_fields"
+                }
+            },
+            "sort": [
+                {"@timestamp": "desc"},
+                "_score"
+            ]
         }
     });
 
