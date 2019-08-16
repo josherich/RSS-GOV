@@ -12,6 +12,12 @@ let routerlist = [
         route: 'http://rss.mindynode.com/netease/:category',
         param: 'category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]',
     },
+    {
+        url: '/cankao/roll',
+        name: '参考消息',
+        route: 'http://rss.mindynode.com/cankao/roll',
+        param: '',
+    },
     // {
     //     url: '/un/veto',
     //     name: '联合国决议否决',
@@ -546,8 +552,8 @@ const homepage = (template) => {
 
         ctx.body = art(path.resolve(__dirname, `./views/${template}.art`), {
             debug: {
-                routes_news: routerlist.slice(0, 1),
-                routes_gov: routerlist.slice(1),
+                routes_news: routerlist.slice(0, 2),
+                routes_gov: routerlist.slice(2),
                 hotRoutes: hotRoutes,
                 hotIPs: hotIPs,
                 status: [
@@ -735,6 +741,8 @@ router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquer
 router.get('/un/veto', require('./routes/un/veto'));
 
 router.get('/sina/:cate', require('./routes/sina/rollnews'));
+
+router.get('/cankao/roll', require('./routes/cankaoxiaoxi/index'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27

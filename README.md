@@ -455,6 +455,10 @@
 
     参数： category: [guoji（国际）| guonei（国内）| shehui（社会）| yaowen（要闻）| tech（科技）| sports（体育）| ent（娱乐）| lady（女性）| auto（汽车）| house（住房）| jiankang（健康）]
 
+#### 7. [参考消息](http://rss.mindynode.com/cankao/roll)
+
+    路由： http://rss.mindynode.com/cankao/roll
+
 ## 电影备案公示
 http://dy.chinasarft.gov.cn/html/www/catalog/0129dffcccb1015d402881cd29de91ec.html
 
