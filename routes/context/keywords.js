@@ -148,33 +148,35 @@ host_name = (id) => {
 module.exports = async (ctx) => {
     let lang = 'zh';
     let words = ctx.params.words;
+    let min_score = ctx.query.min;
+
     if (ctx.query.lang) {
         lang = ctx.query.lang;
     }
     words = words.replace(/\+/g, ' +');
     words = words.replace(/-/g, ' -');
     words = words.replace(/\|/g, ' ');
-
-    const response1 = await axios({
-        method: 'post',
-        url: url,
-        headers: {
-            'User-Agent': config.ua,
-            Referer: 'http://news.mindynode.com',
-        },
-        data: {
-            "min_score": 8.0,
-            "query": {
-                "query_string": {
-                    "query": words,
-                    "fields": [ "page_title^2", "page_content" ],
-                    "type": "most_fields"
+    if (!min_score) {
+        const response1 = await axios({
+            method: 'post',
+            url: url,
+            headers: {
+                'User-Agent': config.ua,
+                Referer: 'http://news.mindynode.com',
+            },
+            data: {
+                "min_score": 8.0,
+                "query": {
+                    "query_string": {
+                        "query": words,
+                        "fields": [ "page_title^2", "page_content" ],
+                        "type": "most_fields"
+                    }
                 }
             }
-        }
-    });
-
-    const min_score = response1.data['hits']['max_score'] / 2
+        });
+        min_score = response1.data['hits']['max_score'] / 2
+    }
 
     const response2 = await axios({
         method: 'post',
