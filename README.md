@@ -1,6 +1,4 @@
-<h1 align="center">Context RSS</h1>
-
-> 🍭 使用 RSS 连接全世界
+<h1 align="center">RSS ORG</h1>
 
 ## 专注于新闻和国家政府部门 RSS 的分支
 
