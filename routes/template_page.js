@@ -13,7 +13,7 @@ module.exports = (options) => async (ctx) => {
     }
     const response = await axios({
         method: 'get',
-        url: options.url,
+        url: typeof options.url == 'function' ? options.url(ctx.params.query) : options.url,
         headers: headers,
         responseType: 'arraybuffer',
     });

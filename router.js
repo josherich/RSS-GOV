@@ -744,6 +744,9 @@ router.get('/sina/:cate', require('./routes/sina/rollnews'));
 
 router.get('/cankao/roll', require('./routes/cankaoxiaoxi/index'));
 
+router.get('/weibo/topic/:query', require('./routes/weibo/topic'));
+router.get('/weibo/toutiao/:query', require('./routes/weibo/toutiao'));
+router.get('/weibo/video/:query', require('./routes/weibo/video'));
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
 // 办公室发布
