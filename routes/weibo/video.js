@@ -1,7 +1,7 @@
 const template = require('../template_page');
 
 const options = {
-    feed_title: '微博 视频',
+    feed_title: query => `微博 视频 [${query.split(',').join(' ')}]`,
     feed_desc: '微博 视频',
     feed_image: 'https://imgs.t.sinajs.cn/t6/style/images/global_nav/WB_logo-x2.png?id=1404211047727',
     feed_url: 'http://s.weibo.com',

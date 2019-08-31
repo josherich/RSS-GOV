@@ -82,7 +82,7 @@ module.exports = (options) => async (ctx) => {
         chapter_items.push(item);
     }
     ctx.state.data = {
-        title: options.feed_title,
+        title: typeof options.feed_title == 'function' ? options.feed_title(ctx.params.query) : options.feed_title,
         link: options.feed_url,
         image: options.feed_image,
         description: options.feed_desc,
