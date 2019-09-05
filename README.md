@@ -29,12 +29,12 @@
 
     路由： http://rss.mindynode.com/guowuyuan/fazhiban
 
-</detail>
+</details>
 
 <details>
     <summary><strong>政协</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>纪检委</strong></summary>
@@ -67,7 +67,7 @@
 
     路由： http://rss.mindynode.com/jijian/shenguancf
 
-</detail>
+</details>
 
 <details>
     <summary><strong>最高人民法院</strong></summary>
@@ -88,7 +88,7 @@
 
     路由： http://rss.mindynode.com/zgfy/zhongda
 
-</detail>
+</details>
 
 <details>
     <summary><strong>最高人民检查院</strong></summary>
@@ -103,7 +103,7 @@
 
 ## 国务院组成部门
 
-</detail>
+</details>
 
 <details>
     <summary><strong>外交部</strong></summary>
@@ -121,7 +121,7 @@
     路由： http://rss.mindynode.com/waijiaobu/zwbd
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国防部</strong></summary>
@@ -131,7 +131,7 @@
     路由： http://rss.mindynode.com/guofangbu/fabu
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家发展和改革委员会</strong></summary>
@@ -140,7 +140,7 @@
 
     路由： http://rss.mindynode.com/fagaiwei/xinwen
 
-</detail>
+</details>
 
 <details>
     <summary><strong>教育部</strong></summary>
@@ -154,7 +154,7 @@
     路由： http://rss.mindynode.com/jiaoyubu/jytz
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>科学技术部</strong></summary>
@@ -163,7 +163,7 @@
 
     路由： http://rss.mindynode.com/kejibu/gengxin
 
-</detail>
+</details>
 
 <details>
     <summary><strong>工业和信息化部</strong></summary>
@@ -216,12 +216,12 @@
 
     路由： http://rss.mindynode.com/gongxinbu/tongji-zhuangbei
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家民族事务委员会</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>公安部</strong></summary>
@@ -230,22 +230,22 @@
 
     路由： http://rss.mindynode.com/gonganbu/bulletin
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家安全部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>民政部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>司法部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>财政部</strong></summary>
@@ -255,7 +255,7 @@
     路由： http://rss.mindynode.com/caizhengbu/zhengce
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>人力资源和社会保障部</strong></summary>
@@ -273,17 +273,17 @@
     路由： http://rss.mindynode.com/renshe/zhengce
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>自然资源部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>生态环境部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>住房和城乡建设部</strong></summary>
@@ -301,52 +301,52 @@
     路由： http://rss.mindynode.com/zhufang/difang
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>交通运输部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>水利部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>农业农村部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>商务部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>文化和旅游部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家卫生健康委员会</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>退役军人事务部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>应急管理部</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>中国人民银行审计署</strong></summary>
 
-</detail>
+</details>
 
 
 ## 国务院直属机构
@@ -360,7 +360,7 @@
 
     参数： topic: all | 国民经济管理-国有资产监管 | 财政-金融-审计 | 国土资源-能源 农业-林业-水利 category: all | 国令 | 国发 | 国函 | 国发明电 | 国办发 | 国办函 | 国办发明电
 
-</detail>
+</details>
 
 <details>
     <summary><strong>海关总署</strong></summary>
@@ -370,7 +370,7 @@
     路由： http://rss.mindynode.com/haiguan/dongtai
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家税务总局</strong></summary>
@@ -379,7 +379,7 @@
 
     路由： http://rss.mindynode.com/shuiwu/yaowen
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家市场监督管理总局</strong></summary>
@@ -404,7 +404,7 @@
 
     路由： http://rss.mindynode.com/shichang/wenjian
 
-</detail>
+</details>
 
 <details>
     <summary><strong>网信办</strong></summary>
@@ -425,7 +425,7 @@
 
     路由： http://rss.mindynode.com/wangxinban/anquan-guanli
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家广播电视总局</strong></summary>
@@ -442,7 +442,7 @@
 
     路由： http://rss.mindynode.com/guangdian/movie-xuke
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家体育总局</strong></summary>
@@ -457,32 +457,32 @@
     路由： http://rss.mindynode.com/tiyu/difang
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家统计局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家国际发展合作署</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家医疗保障局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国务院参事室</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国务院机关事务管理局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家宗教事务局</strong></summary>
@@ -502,72 +502,72 @@
 
 ## 国务院部委管理的国家局
 
-</detail>
+</details>
 
 <details>
     <summary><strong>信访局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>粮食和物资储备局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>能源局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国防科技工业局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>烟草专卖局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>移民管理局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>林业和草原局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>铁路局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>中国民用航空局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家邮政局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>文物局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>中医药管理局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>煤矿安全监察局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>国家外汇管理局</strong></summary>
@@ -577,12 +577,12 @@
     路由： http://rss.mindynode.com/waihui/yaowen
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>药品监督管理局</strong></summary>
 
-</detail>
+</details>
 
 <details>
     <summary><strong>知识产权局</strong></summary>
@@ -596,7 +596,7 @@
     路由： http://rss.mindynode.com/ip/tongzhi
 
 
-</detail>
+</details>
 
 <details>
     <summary><strong>其它</strong></summary>
@@ -635,5 +635,6 @@
 
     路由： http://rss.mindynode.com/cankao/roll
 
+</details>
 
 > 本项目是 [RSSHub](https://github.com/DIYgod/RSSHub) 的一个分支
