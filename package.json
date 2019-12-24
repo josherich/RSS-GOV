@@ -5,7 +5,7 @@
   "description": "Make RSS Great Again!",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "cross-env NODE_ENV=dev nodemon --inspect index.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "format": "prettier \"**/*.{js,json,md}\" --write"
@@ -37,11 +37,19 @@
   },
   "homepage": "https://github.com/DIYgod/RSSHub#readme",
   "devDependencies": {
+    "jest": "24.9.0",
+    "cross-env": "6.0.3",
+    "mockdate": "2.0.5",
+    "nodemon": "2.0.2",
+    "pinyin": "2.9.0",
     "eslint": "4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "lint-staged": "^7.1.0",
     "prettier": "^1.12.1",
+    "prettier-check": "2.0.0",
+    "pretty-quick": "2.0.1",
+    "supertest": "4.0.2",
     "yorkie": "^1.0.3"
   },
   "dependencies": {
@@ -65,7 +73,30 @@
     "readall": "^1.1.0",
     "redis": "2.8.0",
     "twit": "2.2.9",
-    "winston": "3.0.0-rc3"
+    "winston": "3.0.0-rc3",
+    "wtf_wikipedia": "^7.7.1"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "lib/**/*.js",
+      "!lib/routes/**/*.js"
+    ],
+    "bail": true,
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/lib/$1"
+    }
   },
   "engines": {
     "node": ">=10.0.0"

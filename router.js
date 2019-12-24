@@ -512,6 +512,20 @@ let routerlist = [
         route: '/waihui/yaowen',
         param: '',
     },
+
+    {
+        url: '/cppcc/news',
+        name: '政协 新闻',
+        route: '/cppcc/news',
+        param: '',
+    },
+
+    {
+        url: '/cppcc/fabu',
+        name: '政协 权威发布',
+        route: '/cppcc/fabu',
+        param: '',
+    },
 ];
 
 // TODO: fix
@@ -736,6 +750,11 @@ router.get('/chart/exports', require('./routes/datajournal/exports'));
 
 router.get('/chart/stats/category', require('./routes/stats/category'));
 router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquery'));
+
+
+// 政协 新闻
+router.get('/cppcc/news', require('./routes/cppcc/news'));
+router.get('/cppcc/fabu', require('./routes/cppcc/fabu'));
 
 // un veto
 router.get('/un/veto', require('./routes/un/veto'));

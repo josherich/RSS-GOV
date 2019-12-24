@@ -34,6 +34,14 @@
 <details>
     <summary><strong>政协</strong></summary>
 
+#### 1. [政协-新闻](http://rss.mindynode.com/cppcc/news)
+
+    路由： http://rss.mindynode.com/cppcc/news
+
+#### 2. [政协-权威发布](http://rss.mindynode.com/cppcc/fabu)
+
+    路由： http://rss.mindynode.com/cppcc/fabu
+
 </details>
 
 <details>

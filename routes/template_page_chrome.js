@@ -15,7 +15,13 @@ module.exports = (options) => async (ctx) => {
 
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-infobars', '--window-position=0,0', '--ignore-certifcate-errors', '--ignore-certifcate-errors-spki-list', `--user-agent=${config.ua}`],
+        args: ['--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-infobars',
+                '--window-position=0,0',
+                '--ignore-certifcate-errors',
+                '--ignore-certifcate-errors-spki-list',
+                `--user-agent=${config.ua}`],
     });
     const page = await browser.newPage();
     await page.goto(options.url, {waitUntil: 'networkidle0'});
