@@ -80,32 +80,6 @@ let routerlist = [
         route: '/guowuyuan/fazhiban',
         param: '',
     },
-    // 政协
-    // {
-    //     url: '/zhengxie/yaowen',
-    //     name: '政协-要闻',
-    //     route: 'http://rss.mindynode.com/zhengxie/yaowen',
-    //     param: '',
-    // },
-    // {
-    //     url: '/zhengxie/lingdao',
-    //     name: '政协-领导讲话',
-    //     route: 'http://rss.mindynode.com/zhengxie/lingdao',
-    //     param: '',
-    // },
-    // {
-    //     url: '/zhengxie/renshi',
-    //     name: '政协-人事任免',
-    //     route: 'http://rss.mindynode.com/zhengxie/renshi',
-    //     param: '',
-    // },
-    // {
-    //     url: '/zhengxie/tongzhi',
-    //     name: '政协-通知公告',
-    //     route: 'http://rss.mindynode.com/zhengxie/tongzhi',
-    //     param: '',
-    // },
-    // 其它
     {
         url: '/szse/300104',
         name: '深圳证券交易所上市公司公告',
@@ -681,13 +655,6 @@ router.get('/guowuyuan/shuju', require('./routes/guowuyuan/shuju'));
 router.get('/guowuyuan/xinwen', require('./routes/guowuyuan/xinwen'));
 router.get('/guowuyuan/zhengce-zuixin', require('./routes/guowuyuan/zhengce-zuixin'));
 router.get('/guowuyuan/fazhiban', require('./routes/guowuyuan/fazhiban'));
-
-// 政协
-// code in html code
-router.get('/zhengxie/lingdao', require('./routes/zhengxie/lingdao'));
-router.get('/zhengxie/renshi', require('./routes/zhengxie/renshi'));
-router.get('/zhengxie/tongzhi', require('./routes/zhengxie/tongzhi'));
-router.get('/zhengxie/yaowen', require('./routes/zhengxie/yaowen'));
 
 // 国家广播电视总局
 router.get('/guangdian/tongzhi', require('./routes/guangdian/tongzhi'));
