@@ -339,6 +339,10 @@
 <details>
     <summary><strong>国家卫生健康委员会</strong></summary>
 
+#### 1. [最新信息](http://rss.mindynode.com/weijianwei/news)
+
+    路由： http://rss.mindynode.com/weijianwei/news
+
 </details>
 
 <details>

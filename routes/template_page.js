@@ -26,20 +26,13 @@ module.exports = (options) => async (ctx) => {
     let chapter_items = [];
 
     if (options.patterns) {
-        // let res = responseHtml.toString('utf8').match(options.pattern)
         const htmlText = responseHtml.toString('utf8')
         options.patterns.map(pattern => {
             while ((match = pattern.exec(htmlText)) !== null) {
                 chapter_items.push(match[1])
             }
         })
-
         chapter_items = chapter_items.map(options.mapper)
-        // let matches = responseHtml.toString('utf8').matchAll(options.pattern)
-        // for (const match of matches) {
-        //   chapter_items.push(match[0].map(options.mapper))
-        // }
-        // chapter_items = res.map(options.mapper)
     } else {
         const $ = cheerio.load(responseHtml);
         let list = $(options.list_slr[0], options.list_slr[1]);
@@ -94,7 +87,6 @@ module.exports = (options) => async (ctx) => {
                     pubDate: new Date(time_map(time)).toUTCString(),
                 };
             } catch (e) {
-                console.log(e);
                 continue;
             }
             chapter_items.push(item);

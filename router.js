@@ -500,6 +500,13 @@ let routerlist = [
         route: '/cppcc/fabu',
         param: '',
     },
+    // 卫健委
+    {
+        url: '/weijianwei/news',
+        name: '卫健委 最新信息',
+        route: '/weijianwei/news',
+        param: '',
+    },
 ];
 
 // TODO: fix
