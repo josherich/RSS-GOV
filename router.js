@@ -730,6 +730,9 @@ router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquer
 router.get('/cppcc/news', require('./routes/cppcc/news'));
 router.get('/cppcc/fabu', require('./routes/cppcc/fabu'));
 
+// 卫健委 最新信息
+router.get('/weijianwei/news', require('./routes/weijianwei/news'));
+
 // un veto
 router.get('/un/veto', require('./routes/un/veto'));
 
