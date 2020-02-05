@@ -22,7 +22,7 @@ module.exports = async (ctx) => {
             guid: 'a3df68dc-434c-9b59a8e4-919059e041a2',
         },
     });
-    console.log(response.data);
+
     const data = JSON.parse(response.data);
 
     ctx.state.data = {

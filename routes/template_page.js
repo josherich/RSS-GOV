@@ -76,7 +76,7 @@ module.exports = (options) => async (ctx) => {
                     time = time.eq(0).text();
                 }
 
-                if (title == "") {
+                if (title === "") {
                     continue;
                 }
 

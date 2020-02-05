@@ -493,7 +493,6 @@ let routerlist = [
         route: '/cppcc/news',
         param: '',
     },
-
     {
         url: '/cppcc/fabu',
         name: '政协 权威发布',
@@ -507,6 +506,19 @@ let routerlist = [
         route: '/weijianwei/news',
         param: '',
     },
+    // 疾病预防控制中心
+    // {
+    //     url: '/cdc/news',
+    //     name: '疾病预防控制中心 中心要闻',
+    //     route: '/cdc/news',
+    //     param: '',
+    // },
+    // {
+    //     url: '/nmpa/news',
+    //     name: '药监局 新闻',
+    //     route: '/nmpa/news',
+    //     param: '',
+    // },
 ];
 
 // TODO: fix
@@ -725,6 +737,7 @@ router.get('/chart/exports', require('./routes/datajournal/exports'));
 router.get('/chart/stats/category', require('./routes/stats/category'));
 router.get('/chart/stats/:sourceid/:sessionid', require('./routes/stats/easyquery'));
 
+router.get('/wikipedia/year', require('./routes/wikipedia/cal'));
 
 // 政协 新闻
 router.get('/cppcc/news', require('./routes/cppcc/news'));
@@ -732,6 +745,9 @@ router.get('/cppcc/fabu', require('./routes/cppcc/fabu'));
 
 // 卫健委 最新信息
 router.get('/weijianwei/news', require('./routes/weijianwei/news'));
+
+// 疾病预防控制中心
+router.get('/cdc/news', require('./routes/cdc/news'));
 
 // un veto
 router.get('/un/veto', require('./routes/un/veto'));
@@ -743,6 +759,10 @@ router.get('/cankao/roll', require('./routes/cankaoxiaoxi/index'));
 router.get('/weibo/topic/:query', require('./routes/weibo/topic'));
 router.get('/weibo/toutiao/:query', require('./routes/weibo/toutiao'));
 router.get('/weibo/video/:query', require('./routes/weibo/video'));
+
+// 药监局 新闻
+router.get('/nmpa/news', require('./routes/nmpa/news'));
+
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
 // 办公室发布
