@@ -75,10 +75,20 @@ host_name = (id) => {
         "1202": "国家统计局 数据解读",
         "1201": "国家统计局 最新发布",
         "1200": "国务院办公厅政府 信息公开",
+
+        "907": "The Economist Economy",
+        "906": "The Hill Finance",
+        "905": "WSJ Business",
+        "904": "The Economist Business",
+        "903": "The Washington Post Business",
+        "902": "ABC Business",
+        "901": "CNN Money",
+
         "704": "虎扑国际足球",
         "703": "虎扑 NBA",
         "702": "新浪国际足球",
         "701": "人民网体育",
+
         "608": "央视新闻-世界",
         "607": "朝日新闻-政治经济",
         "606": "朝日新闻-日本社会",
