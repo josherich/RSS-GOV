@@ -13,7 +13,7 @@ module.exports = (options) => async (ctx) => {
     }
     const response = await axios({
         method: 'get',
-        url: typeof options.url == 'function' ? options.url(ctx.params.query) : options.url,
+        url: typeof options.url === 'function' ? options.url(ctx.params.query) : options.url,
         headers: headers,
         responseType: 'arraybuffer',
     });
@@ -76,7 +76,7 @@ module.exports = (options) => async (ctx) => {
                     time = time.eq(0).text();
                 }
 
-                if (title === "") {
+                if (title === '') {
                     continue;
                 }
 
@@ -93,7 +93,7 @@ module.exports = (options) => async (ctx) => {
         }
     }
     ctx.state.data = {
-        title: typeof options.feed_title == 'function' ? options.feed_title(ctx.params.query) : options.feed_title,
+        title: typeof options.feed_title === 'function' ? options.feed_title(ctx.params.query) : options.feed_title,
         link: options.feed_url,
         image: options.feed_image,
         description: options.feed_desc,

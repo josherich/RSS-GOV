@@ -513,6 +513,12 @@ let routerlist = [
         route: '/minzhengbu/news',
         param: '',
     },
+    {
+        url: '/minzhengbu/tongji',
+        name: '民政部 统计',
+        route: '/minzhengbu/tongji',
+        param: '',
+    },
     // 疾病预防控制中心
     // {
     //     url: '/cdc/news',
@@ -772,6 +778,7 @@ router.get('/nmpa/news', require('./routes/nmpa/news'));
 
 // 民政部
 router.get('/minzhengbu/news', require('./routes/minzhengbu/index'));
+router.get('/minzhengbu/tongji', require('./routes/minzhengbu/tongji'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
