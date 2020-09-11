@@ -252,6 +252,10 @@
 
     路由： http://rss.mindynode.com/minzhengbu/news
 
+#### 2. [统计](http://rss.mindynode.com/minzhengbu/tongji)
+
+    路由： http://rss.mindynode.com/minzhengbu/tongji
+
 </details>
 
 <details>
