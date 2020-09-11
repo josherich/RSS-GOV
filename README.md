@@ -248,6 +248,10 @@
 <details>
     <summary><strong>民政部</strong></summary>
 
+#### 1. [政策](http://rss.mindynode.com/minzhengbu/news)
+
+    路由： http://rss.mindynode.com/minzhengbu/news
+
 </details>
 
 <details>
