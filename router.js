@@ -506,6 +506,13 @@ let routerlist = [
         route: '/weijianwei/news',
         param: '',
     },
+    // 民政部
+    {
+        url: '/minzhengbu/news',
+        name: '民政部 政策',
+        route: '/minzhengbu/news',
+        param: '',
+    },
     // 疾病预防控制中心
     // {
     //     url: '/cdc/news',
@@ -762,6 +769,9 @@ router.get('/weibo/video/:query', require('./routes/weibo/video'));
 
 // 药监局 新闻
 router.get('/nmpa/news', require('./routes/nmpa/news'));
+
+// 民政部
+router.get('/minzhengbu/news', require('./routes/minzhengbu/index'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
