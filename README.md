@@ -332,10 +332,34 @@
 <details>
     <summary><strong>农业农村部</strong></summary>
 
+#### 1. [国际交流](http://rss.mindynode.com/nongye/guoji)
+    
+http://www.moa.gov.cn/xw/gjjl/
+
+    路由：http://rss.mindynode.com/nongye/guoji
+
 </details>
 
 <details>
     <summary><strong>商务部</strong></summary>
+
+#### 1. [日常新闻发布](http://rss.mindynode.com/shangwu/richang)
+
+http://www.mofcom.gov.cn/article/ae/ai/
+
+    路由：http://rss.mindynode.com/shangwu/richang
+
+#### 2. [新闻发言人谈话](http://rss.mindynode.com/shangwu/fayan)
+
+http://www.mofcom.gov.cn/article/ae/ag/
+
+    路由：http://rss.mindynode.com/shangwu/fayan
+
+#### 3. [专题新闻发布会](http://rss.mindynode.com/shangwu/zhuanti)
+
+http://www.mofcom.gov.cn/article/ae/ztfbh/
+
+    路由：http://rss.mindynode.com/shangwu/zhuanti
 
 </details>
 
