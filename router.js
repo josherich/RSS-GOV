@@ -519,6 +519,30 @@ let routerlist = [
         route: '/minzhengbu/tongji',
         param: '',
     },
+    {
+        url: '/nongye/guoji',
+        name: '农业农村部 国际交流',
+        route: '/nongye/guoji',
+        param: '',
+    },
+    {
+        url: '/shangwu/richang',
+        name: '商务部 日常新闻发布',
+        route: '/shangwu/richang',
+        param: '',
+    },
+    {
+        url: '/shangwu/fayan',
+        name: '商务部 发言人谈话',
+        route: '/shangwu/fayan',
+        param: '',
+    },
+    {
+        url: '/shangwu/zhuanti',
+        name: '商务部 专题发布会',
+        route: '/shangwu/zhuanti',
+        param: '',
+    },
     // 疾病预防控制中心
     // {
     //     url: '/cdc/news',
@@ -779,6 +803,14 @@ router.get('/nmpa/news', require('./routes/nmpa/news'));
 // 民政部
 router.get('/minzhengbu/news', require('./routes/minzhengbu/index'));
 router.get('/minzhengbu/tongji', require('./routes/minzhengbu/tongji'));
+
+// 农业农村部
+router.get('/nongye/guoji', require('./routes/nongye/guoji'));
+
+// 商务部
+router.get('/shangwu/richang', require('./routes/shangwu/richang'));
+router.get('/shangwu/fayan', require('./routes/shangwu/fayan'));
+router.get('/shangwu/zhuanti', require('./routes/shangwu/zhuanti'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
