@@ -261,6 +261,18 @@
 <details>
     <summary><strong>司法部</strong></summary>
 
+#### 1. [政法要闻](http://rss.mindynode.com/sifa/zhengfa)
+
+http://www.moj.gov.cn/news/node_zfyw.html
+
+    路由： http://rss.mindynode.com/sifa/zhengfa
+
+#### 2. [行政处罚和行业处分通报](http://rss.mindynode.com/sifa/chufa)
+
+http://www.moj.gov.cn/government_public/node_lsl.html
+
+    路由： http://rss.mindynode.com/sifa/chufa
+
 </details>
 
 <details>

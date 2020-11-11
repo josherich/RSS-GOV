@@ -543,6 +543,18 @@ let routerlist = [
         route: '/shangwu/zhuanti',
         param: '',
     },
+    {
+        url: '/sifa/zhengfa',
+        name: '司法部 政法要闻',
+        route: '/sifa/zhengfa',
+        param: '',
+    },
+    {
+        url: '/sifa/chufa',
+        name: '司法部 行政处罚和行业处分通报',
+        route: '/sifa/chufa',
+        param: '',
+    },
     // 疾病预防控制中心
     // {
     //     url: '/cdc/news',
@@ -811,6 +823,10 @@ router.get('/nongye/guoji', require('./routes/nongye/guoji'));
 router.get('/shangwu/richang', require('./routes/shangwu/richang'));
 router.get('/shangwu/fayan', require('./routes/shangwu/fayan'));
 router.get('/shangwu/zhuanti', require('./routes/shangwu/zhuanti'));
+
+// 司法部
+router.get('/sifa/zhengfa', require('./routes/sifa/zhengfa'));
+router.get('/sifa/chufa', require('./routes/sifa/chufa'));
 
 // 网信办 相关部门发布
 // http://search.cac.gov.cn/was5/web/search?channelid=246506&prepage=36&searchword=extend5%3D%27%251192649%25%27
