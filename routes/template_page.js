@@ -2,6 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const config = require('../config');
 const iconv = require('iconv-lite');
+const fn = require('../utils/functions');
 
 module.exports = (options) => async (ctx) => {
     let headers = {
@@ -18,7 +19,7 @@ module.exports = (options) => async (ctx) => {
         responseType: 'arraybuffer',
     });
 
-    let responseHtml = response.data;
+    let responseHtml = options.data_slr ? fn.get(JSON.parse(response.data), options.data_slr) : response.data;
     if (options.cn) {
         responseHtml = iconv.decode(response.data, 'gb2312');
     }
