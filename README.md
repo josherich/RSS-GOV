@@ -743,25 +743,91 @@ http://www.mofcom.gov.cn/article/ae/ztfbh/
     URL: https://energy.gov/rss/%3Cfront%3E/2193718
 </details>
 
+<details>
+    <summary><strong>U.S. Department of Health and Human Services</strong></summary>
 
-U.S. Department of Health and Human Services
+#### [News](https://www.hhs.gov/rss/news.xml)
 
-U.S. Department of Homeland Security
+    URL: https://www.hhs.gov/rss/news.xml
 
-U.S. Department of Housing and Urban Development
+</details>
 
-U.S. Department of Justice
+<details>
+    <summary><strong>U.S. Department of Homeland Security</strong></summary>
 
-U.S. Department of Labor
+#### [Homeland Security News](https://www.dhs.gov/news/rss.xml)
 
-U.S. Department of State
 
-U.S. Department of the Interior
+#### [Immigration and Customs Enforcement News](https://www.ice.gov/rss/ice-breaking-news)
 
-U.S. Department of the Treasury
+    URL: https://www.ice.gov/rss/ice-breaking-news
 
-U.S. Department of Transportation
+#### [USICS News](https://www.uscis.gov/news/rss-feed/23269?title=News%20Releases&topic_id=1)
 
-U.S. Department of Veterans Affairs
+    URL: https://www.uscis.gov/news/rss-feed/23269?title=News%20Releases&topic_id=1
+
+</details>
+
+<details>
+    <summary><strong>U.S. Department of Housing and Urban Development</strong></summary>
+
+#### [News](http://rss.mindynode.com/us/hud/news)
+
+    URL: http://rss.mindynode.com/us/hud/news
+
+</details>
+
+<details>
+    <summary><strong>U.S. Department of Justice</strong></summary>
+
+#### [News](https://www.justice.gov/rss/justice-news/all/all/all/1664/und%2Ben/all/1974-01-01%3Bnow)
+
+    URL: https://www.justice.gov/rss/justice-news/all/all/all/1664/und%2Ben/all/1974-01-01%3Bnow
+</details>
+
+<details>
+    <summary><strong>U.S. Department of Labor</strong></summary>
+
+#### [Press Release](https://www.dol.gov/rss/releases.xml)
+    URL: https://www.dol.gov/rss/releases.xml
+
+</details>
+
+<details>
+    <summary><strong>U.S. Department of State</strong></summary>
+
+#### [collected department releases](https://www.state.gov/rss-feed/collected-department-releases/feed/)
+    URL: https://www.state.gov/rss-feed/collected-department-releases/feed/
+
+#### [east asia and the pacific](https://www.state.gov/rss-feed/east-asia-and-the-pacific/feed/)
+    URL: https://www.state.gov/rss-feed/east-asia-and-the-pacific/feed/
+
+#### [europe and eurasia](https://www.state.gov/rss-feed/europe-and-eurasia/feed/)
+    URL: https://www.state.gov/rss-feed/europe-and-eurasia/feed/
+</details>
+
+<details>
+    <summary><strong>U.S. Department of the Interior</strong></summary>
+
+#### [Press Release](https://www.doi.gov/feeds/list/11143/rss.xml)
+
+    URL: https://www.doi.gov/feeds/list/11143/rss.xml
+</details>
+
+<details>
+    <summary><strong>U.S. Department of the Treasury</strong></summary>
+
+#### [Press Release](http://rss.mindynode.com/us/treasury/press)
+    URL: http://rss.mindynode.com/us/treasury/press
+
+</details>
+
+<details>
+    <summary><strong>U.S. Department of Transportation</strong></summary>
+
+#### [Press Release](http://rss.mindynode.com/us/transportation/press)
+    URL: http://rss.mindynode.com/us/transportation/press
+
+</details>
 
 > A branch of [RSSHub](https://github.com/DIYgod/RSSHub)

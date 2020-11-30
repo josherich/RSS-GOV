@@ -49,6 +49,27 @@ let routerlist = [
     //     route: '/wangxinban/anquan-guanli',
     //     param: '',
     // },
+
+    // US
+    {
+        url: '/us/hud/news',
+        name: 'HUD Press Release',
+        route: '/us/hud/news',
+        param: '',
+    },
+    {
+        url: '/us/treasury/press',
+        name: 'Department of Treasury Press Release',
+        route: '/us/treasury/press',
+        param: '',
+    },
+    {
+        url: '/us/transportation/press',
+        name: 'Department of Transportation Press Release',
+        route: '/us/transportation/press',
+        param: '',
+    },
+
     // 国务院
     {
         url: '/guowuyuan/xinwen',
@@ -568,6 +589,7 @@ let routerlist = [
     //     route: '/nmpa/news',
     //     param: '',
     // },
+
 ];
 
 // TODO: fix
@@ -870,5 +892,14 @@ router.get('/sifa/chufa', require('./routes/sifa/chufa'));
 
 // 中国裁判文书网
 // router.get('/court/wenshu', require('./routes/court/wenshu'));
+
+// US
+// HUD Press Release
+router.get('/us/hud/news', require('./routes/us/hud/news'));
+
+router.get('/us/treasury/press', require('./routes/us/treasury/press'));
+
+router.get('/us/transportation/press', require('./routes/us/transportation/press'));
+
 
 module.exports = router;
